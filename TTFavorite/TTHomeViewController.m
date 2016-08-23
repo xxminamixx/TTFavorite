@@ -6,15 +6,15 @@
 //  Copyright © 2016年 南　京兵. All rights reserved.
 //
 
-#import "HomeViewController.h"
+#import "TTHomeViewController.h"
 #import <Social/Social.h>
 #import <Accounts/Accounts.h>
 
-@interface HomeViewController ()
+@interface TTHomeViewController ()
 
 @end
 
-@implementation HomeViewController
+@implementation TTHomeViewController
 
 - (void)viewDidLoad
 {

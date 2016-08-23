@@ -15,7 +15,7 @@
 		9DC21D791D6C3FC00037D71F /* TTFavoriteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DC21D781D6C3FC00037D71F /* TTFavoriteTests.m */; };
 		9DC21D841D6C3FC00037D71F /* TTFavoriteUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DC21D831D6C3FC00037D71F /* TTFavoriteUITests.m */; };
 		9DC21D921D6C3FD30037D71F /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DC21D911D6C3FD30037D71F /* Social.framework */; };
-		9DC21D991D6C433C0037D71F /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DC21D981D6C433C0037D71F /* HomeViewController.m */; };
+		9DC21D991D6C433C0037D71F /* TTHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DC21D981D6C433C0037D71F /* TTHomeViewController.m */; };
 		9DC21D9B1D6C45DD0037D71F /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DC21D9A1D6C45DD0037D71F /* Accounts.framework */; };
 /* End PBXBuildFile section */
 
@@ -52,8 +52,8 @@
 		9DC21D831D6C3FC00037D71F /* TTFavoriteUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTFavoriteUITests.m; sourceTree = "<group>"; };
 		9DC21D851D6C3FC00037D71F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9DC21D911D6C3FD30037D71F /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
-		9DC21D971D6C433C0037D71F /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
-		9DC21D981D6C433C0037D71F /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		9DC21D971D6C433C0037D71F /* TTHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTHomeViewController.h; sourceTree = "<group>"; };
+		9DC21D981D6C433C0037D71F /* TTHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTHomeViewController.m; sourceTree = "<group>"; };
 		9DC21D9A1D6C45DD0037D71F /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -167,8 +167,8 @@
 			children = (
 				9DC21D611D6C3FBF0037D71F /* AppDelegate.h */,
 				9DC21D621D6C3FC00037D71F /* AppDelegate.m */,
-				9DC21D971D6C433C0037D71F /* HomeViewController.h */,
-				9DC21D981D6C433C0037D71F /* HomeViewController.m */,
+				9DC21D971D6C433C0037D71F /* TTHomeViewController.h */,
+				9DC21D981D6C433C0037D71F /* TTHomeViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -312,7 +312,7 @@
 			files = (
 				9DC21D631D6C3FC00037D71F /* AppDelegate.m in Sources */,
 				9DC21D601D6C3FBF0037D71F /* main.m in Sources */,
-				9DC21D991D6C433C0037D71F /* HomeViewController.m in Sources */,
+				9DC21D991D6C433C0037D71F /* TTHomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
