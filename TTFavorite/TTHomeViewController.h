@@ -10,4 +10,6 @@
 
 @interface TTHomeViewController : UIViewController
 
+- (void)fetchTimelineForUser:(NSString *)username;
+
 @end

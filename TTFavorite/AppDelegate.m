@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "TTHomeViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+    TTHomeViewController *request = [[TTHomeViewController alloc] init];
+    [request fetchTimelineForUser:@"xxxxx_hobby"];
     return YES;
 }
 
