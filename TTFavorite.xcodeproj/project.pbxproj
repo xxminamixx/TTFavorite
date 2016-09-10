@@ -97,13 +97,11 @@
 				6AE1CD451D83A5CE009EA6FD /* Utils.m */,
 			);
 			name = Utility;
-			path = TTFavorite;
 			sourceTree = "<group>";
 		};
 		9DC21D521D6C3FBF0037D71F = {
 			isa = PBXGroup;
 			children = (
-				6AE1CD431D83A5A4009EA6FD /* Utility */,
 				9DC21D931D6C3FDE0037D71F /* Framework */,
 				9DC21D5D1D6C3FBF0037D71F /* TTFavorite */,
 				9DC21D771D6C3FC00037D71F /* TTFavoriteTests */,
@@ -125,6 +123,7 @@
 		9DC21D5D1D6C3FBF0037D71F /* TTFavorite */ = {
 			isa = PBXGroup;
 			children = (
+				6AE1CD431D83A5A4009EA6FD /* Utility */,
 				9DC21D961D6C40110037D71F /* Model */,
 				9DC21D941D6C3FFB0037D71F /* View */,
 				9DC21D951D6C40040037D71F /* Controller */,

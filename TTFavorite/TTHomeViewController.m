@@ -37,10 +37,7 @@
     
     
     ACAccountStore *store = [[ACAccountStore alloc] init];
-    ACAccountType *type = [store accountTypeWithAccountTypeIdentifier:
-                           ACAccountTypeIdentifierTwitter];
-    
-    
+    ACAccountType *type = [store accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
     
     UIBarButtonItem* left1 = [[UIBarButtonItem alloc]
                               initWithTitle:@"複数選択"
@@ -78,28 +75,6 @@
     [accountStore requestAccessToAccountsWithType:accountType
                                           options:nil
                                        completion:accountBlock ];
-//    [store requestAccessToAccountsWithType:type
-//                                   options:nil
-//                                completion:^(BOOL granted, NSError *error) {
-//                                    
-//                                    if (!granted) {
-//                                        
-//                                        NSLog(@"not granted");
-//                                        
-//                                        return;
-//                                    }
-//                                    
-//                                    NSArray *twitterAccounts = [store accountsWithAccountType:type];
-//                                    
-//                                    if (!(twitterAccounts > 0)) {
-//                                        
-//                                        NSLog(@"no twitter accounts");
-//                                        
-//                                        return;
-//                                    }
-//                                    
-//                                    ACAccount *account = [twitterAccounts lastObject];
-//                                }];
 }
 
 - (void)didReceiveMemoryWarning
@@ -112,68 +87,6 @@
 {
     return [SLComposeViewController
             isAvailableForServiceType:SLServiceTypeTwitter];
-}
-
-// タイムライン取得処理
-- (void)fetchTimelineForUser:(NSString *)username
-{
-    //  Step 0: Check that the user has local Twitter accounts
-    if ([self userHasAccessToTwitter]) {
-        ACAccountType *twitterAccountType = [self.accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
-        [self.accountStore requestAccessToAccountsWithType:twitterAccountType options:NULL completion:^(BOOL granted, NSError *error) {
-            if (granted) {
-                NSArray *twitterAccounts =
-                [self.accountStore accountsWithAccountType:twitterAccountType];
-                NSURL *url = [NSURL URLWithString:@"https://api.twitter.com"
-                              @"/1.1/statuses/user_timeline.json"];
-                NSDictionary *params = @{@"screen_name" : username,
-                                         @"include_rts" : @"0",
-                                         @"trim_user" : @"1",
-                                         @"text" : @"1"};
-                SLRequest *request =
-                [SLRequest requestForServiceType:SLServiceTypeTwitter
-                                   requestMethod:SLRequestMethodGET
-                                             URL:url
-                                      parameters:params];
-                
-                //  Attach an account to the request
-                [request setAccount:[twitterAccounts lastObject]];
-                
-                [request performRequestWithHandler:
-                 ^(NSData *responseData,
-                   NSHTTPURLResponse *urlResponse,
-                   NSError *error) {
-                     
-                     if (responseData) {
-                         if (urlResponse.statusCode >= 200 &&
-                             urlResponse.statusCode < 300) {
-                             
-                             NSError *jsonError;
-                             NSDictionary *timelineData =
-                             [NSJSONSerialization
-                              JSONObjectWithData:responseData
-                              options:NSJSONReadingAllowFragments error:&jsonError];
-                             if (timelineData) {
-                                 NSLog(@"Timeline Response: %@\n", timelineData);
-                             }
-                             else {
-                                 // Our JSON deserialization went awry
-                                 NSLog(@"JSON Error: %@", [jsonError localizedDescription]);
-                             }
-                         }
-                         else {
-                             // The server did not respond ... were we rate-limited?
-                             NSLog(@"The response status code is %ld", (long)urlResponse.statusCode);
-                         }
-                     }
-                 }];
-            }
-            else {
-                // Access was not granted, or an error occurred
-                NSLog(@"%@", [error localizedDescription]);
-            }
-        }];
-    }
 }
 
 //　お気に入り取得メソッド
@@ -227,19 +140,16 @@
                                  NSLog(@"%@", self.favoriteList);
                              }
                              else {
-                                 // Our JSON deserialization went awry
                                  NSLog(@"JSON Error: %@", [jsonError localizedDescription]);
                              }
                          }
                          else {
-//                             // The server did not respond ... were we rate-limited?
 //                             NSLog(@"The response status code is %ld", (long)urlResponse.statusCode);
                          }
                      }
                  }];
             }
             else {
-                // Access was not granted, or an error occurred
                 NSLog(@"%@", [error localizedDescription]);
             }
         }];
