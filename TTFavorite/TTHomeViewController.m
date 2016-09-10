@@ -218,7 +218,10 @@
                                  for (NSDictionary *dic in favoriteData) {
                                      TTFavoriteEntity *entity = [TTFavoriteEntity new];
                                      entity.text = [dic valueForKey:@"text"];
+                                     entity.user = [dic valueForKeyPath:
+                                                    @"user.name"];
                                      NSLog(@"%@", entity.text);
+                                     NSLog(@"%@", entity.user);
                                      [self.favoriteList addObject:entity];
                                  }
                                  NSLog(@"%@", self.favoriteList);
