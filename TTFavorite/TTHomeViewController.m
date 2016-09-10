@@ -113,8 +113,8 @@
 {
     //  Step 0: Check that the user has local Twitter accounts
     if ([self userHasAccessToTwitter]) {
-        ACAccountType *twitterAccountType =　[self.accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
-        [self.accountStore　requestAccessToAccountsWithType:twitterAccountType　options:NULL completion:^(BOOL granted, NSError *error) {
+        ACAccountType *twitterAccountType = [self.accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
+        [self.accountStore requestAccessToAccountsWithType:twitterAccountType options:NULL completion:^(BOOL granted, NSError *error) {
             if (granted) {
                 NSArray *twitterAccounts =
                 [self.accountStore accountsWithAccountType:twitterAccountType];
@@ -123,7 +123,7 @@
                 NSDictionary *params = @{@"screen_name" : username,
                                          @"include_rts" : @"0",
                                          @"trim_user" : @"1",
-                                         @"count" : @"1"};
+                                         @"text" : @"1"};
                 SLRequest *request =
                 [SLRequest requestForServiceType:SLServiceTypeTwitter
                                    requestMethod:SLRequestMethodGET
@@ -171,10 +171,61 @@
 }
 
 //　お気に入り取得メソッド
-- (void)fetchFavorite
+- (void)fetchFavoriteForUser:(NSString *)userName
 {
-    NSURL *url = [NSURL URLWithString:@"https://api.twitter.com/1.1/favorites/list.json"];
-    
+    if ([self userHasAccessToTwitter]) {
+        ACAccountType *twitterAccountType = [self.accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
+        [self.accountStore requestAccessToAccountsWithType:twitterAccountType options:NULL completion:^(BOOL granted, NSError *error) {
+            if (granted) {
+                NSArray *twitterAccounts =
+                [self.accountStore accountsWithAccountType:twitterAccountType];
+                NSURL *url = [NSURL URLWithString:@"https://api.twitter.com/1.1/favorites/list.json"];
+                NSDictionary *parameter = @{@"screen_name" : userName};
+                
+                // リクエスト作成
+                SLRequest *request =
+                [SLRequest requestForServiceType:SLServiceTypeTwitter
+                                   requestMethod:SLRequestMethodGET
+                                             URL:url
+                                      parameters:parameter];
+                
+                [request setAccount:[twitterAccounts lastObject]];
+                
+                [request performRequestWithHandler:
+                 ^(NSData *responseData,
+                   NSHTTPURLResponse *urlResponse,
+                   NSError *error) {
+                     
+                     if (responseData) {
+                         if (urlResponse.statusCode >= 200 &&
+                             urlResponse.statusCode < 300) {
+                             
+                             NSError *jsonError;
+                             NSDictionary *favoriteData = [NSJSONSerialization JSONObjectWithData:responseData
+                                                                                          options:NSJSONReadingAllowFragments
+                                                                                            error:&jsonError];
+                             //　フェッチしたデータがfavoriteDataに格納
+                             if (favoriteData) {
+                                 NSLog(@"Timeline Response: %@\n", favoriteData);
+                             }
+                             else {
+                                 // Our JSON deserialization went awry
+                                 NSLog(@"JSON Error: %@", [jsonError localizedDescription]);
+                             }
+                         }
+                         else {
+//                             // The server did not respond ... were we rate-limited?
+//                             NSLog(@"The response status code is %ld", (long)urlResponse.statusCode);
+                         }
+                     }
+                 }];
+            }
+            else {
+                // Access was not granted, or an error occurred
+                NSLog(@"%@", [error localizedDescription]);
+            }
+        }];
+    }
 }
 
 @end

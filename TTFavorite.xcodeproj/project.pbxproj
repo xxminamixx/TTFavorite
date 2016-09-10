@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6AE1CD421D83A2AA009EA6FD /* TTFavoriteEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AE1CD411D83A2AA009EA6FD /* TTFavoriteEntity.m */; };
 		9DC21D601D6C3FBF0037D71F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DC21D5F1D6C3FBF0037D71F /* main.m */; };
 		9DC21D631D6C3FC00037D71F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DC21D621D6C3FC00037D71F /* AppDelegate.m */; };
 		9DC21D691D6C3FC00037D71F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DC21D671D6C3FC00037D71F /* Main.storyboard */; };
@@ -37,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6AE1CD401D83A2AA009EA6FD /* TTFavoriteEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTFavoriteEntity.h; sourceTree = "<group>"; };
+		6AE1CD411D83A2AA009EA6FD /* TTFavoriteEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTFavoriteEntity.m; sourceTree = "<group>"; };
 		9DC21D5B1D6C3FBF0037D71F /* TTFavorite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TTFavorite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DC21D5F1D6C3FBF0037D71F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9DC21D611D6C3FBF0037D71F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -176,6 +179,8 @@
 		9DC21D961D6C40110037D71F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6AE1CD401D83A2AA009EA6FD /* TTFavoriteEntity.h */,
+				6AE1CD411D83A2AA009EA6FD /* TTFavoriteEntity.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -312,6 +317,7 @@
 			files = (
 				9DC21D631D6C3FC00037D71F /* AppDelegate.m in Sources */,
 				9DC21D601D6C3FBF0037D71F /* main.m in Sources */,
+				6AE1CD421D83A2AA009EA6FD /* TTFavoriteEntity.m in Sources */,
 				9DC21D991D6C433C0037D71F /* TTHomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -540,6 +546,7 @@
 				9DC21D8A1D6C3FC00037D71F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9DC21D8B1D6C3FC00037D71F /* Build configuration list for PBXNativeTarget "TTFavoriteTests" */ = {
 			isa = XCConfigurationList;
@@ -548,6 +555,7 @@
 				9DC21D8D1D6C3FC00037D71F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9DC21D8E1D6C3FC00037D71F /* Build configuration list for PBXNativeTarget "TTFavoriteUITests" */ = {
 			isa = XCConfigurationList;
@@ -556,6 +564,7 @@
 				9DC21D901D6C3FC00037D71F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

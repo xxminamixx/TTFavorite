@@ -20,7 +20,8 @@
 {
     
     TTHomeViewController *request = [[TTHomeViewController alloc] init];
-    [request fetchTimelineForUser:@"xxxxx_hobby"];
+//    [request fetchTimelineForUser:@"xxxxx_hobby"];
+    [request fetchFavoriteForUser:@"xxxxx_hobby"];
     return YES;
 }
 

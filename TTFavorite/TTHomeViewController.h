@@ -11,5 +11,6 @@
 @interface TTHomeViewController : UIViewController
 
 - (void)fetchTimelineForUser:(NSString *)username;
+- (void)fetchFavoriteForUser:(NSString *)userName;
 
 @end
