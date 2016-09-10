@@ -9,10 +9,13 @@
 #import "TTHomeViewController.h"
 #import <Social/Social.h>
 #import <Accounts/Accounts.h>
+#import "Utils.h"
+#import "TTFavoriteEntity.h"
 
 @interface TTHomeViewController ()
 
 @property (nonatomic) ACAccountStore *accountStore;
+@property NSMutableArray *favoriteList;
 
 @end
 
@@ -30,6 +33,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    
+    
     ACAccountStore *store = [[ACAccountStore alloc] init];
     ACAccountType *type = [store accountTypeWithAccountTypeIdentifier:
                            ACAccountTypeIdentifierTwitter];
@@ -180,7 +186,9 @@
                 NSArray *twitterAccounts =
                 [self.accountStore accountsWithAccountType:twitterAccountType];
                 NSURL *url = [NSURL URLWithString:@"https://api.twitter.com/1.1/favorites/list.json"];
-                NSDictionary *parameter = @{@"screen_name" : userName};
+                NSDictionary *parameter = @{@"screen_name" : userName,
+                                            @"count": @"100",
+                                            };
                 
                 // リクエスト作成
                 SLRequest *request =
@@ -206,7 +214,14 @@
                                                                                             error:&jsonError];
                              //　フェッチしたデータがfavoriteDataに格納
                              if (favoriteData) {
-                                 NSLog(@"Timeline Response: %@\n", favoriteData);
+                                 self.favoriteList = [[NSMutableArray alloc] init];
+                                 for (NSDictionary *dic in favoriteData) {
+                                     TTFavoriteEntity *entity = [TTFavoriteEntity new];
+                                     entity.text = [dic valueForKey:@"text"];
+                                     NSLog(@"%@", entity.text);
+                                     [self.favoriteList addObject:entity];
+                                 }
+                                 NSLog(@"%@", self.favoriteList);
                              }
                              else {
                                  // Our JSON deserialization went awry

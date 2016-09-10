@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6AE1CD421D83A2AA009EA6FD /* TTFavoriteEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AE1CD411D83A2AA009EA6FD /* TTFavoriteEntity.m */; };
+		6AE1CD461D83A5CE009EA6FD /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AE1CD451D83A5CE009EA6FD /* Utils.m */; };
 		9DC21D601D6C3FBF0037D71F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DC21D5F1D6C3FBF0037D71F /* main.m */; };
 		9DC21D631D6C3FC00037D71F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DC21D621D6C3FC00037D71F /* AppDelegate.m */; };
 		9DC21D691D6C3FC00037D71F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DC21D671D6C3FC00037D71F /* Main.storyboard */; };
@@ -40,6 +41,8 @@
 /* Begin PBXFileReference section */
 		6AE1CD401D83A2AA009EA6FD /* TTFavoriteEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTFavoriteEntity.h; sourceTree = "<group>"; };
 		6AE1CD411D83A2AA009EA6FD /* TTFavoriteEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTFavoriteEntity.m; sourceTree = "<group>"; };
+		6AE1CD441D83A5CE009EA6FD /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
+		6AE1CD451D83A5CE009EA6FD /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
 		9DC21D5B1D6C3FBF0037D71F /* TTFavorite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TTFavorite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DC21D5F1D6C3FBF0037D71F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9DC21D611D6C3FBF0037D71F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -87,9 +90,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6AE1CD431D83A5A4009EA6FD /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				6AE1CD441D83A5CE009EA6FD /* Utils.h */,
+				6AE1CD451D83A5CE009EA6FD /* Utils.m */,
+			);
+			name = Utility;
+			path = TTFavorite;
+			sourceTree = "<group>";
+		};
 		9DC21D521D6C3FBF0037D71F = {
 			isa = PBXGroup;
 			children = (
+				6AE1CD431D83A5A4009EA6FD /* Utility */,
 				9DC21D931D6C3FDE0037D71F /* Framework */,
 				9DC21D5D1D6C3FBF0037D71F /* TTFavorite */,
 				9DC21D771D6C3FC00037D71F /* TTFavoriteTests */,
@@ -318,6 +332,7 @@
 				9DC21D631D6C3FC00037D71F /* AppDelegate.m in Sources */,
 				9DC21D601D6C3FBF0037D71F /* main.m in Sources */,
 				6AE1CD421D83A2AA009EA6FD /* TTFavoriteEntity.m in Sources */,
+				6AE1CD461D83A5CE009EA6FD /* Utils.m in Sources */,
 				9DC21D991D6C433C0037D71F /* TTHomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
