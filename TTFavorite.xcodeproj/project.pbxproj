@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6A4AFB3F1D83EF7B003720F8 /* TTFavoriteTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A4AFB3D1D83EF7B003720F8 /* TTFavoriteTableViewCell.m */; };
+		6A4AFB401D83EF7B003720F8 /* TTFavoriteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A4AFB3E1D83EF7B003720F8 /* TTFavoriteTableViewCell.xib */; };
 		6AE1CD421D83A2AA009EA6FD /* TTFavoriteEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AE1CD411D83A2AA009EA6FD /* TTFavoriteEntity.m */; };
 		6AE1CD461D83A5CE009EA6FD /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AE1CD451D83A5CE009EA6FD /* Utils.m */; };
 		9DC21D601D6C3FBF0037D71F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DC21D5F1D6C3FBF0037D71F /* main.m */; };
@@ -39,6 +41,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6A4AFB3C1D83EF7B003720F8 /* TTFavoriteTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTFavoriteTableViewCell.h; sourceTree = "<group>"; };
+		6A4AFB3D1D83EF7B003720F8 /* TTFavoriteTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTFavoriteTableViewCell.m; sourceTree = "<group>"; };
+		6A4AFB3E1D83EF7B003720F8 /* TTFavoriteTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TTFavoriteTableViewCell.xib; sourceTree = "<group>"; };
 		6AE1CD401D83A2AA009EA6FD /* TTFavoriteEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTFavoriteEntity.h; sourceTree = "<group>"; };
 		6AE1CD411D83A2AA009EA6FD /* TTFavoriteEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTFavoriteEntity.m; sourceTree = "<group>"; };
 		6AE1CD441D83A5CE009EA6FD /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
@@ -174,6 +179,9 @@
 			isa = PBXGroup;
 			children = (
 				9DC21D671D6C3FC00037D71F /* Main.storyboard */,
+				6A4AFB3C1D83EF7B003720F8 /* TTFavoriteTableViewCell.h */,
+				6A4AFB3D1D83EF7B003720F8 /* TTFavoriteTableViewCell.m */,
+				6A4AFB3E1D83EF7B003720F8 /* TTFavoriteTableViewCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -304,6 +312,7 @@
 				9DC21D6E1D6C3FC00037D71F /* LaunchScreen.storyboard in Resources */,
 				9DC21D6B1D6C3FC00037D71F /* Assets.xcassets in Resources */,
 				9DC21D691D6C3FC00037D71F /* Main.storyboard in Resources */,
+				6A4AFB401D83EF7B003720F8 /* TTFavoriteTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,6 +342,7 @@
 				6AE1CD421D83A2AA009EA6FD /* TTFavoriteEntity.m in Sources */,
 				6AE1CD461D83A5CE009EA6FD /* Utils.m in Sources */,
 				9DC21D991D6C433C0037D71F /* TTHomeViewController.m in Sources */,
+				6A4AFB3F1D83EF7B003720F8 /* TTFavoriteTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
