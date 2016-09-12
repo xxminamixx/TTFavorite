@@ -95,6 +95,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6A8A37381D86F6C800BB915C /* HomeViewController */ = {
+			isa = PBXGroup;
+			children = (
+				9DC21D971D6C433C0037D71F /* TTHomeViewController.h */,
+				9DC21D981D6C433C0037D71F /* TTHomeViewController.m */,
+			);
+			name = HomeViewController;
+			sourceTree = "<group>";
+		};
 		6AE1CD431D83A5A4009EA6FD /* Utility */ = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +137,8 @@
 		9DC21D5D1D6C3FBF0037D71F /* TTFavorite */ = {
 			isa = PBXGroup;
 			children = (
+				9DC21D611D6C3FBF0037D71F /* AppDelegate.h */,
+				9DC21D621D6C3FC00037D71F /* AppDelegate.m */,
 				6AE1CD431D83A5A4009EA6FD /* Utility */,
 				9DC21D961D6C40110037D71F /* Model */,
 				9DC21D941D6C3FFB0037D71F /* View */,
@@ -189,10 +200,7 @@
 		9DC21D951D6C40040037D71F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				9DC21D611D6C3FBF0037D71F /* AppDelegate.h */,
-				9DC21D621D6C3FC00037D71F /* AppDelegate.m */,
-				9DC21D971D6C433C0037D71F /* TTHomeViewController.h */,
-				9DC21D981D6C433C0037D71F /* TTHomeViewController.m */,
+				6A8A37381D86F6C800BB915C /* HomeViewController */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -273,6 +281,7 @@
 				TargetAttributes = {
 					9DC21D5A1D6C3FBF0037D71F = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = KRPQ8E7V25;
 					};
 					9DC21D731D6C3FC00037D71F = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -485,6 +494,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = TTFavorite/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -497,6 +507,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = TTFavorite/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

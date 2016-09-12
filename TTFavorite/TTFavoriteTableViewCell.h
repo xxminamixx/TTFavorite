@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TTFavoriteEntity.h"
 
 @interface TTFavoriteTableViewCell : UITableViewCell
+
+- (void)setMyProperty:(TTFavoriteEntity *)entity;
 
 @end

@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void (^completedBlock)(void);
+
 @interface TTHomeViewController : UIViewController
 
-- (void)fetchFavoriteForUser:(NSString *)userName;
+@property (weak, nonatomic) IBOutlet UITableView *favoriteTableView;
+- (void)fetchFavoriteForUser:(NSString *)userName completed:(completedBlock)block;
 
 @end

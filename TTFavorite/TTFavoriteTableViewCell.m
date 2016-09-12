@@ -14,7 +14,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *name;
 @property (weak, nonatomic) IBOutlet UILabel *text;
 
-
 @end
 
 @implementation TTFavoriteTableViewCell
@@ -27,6 +26,12 @@
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
     [super setSelected:selected animated:animated];
+}
+
+- (void)setMyProperty:(TTFavoriteEntity *)entity
+{
+    self.name.text = entity.name;
+    self.text.text = entity.text;
 }
 
 @end

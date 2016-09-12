@@ -18,10 +18,17 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    
-    TTHomeViewController *request = [[TTHomeViewController alloc] init];
-//    [request fetchTimelineForUser:@"xxxxx_hobby"];
-    [request fetchFavoriteForUser:@"xxxxx_hobby"];
+//    TTHomeViewController *request = [[TTHomeViewController alloc] init];
+//
+//    __weak typeof(self) weakSelf = self;
+//    completedBlock completed = ^{
+//        __strong typeof(self) strongSelf = weakSelf;
+//        if (strongSelf) {
+//            [request.favoriteTableView reloadData];
+//        }
+//    };
+//    
+//    [request fetchFavoriteForUser:@"xxxxx_hobby" completed:completed];
     return YES;
 }
 

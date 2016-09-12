@@ -11,11 +11,15 @@
 #import <Accounts/Accounts.h>
 #import "Utils.h"
 #import "TTFavoriteEntity.h"
+#import "TTFavoriteTableViewCell.h"
 
-@interface TTHomeViewController ()
+
+
+@interface TTHomeViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic) ACAccountStore *accountStore;
 @property NSMutableArray *favoriteList;
+
 
 @end
 
@@ -34,7 +38,12 @@
 {
     [super viewDidLoad];
     
+    // cellの登録
+    UINib *nib = [UINib nibWithNibName:@"TTFavoriteTableViewCell" bundle:nil];
+    [self.favoriteTableView registerNib:nib forCellReuseIdentifier:@"Cell"];
     
+    self.favoriteTableView.delegate = self;
+    self.favoriteTableView.dataSource = self;
     
     ACAccountStore *store = [[ACAccountStore alloc] init];
     ACAccountType *type = [store accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
@@ -75,6 +84,16 @@
     [accountStore requestAccessToAccountsWithType:accountType
                                           options:nil
                                        completion:accountBlock ];
+    
+    __weak typeof(self) weakSelf = self;
+    completedBlock completed = ^{
+        __strong typeof(self) strongSelf = weakSelf;
+        if (strongSelf) {
+            [self.favoriteTableView reloadData];
+        }
+    };
+    
+    [self fetchFavoriteForUser:@"xxxxx_hobby" completed:completed];
 }
 
 - (void)didReceiveMemoryWarning
@@ -90,10 +109,14 @@
 }
 
 //　お気に入り取得メソッド
-- (void)fetchFavoriteForUser:(NSString *)userName
+- (void)fetchFavoriteForUser:(NSString *)userName completed:(completedBlock)block;
 {
+    self.favoriteList = [NSMutableArray array];
+    
     if ([self userHasAccessToTwitter]) {
+        self.accountStore = [[ACAccountStore alloc] init];
         ACAccountType *twitterAccountType = [self.accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
+
         [self.accountStore requestAccessToAccountsWithType:twitterAccountType options:NULL completion:^(BOOL granted, NSError *error) {
             if (granted) {
                 NSArray *twitterAccounts =
@@ -102,7 +125,6 @@
                 NSDictionary *parameter = @{@"screen_name" : userName,
                                             @"count": @"100",
                                             };
-                
                 // リクエスト作成
                 SLRequest *request =
                 [SLRequest requestForServiceType:SLServiceTypeTwitter
@@ -127,13 +149,12 @@
                                                                                             error:&jsonError];
                              //　フェッチしたデータがfavoriteDataに格納
                              if (favoriteData) {
-                                 self.favoriteList = [[NSMutableArray alloc] init];
-                                 NSLog(@"%@", favoriteData);
+//                                 NSLog(@"%@", favoriteData);
                                  for (NSDictionary *dic in favoriteData) {
                                      TTFavoriteEntity *entity = [TTFavoriteEntity new];
                                      entity.text = [dic valueForKey:@"text"];
                                      entity.name = [dic valueForKeyPath:@"user.name"];
-                                     entity.image = [dic valueForKeyPath:@"entities.media.media_url_https"];
+                                     entity.image = [dic valueForKeyPath:@"entities.media.media_url"];
                                      entity.icon = [dic valueForKeyPath:@"user.profile_image_url"];
                                      NSLog(@"%@", entity.text);
                                      NSLog(@"%@", entity.name);
@@ -141,6 +162,7 @@
                                      NSLog(@"%@", entity.icon);
                                      [self.favoriteList addObject:entity];
                                  }
+                                 block();
                              }
                              else {
                                  NSLog(@"JSON Error: %@", [jsonError localizedDescription]);
@@ -157,6 +179,26 @@
             }
         }];
     }
+}
+
+- (NSInteger)tableView:(UITableView *)tableView
+numberOfRowsInSection:(NSInteger)section
+{
+    return self.favoriteList.count;
+}
+
+- (UITableViewCell *)tableView:
+(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    TTFavoriteTableViewCell *cell =
+    [self.favoriteTableView dequeueReusableCellWithIdentifier:@"Cell"];
+    
+    TTFavoriteEntity *entity = [[TTFavoriteEntity alloc] init];
+    entity = self.favoriteList[indexPath.row];
+    
+    [cell setMyProperty:entity];
+    
+    return cell;
 }
 
 @end
