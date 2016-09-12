@@ -201,4 +201,13 @@ numberOfRowsInSection:(NSInteger)section
     return cell;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+//    TTFavoriteTableViewCell *cell =
+//    [self.favoriteTableView dequeueReusableCellWithIdentifier:@"Cell"];
+//   
+//    return cell.height;
+    return 125;
+}
+
 @end

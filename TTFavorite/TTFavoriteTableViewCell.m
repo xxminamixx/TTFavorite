@@ -28,10 +28,21 @@
     [super setSelected:selected animated:animated];
 }
 
+// 自身のプロパティにエンンティティをセット
 - (void)setMyProperty:(TTFavoriteEntity *)entity
 {
     self.name.text = entity.name;
     self.text.text = entity.text;
+}
+
+-(CGFloat) height
+{
+    CGFloat pad = 5;
+    CGFloat bodyLabelW = self.text.bounds.size.width;
+    CGSize bodySize = [self.text.attributedText boundingRectWithSize:CGSizeMake(bodyLabelW, MAXFLOAT)
+                                                                  options:NSStringDrawingUsesLineFragmentOrigin
+                                                                  context:nil].size;
+    return bodySize.height + pad * 2;
 }
 
 @end

@@ -12,5 +12,6 @@
 @interface TTFavoriteTableViewCell : UITableViewCell
 
 - (void)setMyProperty:(TTFavoriteEntity *)entity;
+-(CGFloat) height;
 
 @end
