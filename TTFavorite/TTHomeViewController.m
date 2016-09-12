@@ -128,15 +128,17 @@
                              //　フェッチしたデータがfavoriteDataに格納
                              if (favoriteData) {
                                  self.favoriteList = [[NSMutableArray alloc] init];
-//                                 NSLog(@"%@", favoriteData);
+                                 NSLog(@"%@", favoriteData);
                                  for (NSDictionary *dic in favoriteData) {
                                      TTFavoriteEntity *entity = [TTFavoriteEntity new];
                                      entity.text = [dic valueForKey:@"text"];
-                                     entity.user = [dic valueForKeyPath:@"user.name"];
+                                     entity.name = [dic valueForKeyPath:@"user.name"];
                                      entity.image = [dic valueForKeyPath:@"entities.media.media_url_https"];
+                                     entity.icon = [dic valueForKeyPath:@"user.profile_image_url"];
                                      NSLog(@"%@", entity.text);
-                                     NSLog(@"%@", entity.user);
+                                     NSLog(@"%@", entity.name);
                                      NSLog(@"%@", entity.image);
+                                     NSLog(@"%@", entity.icon);
                                      [self.favoriteList addObject:entity];
                                  }
                              }
