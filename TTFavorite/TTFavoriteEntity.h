@@ -10,8 +10,9 @@
 
 @interface TTFavoriteEntity : NSObject
 
-@property NSString *user;
+@property NSString *name;
 @property NSString *text;
 @property NSString *image;
+@property NSString *icon;
 
 @end
