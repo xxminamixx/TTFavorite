@@ -7,6 +7,9 @@
 //
 
 #import "TTFavoriteTableViewCell.h"
+#import <SDWebImage/UIImageView+WebCache.h>
+#import "UIImageView+WebCache.h"
+#import "UIImageView+WebCache.h"
 
 @interface TTFavoriteTableViewCell()
 
@@ -17,6 +20,17 @@
 @end
 
 @implementation TTFavoriteTableViewCell
+
+-(id) initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString*)reuseIdentifier {
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    if (self) {
+        self.text = [[UILabel alloc] init];
+        // 行数制限なし
+        self.text.numberOfLines = 0;
+        [self addSubview:self.text];
+    }
+    return self;
+}
 
 - (void)awakeFromNib
 {
@@ -37,12 +51,28 @@
 
 -(CGFloat) height
 {
-    CGFloat pad = 5;
+    CGFloat pad = 10;
     CGFloat bodyLabelW = self.text.bounds.size.width;
     CGSize bodySize = [self.text.attributedText boundingRectWithSize:CGSizeMake(bodyLabelW, MAXFLOAT)
                                                                   options:NSStringDrawingUsesLineFragmentOrigin
                                                                   context:nil].size;
-    return bodySize.height + pad * 2;
+    return bodySize.height + pad * 2 + 20;
 }
+
+//- (void)sd_setImageWithURL:(NSURL *)url completed:(SDWebImageCompletionBlock)completedBlock
+//{
+//    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+//    [self.shopLogo sd_setImageWithURL:url placeholderImage:loadImage options:0 progress:nil completed:completedBlock];
+//    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+//}
+//
+//- (void)imageRefresh:(NSURL *)url
+//{
+//    [self sd_setImageWithURL:url
+//                   completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+//                       [self setNeedsLayout];
+//                       [self layoutIfNeeded];
+//                   }];
+//}
 
 @end

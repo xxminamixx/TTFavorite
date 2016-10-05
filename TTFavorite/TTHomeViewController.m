@@ -193,6 +193,10 @@ numberOfRowsInSection:(NSInteger)section
     TTFavoriteTableViewCell *cell =
     [self.favoriteTableView dequeueReusableCellWithIdentifier:@"Cell"];
     
+    if (cell == nil) {
+        cell = [[TTFavoriteTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
+    }
+    
     TTFavoriteEntity *entity = [[TTFavoriteEntity alloc] init];
     entity = self.favoriteList[indexPath.row];
     
@@ -207,7 +211,10 @@ numberOfRowsInSection:(NSInteger)section
 //    [self.favoriteTableView dequeueReusableCellWithIdentifier:@"Cell"];
 //   
 //    return cell.height;
-    return 125;
+    
+     TTFavoriteTableViewCell *cell = (TTFavoriteTableViewCell*)[self tableView:self.favoriteTableView cellForRowAtIndexPath:indexPath];
+    return cell.height
+    ;
 }
 
 @end

@@ -11,6 +11,7 @@
 
 @interface TTFavoriteTableViewCell : UITableViewCell
 
+-(id) initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString*)str;
 - (void)setMyProperty:(TTFavoriteEntity *)entity;
 -(CGFloat) height;
 
