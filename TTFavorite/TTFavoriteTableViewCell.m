@@ -14,9 +14,13 @@ UIImage *loadImage;
 
 @interface TTFavoriteTableViewCell()
 
-@property (weak, nonatomic) IBOutlet UIImageView *image;
+@property (weak, nonatomic) IBOutlet UIImageView *icon;
 @property (weak, nonatomic) IBOutlet UILabel *name;
 @property (weak, nonatomic) IBOutlet UILabel *text;
+@property (weak, nonatomic) IBOutlet UIImageView *image;
+
+- (IBAction)favoriteButton:(id)sender;
+- (IBAction)labelButton:(id)sender;
 
 @end
 
@@ -76,4 +80,9 @@ UIImage *loadImage;
                    }];
 }
 
+- (IBAction)favoriteButton:(id)sender {
+}
+
+- (IBAction)labelButton:(id)sender {
+}
 @end

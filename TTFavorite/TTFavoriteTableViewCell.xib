@@ -54,6 +54,9 @@
                                 <exclude reference="HgY-4L-CqU"/>
                             </mask>
                         </variation>
+                        <connections>
+                            <action selector="favoriteButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="IMy-oY-8qQ"/>
+                        </connections>
                     </button>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Sk7-Ig-a6V">
                         <rect key="frame" x="10" y="100" width="300" height="100"/>
@@ -76,6 +79,9 @@
                                 <exclude reference="eaT-iE-STA"/>
                             </mask>
                         </variation>
+                        <connections>
+                            <action selector="labelButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Z0f-gY-gTR"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>
@@ -154,7 +160,8 @@
                 </variation>
             </tableViewCellContentView>
             <connections>
-                <outlet property="image" destination="Qd2-0g-BoK" id="agB-zS-41z"/>
+                <outlet property="icon" destination="Qd2-0g-BoK" id="Oem-Jy-DYc"/>
+                <outlet property="image" destination="Sk7-Ig-a6V" id="qvq-m6-sAP"/>
                 <outlet property="name" destination="kh8-C2-2PI" id="QMM-hm-NEQ"/>
                 <outlet property="text" destination="iaP-D7-S9T" id="DPv-ss-Iz1"/>
             </connections>
