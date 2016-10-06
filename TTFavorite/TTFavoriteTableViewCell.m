@@ -7,9 +7,10 @@
 //
 
 #import "TTFavoriteTableViewCell.h"
-#import <SDWebImage/UIImageView+WebCache.h>
 #import "UIImageView+WebCache.h"
 #import "UIImageView+WebCache.h"
+
+UIImage *loadImage;
 
 @interface TTFavoriteTableViewCell()
 
@@ -59,20 +60,20 @@
     return bodySize.height + pad * 2 + 20;
 }
 
-//- (void)sd_setImageWithURL:(NSURL *)url completed:(SDWebImageCompletionBlock)completedBlock
-//{
-//    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-//    [self.shopLogo sd_setImageWithURL:url placeholderImage:loadImage options:0 progress:nil completed:completedBlock];
-//    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-//}
-//
-//- (void)imageRefresh:(NSURL *)url
-//{
-//    [self sd_setImageWithURL:url
-//                   completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-//                       [self setNeedsLayout];
-//                       [self layoutIfNeeded];
-//                   }];
-//}
+- (void)sd_setImageWithURL:(NSURL *)url completed:(SDWebImageCompletionBlock)completedBlock
+{
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    [self.image sd_setImageWithURL:url placeholderImage:loadImage options:0 progress:nil completed:completedBlock];
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+}
+
+- (void)imageRefresh:(NSURL *)url
+{
+    [self sd_setImageWithURL:url
+                   completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+                       [self setNeedsLayout];
+                       [self layoutIfNeeded];
+                   }];
+}
 
 @end
