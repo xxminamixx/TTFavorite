@@ -19,7 +19,7 @@
 
 @property (nonatomic) ACAccountStore *accountStore;
 @property NSMutableArray *favoriteList;
-
+@property TTFavoriteTableViewCell *dummyCell;
 
 @end
 
@@ -41,12 +41,14 @@
     // cellの登録
     UINib *nib = [UINib nibWithNibName:@"TTFavoriteTableViewCell" bundle:nil];
     [self.favoriteTableView registerNib:nib forCellReuseIdentifier:@"Cell"];
+    self.dummyCell = [self.favoriteTableView dequeueReusableCellWithIdentifier:@"Cell"];
     
     self.favoriteTableView.delegate = self;
     self.favoriteTableView.dataSource = self;
     
     ACAccountStore *store = [[ACAccountStore alloc] init];
     ACAccountType *type = [store accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
+    
     
     UIBarButtonItem* left1 = [[UIBarButtonItem alloc]
                               initWithTitle:@"複数選択"
@@ -207,14 +209,10 @@ numberOfRowsInSection:(NSInteger)section
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    TTFavoriteTableViewCell *cell =
-//    [self.favoriteTableView dequeueReusableCellWithIdentifier:@"Cell"];
-//   
-//    return cell.height;
-    
-     TTFavoriteTableViewCell *cell = (TTFavoriteTableViewCell*)[self tableView:self.favoriteTableView cellForRowAtIndexPath:indexPath];
-    return cell.height
-    ;
+    TTFavoriteEntity *entity = [[TTFavoriteEntity alloc] init];
+    entity = self.favoriteList[indexPath.row];
+    [self.dummyCell setMyProperty:entity];
+    return self.dummyCell.height;
 }
 
 @end
