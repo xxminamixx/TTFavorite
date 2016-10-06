@@ -56,12 +56,26 @@ UIImage *loadImage;
 
 -(CGFloat) height
 {
-    CGFloat pad = 10;
+    CGFloat margin10 = 10;
+    CGFloat margin5 = 5;
+    CGFloat iconHeight = 80;
+    CGFloat nameLabelHeight = 15; // ユーザ名のラベルの高さ
+    CGFloat imageHeight = 100; // 画像の高さ
+    CGFloat buttonHeight = 30; // お気に入りボタンとラベルボタンの高さ
+    
     CGFloat bodyLabelW = self.text.bounds.size.width;
     CGSize bodySize = [self.text.attributedText boundingRectWithSize:CGSizeMake(bodyLabelW, MAXFLOAT)
                                                                   options:NSStringDrawingUsesLineFragmentOrigin
                                                                   context:nil].size;
-    return bodySize.height + pad * 2 + 20;
+    
+    if (bodySize.height <= iconHeight){
+        // ラベルの高さがiconの高さを超えない場合
+        return 240;
+    } else {
+        // ラベルの高さがiconのサイズ
+        return nameLabelHeight + (margin10 * 2) +bodySize.height + (margin10) + imageHeight + (margin5 * 2) + buttonHeight;
+    }
+    
 }
 
 - (void)sd_setImageWithURL:(NSURL *)url completed:(SDWebImageCompletionBlock)completedBlock
