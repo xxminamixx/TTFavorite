@@ -14,5 +14,6 @@
 @property NSString *text;
 @property NSString *image;
 @property NSString *icon;
+@property NSString *label;
 
 @end
