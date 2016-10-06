@@ -208,6 +208,10 @@ numberOfRowsInSection:(NSInteger)section
     
     [cell setMyProperty:entity];
     
+    // Entityのimageをurlに変換
+    NSURL *url = [NSURL URLWithString:entity.image];
+    [cell imageRefresh:url];
+    
     return cell;
 }
 
@@ -216,6 +220,11 @@ numberOfRowsInSection:(NSInteger)section
     TTFavoriteEntity *entity = [[TTFavoriteEntity alloc] init];
     entity = self.favoriteList[indexPath.row];
     [self.dummyCell setMyProperty:entity];
+    
+    // Entityのimageをurlに変換
+    NSURL *url = [NSURL URLWithString:entity.image];
+    [self.dummyCell imageRefresh:url];
+    
     return self.dummyCell.height;
 }
 
