@@ -76,14 +76,14 @@
                 
                 // ユーザ名
                 NSString* userName = account.username;
-                NSLog(@"%@",userName);
+//                NSLog(@"%@",userName);
                 
                 // ユーザID
                 NSString* userID = [account valueForKeyPath:@"properties.user_id"];
-                NSLog(@"%@",userID);
+//                NSLog(@"%@",userID);
                 
             } else {
-                NSLog(@"登録アカウントなし");
+//                NSLog(@"登録アカウントなし");
             }
         }
     };
@@ -95,7 +95,9 @@
     completedBlock completed = ^{
         __strong typeof(self) strongSelf = weakSelf;
         if (strongSelf) {
-            [self.favoriteTableView reloadData];
+            dispatch_async(dispatch_get_main_queue(),^{
+                [self.favoriteTableView reloadData];
+            });
         }
     };
     
@@ -155,17 +157,17 @@
                                                                                             error:&jsonError];
                              //　フェッチしたデータがfavoriteDataに格納
                              if (favoriteData) {
-//                                 NSLog(@"%@", favoriteData);
-                                 for (NSDictionary *dic in favoriteData) {
+                                NSLog(@"%@", favoriteData);
+                                for (NSDictionary *dic in favoriteData) {
                                      TTFavoriteEntity *entity = [TTFavoriteEntity new];
                                      entity.text = [dic valueForKey:@"text"];
                                      entity.name = [dic valueForKeyPath:@"user.name"];
-                                     entity.image = [dic valueForKeyPath:@"entities.media.media_url"];
-                                     entity.icon = [dic valueForKeyPath:@"user.profile_image_url"];
-                                     NSLog(@"%@", entity.text);
-                                     NSLog(@"%@", entity.name);
-                                     NSLog(@"%@", entity.image);
-                                     NSLog(@"%@", entity.icon);
+                                     entity.imageList = [dic valueForKeyPath:@"entities.media.media_url_https"];
+                                     entity.icon = [dic valueForKeyPath:@"user.profile_image_url_https"];
+//                                     NSLog(@"%@", entity.text);
+//                                     NSLog(@"%@", entity.name);
+//                                     NSLog(@"%@", entity.image);
+//                                     NSLog(@"%@", entity.icon);
                                      [self.favoriteList addObject:entity];
                                  }
                                  block();
@@ -208,6 +210,17 @@ numberOfRowsInSection:(NSInteger)section
     
     [cell setMyProperty:entity];
     
+    if (entity.imageList[0]) {
+        NSURL *url = [NSURL URLWithString:entity.imageList[0]];
+        [cell imageRefresh:url];
+    }
+    
+    if (entity.icon) {
+        NSURL *url = [NSURL URLWithString:entity.icon];
+        [cell iconRefresh:url];
+    }
+
+    
     return cell;
 }
 
@@ -216,6 +229,17 @@ numberOfRowsInSection:(NSInteger)section
     TTFavoriteEntity *entity = [[TTFavoriteEntity alloc] init];
     entity = self.favoriteList[indexPath.row];
     [self.dummyCell setMyProperty:entity];
+    
+//    if (entity.image) {
+//        NSURL *url = [NSURL URLWithString:entity.image];
+//        [self.dummyCell imageRefresh:url];
+//    }
+    
+    if (entity.icon) {
+        NSURL *url = [NSURL URLWithString:entity.icon];
+        [self.dummyCell iconRefresh:url];
+    }
+    
     return self.dummyCell.height;
 }
 

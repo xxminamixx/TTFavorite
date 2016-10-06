@@ -12,7 +12,7 @@
 
 @property NSString *name; // ユーザ名
 @property NSString *text; // ツイート本文
-@property NSString *image; // 画像があった場合のurl
+@property NSMutableArray *imageList; // 画像があった場合のurl
 @property NSString *icon; // アイコン画像url
 @property NSString *label; //　フォルダ分け用のlabel
 

@@ -10,8 +10,6 @@
 #import "UIImageView+WebCache.h"
 #import "UIImageView+WebCache.h"
 
-UIImage *loadImage;
-
 @interface TTFavoriteTableViewCell()
 
 @property (weak, nonatomic) IBOutlet UIImageView *icon;
@@ -80,9 +78,7 @@ UIImage *loadImage;
 
 - (void)sd_setImageWithURL:(NSURL *)url completed:(SDWebImageCompletionBlock)completedBlock
 {
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-    [self.image sd_setImageWithURL:url placeholderImage:loadImage options:0 progress:nil completed:completedBlock];
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    [self.image sd_setImageWithURL:url placeholderImage:nil options:0 progress:nil completed:completedBlock];
 }
 
 - (void)imageRefresh:(NSURL *)url
@@ -91,6 +87,20 @@ UIImage *loadImage;
                    completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
                        [self setNeedsLayout];
                        [self layoutIfNeeded];
+                   }];
+}
+
+- (void)sd_setIconWithURL:(NSURL *)url completed:(SDWebImageCompletionBlock)completedBlock
+{
+    [self.icon sd_setImageWithURL:url placeholderImage:nil options:0 progress:nil completed:completedBlock];
+}
+
+- (void)iconRefresh:(NSURL *)url
+{
+    [self sd_setIconWithURL:url
+                   completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+                        [self setNeedsLayout];
+                        [self layoutIfNeeded];
                    }];
 }
 

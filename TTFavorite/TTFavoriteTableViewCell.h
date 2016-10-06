@@ -27,4 +27,7 @@
 // 画像を再読み込みする
 - (void)imageRefresh:(NSURL *)url;
 
+- (void)sd_setIconWithURL:(NSURL *)url completed:(SDWebImageCompletionBlock)completedBlock;
+- (void)iconRefresh:(NSURL *)url;
+
 @end
