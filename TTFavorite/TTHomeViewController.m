@@ -37,6 +37,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+    // 高さ計算が上手くいかない場合は以下を追加する
+//    self.favoriteTableView.estimatedRowHeight = 240;
+//    self.favoriteTableView.rowHeight = UITableViewAutomaticDimension;
     
     // cellの登録
     UINib *nib = [UINib nibWithNibName:@"TTFavoriteTableViewCell" bundle:nil];
