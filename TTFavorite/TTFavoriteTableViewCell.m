@@ -67,8 +67,8 @@
     CGFloat margin5 = 5;
     CGFloat iconHeight = 80;
     CGFloat nameLabelHeight = 15; // ユーザ名のラベルの高さ
-    CGFloat imageHeight = 100; // 画像の高さ
-    CGFloat buttonHeight = 30; // お気に入りボタンとラベルボタンの高さ
+    CGFloat imageHeight = 110; // 画像の高さ
+    CGFloat buttonHeight = 15; // お気に入りボタンとラベルボタンの高さ
     
     CGFloat bodyLabelW = self.text.bounds.size.width;
     CGSize bodySize = [self.text.attributedText boundingRectWithSize:CGSizeMake(bodyLabelW, MAXFLOAT)
@@ -80,7 +80,7 @@
         return 240;
     } else {
         // ラベルの高さがiconのサイズ
-        return nameLabelHeight + (margin10 * 2) +bodySize.height + (margin10) + imageHeight + (margin5 * 2) + buttonHeight;
+        return nameLabelHeight + (margin10 * 2) +bodySize.height + (margin10) + (imageHeight * 2) + (margin5 * 2) + buttonHeight + (margin5 * 2);
     }
     
 }
