@@ -39,8 +39,8 @@
     [super viewDidLoad];
 
     // 高さ計算が上手くいかない場合は以下を追加する
-//    self.favoriteTableView.estimatedRowHeight = 240;
-//    self.favoriteTableView.rowHeight = UITableViewAutomaticDimension;
+    self.favoriteTableView.estimatedRowHeight = 240;
+    self.favoriteTableView.rowHeight = UITableViewAutomaticDimension;
     
     // cellの登録
     UINib *nib = [UINib nibWithNibName:@"TTFavoriteTableViewCell" bundle:nil];
@@ -222,23 +222,20 @@ numberOfRowsInSection:(NSInteger)section
     return cell;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    TTFavoriteEntity *entity = [[TTFavoriteEntity alloc] init];
-    entity = self.favoriteList[indexPath.row];
-    [self.dummyCell setMyProperty:entity];
-    
-//    if (entity.image) {
-//        NSURL *url = [NSURL URLWithString:entity.image];
-//        [self.dummyCell imageRefresh:url];
+//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    TTFavoriteEntity *entity = [[TTFavoriteEntity alloc] init];
+//    entity = self.favoriteList[indexPath.row];
+//    [self.dummyCell setMyProperty:entity];
+//    
+//    [self.dummyCell imageRefresh:entity.imageList];
+//    
+//    if (entity.icon) {
+//        NSURL *url = [NSURL URLWithString:entity.icon];
+//        [self.dummyCell iconRefresh:url];
 //    }
-    
-    if (entity.icon) {
-        NSURL *url = [NSURL URLWithString:entity.icon];
-        [self.dummyCell iconRefresh:url];
-    }
-    
-    return self.dummyCell.height;
-}
+//    
+//    return self.dummyCell.height;
+//}
 
 @end
