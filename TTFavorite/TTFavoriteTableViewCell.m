@@ -33,17 +33,6 @@
 
 @implementation TTFavoriteTableViewCell
 
--(id) initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString*)reuseIdentifier {
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-        self.text = [[UILabel alloc] init];
-        // 行数制限なし
-        self.text.numberOfLines = 0;
-        [self addSubview:self.text];
-    }
-    return self;
-}
-
 - (void)awakeFromNib
 {
     [super awakeFromNib];
@@ -70,7 +59,7 @@
     CGFloat nameLabelHeight = 15; // ユーザ名のラベルの高さ
     CGFloat imageHeight = 110; // 画像の高さ
     CGFloat buttonHeight = 15; // お気に入りボタンとラベルボタンの高さ
-    
+ 
     CGFloat bodyLabelW = self.text.bounds.size.width;
     CGSize bodySize = [self.text.attributedText boundingRectWithSize:CGSizeMake(bodyLabelW, MAXFLOAT)
                                                                   options:NSStringDrawingUsesLineFragmentOrigin
@@ -171,12 +160,14 @@
             self.image4Height.constant = 0;
             
             // image1のtextとのマージンを0にする(4つのUIImageのy座標の基準)
-            self.image1TopMargin.constant = 0;
-            self.image2TopMargin.constant = 0;
+//            self.image1TopMargin.constant = 0;
+//            self.image2TopMargin.constant = 0;
             
             break;
         case 1:
             // 1個のときの処理
+            self.image1Height.constant = 110;
+            self.image2Height.constant = 110;
             self.image2.hidden = YES;
             self.image3Height.constant = 0;
             self.image4Height.constant = 0;
@@ -185,15 +176,29 @@
             break;
         case 2:
             // 2個のときの処理
+            self.image1Height.constant = 110;
+            self.image2Height.constant = 110;
+            self.image2.hidden = NO;
             self.image3Height.constant = 0;
             self.image4Height.constant = 0;
             break;
         case 3:
             // 3個のときの処理
-            self.image4.hidden = YES;
+            self.image1Height.constant = 110;
+            self.image2Height.constant = 110;
+            self.image2.hidden = NO;
+            self.image3Height.constant = 110;
+            self.image4Height.constant = 0;
+
             break;
         case 4:
             // 4個のときの処理
+            self.image1Height.constant = 110;
+            self.image2Height.constant = 110;
+            self.image2.hidden = NO;
+            self.image3Height.constant = 110;
+            self.image4Height.constant = 110;
+
             break;
         default:
             break;

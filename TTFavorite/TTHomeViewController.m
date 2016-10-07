@@ -37,6 +37,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.navigationItem.title = @"お気に入りビューワー＠みなみ";
 
     // 高さ計算が上手くいかない場合は以下を追加する
     self.favoriteTableView.estimatedRowHeight = 240;
@@ -162,7 +164,7 @@
                                      TTFavoriteEntity *entity = [TTFavoriteEntity new];
                                      entity.text = [dic valueForKey:@"text"];
                                      entity.name = [dic valueForKeyPath:@"user.name"];
-                                     entity.imageList = [dic valueForKeyPath:@"entities.media.media_url_https"];
+                                     entity.imageList = [dic valueForKeyPath:@"extended_entities.media.media_url_https"];
                                      entity.icon = [dic valueForKeyPath:@"user.profile_image_url_https"];
 //                                     NSLog(@"%@", entity.text);
 //                                     NSLog(@"%@", entity.name);

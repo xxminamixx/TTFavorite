@@ -12,9 +12,6 @@
 
 @interface TTFavoriteTableViewCell : UITableViewCell
 
-// セルに行数制限なしのUILabelをセットし、引数の文字列をこのCellのidとするイニシャライザ
--(id) initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString*)str;
-
 // Entityを受け取り自身のlabelに名前とテキストをセットする
 - (void)setMyProperty:(TTFavoriteEntity *)entity;
 
