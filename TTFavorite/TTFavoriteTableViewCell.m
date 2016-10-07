@@ -19,6 +19,11 @@
 @property (weak, nonatomic) IBOutlet UIImageView *image2;
 @property (weak, nonatomic) IBOutlet UIImageView *image3;
 @property (weak, nonatomic) IBOutlet UIImageView *image4;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *image1TopMargin;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *image1Height;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *image2Height;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *image3Height;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *image4Height;
 
 - (IBAction)favoriteButton:(id)sender;
 - (IBAction)labelButton:(id)sender;
@@ -158,9 +163,22 @@
     switch (numberOfImages) {
         case 0:
             // 画像なしのときの処理
+            // 各UIImageの高さ制約を0にする
+            self.image1Height.constant = 0;
+            self.image2Height.constant = 0;
+            self.image3Height.constant = 0;
+            self.image4Height.constant = 0;
+            
+            // image1のtextとのマージンを0にする(4つのUIImageのy座標の基準)
+            self.image1TopMargin.constant = 0;
+            
             break;
         case 1:
             // 1個のときの処理
+            self.image2.hidden = YES;
+            self.image3Height.constant = 0;
+            self.image4Height.constant = 0;
+            // image1の下のマージンを0にする必要ある？
             
             break;
         case 2:
