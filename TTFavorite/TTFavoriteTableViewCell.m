@@ -135,4 +135,26 @@
 
 - (IBAction)labelButton:(id)sender {
 }
+
+// 画像の数によってレイアウトを変化させる
+- (void)imageLayoutWithNumberOfImages:(NSInteger)numberOfImages
+{
+    switch (numberOfImages) {
+        case 1:
+            // 1個のときの処理
+            break;
+        case 2:
+            // 2個のときの処理
+            break;
+        case 3:
+            // 3個のときの処理
+            break;
+        case 4:
+            // 4個のときの処理
+            break;
+        default:
+            break;
+    }
+}
+
 @end
