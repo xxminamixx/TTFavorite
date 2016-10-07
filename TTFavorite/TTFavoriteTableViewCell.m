@@ -183,9 +183,12 @@
             break;
         case 2:
             // 2個のときの処理
+            self.image3Height.constant = 0;
+            self.image4Height.constant = 0;
             break;
         case 3:
             // 3個のときの処理
+            self.image4.hidden = YES;
             break;
         case 4:
             // 4個のときの処理
