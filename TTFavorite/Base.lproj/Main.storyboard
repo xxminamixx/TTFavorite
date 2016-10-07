@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="i3T-H7-gVr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="i3T-H7-gVr">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Home View Controller-->
@@ -14,41 +15,38 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JRy-5d-sey">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="JRy-5d-sey" secondAttribute="bottom" id="DDi-yj-BMt"/>
-                            <constraint firstItem="JRy-5d-sey" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="IM5-NF-RcF"/>
-                            <constraint firstItem="JRy-5d-sey" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Ry9-47-ckm"/>
-                            <constraint firstAttribute="trailing" secondItem="JRy-5d-sey" secondAttribute="trailing" id="aE0-Bb-yfC"/>
+                            <constraint firstAttribute="trailing" secondItem="JRy-5d-sey" secondAttribute="trailing" id="Kfa-KP-FD8"/>
+                            <constraint firstItem="JRy-5d-sey" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Lh1-UB-fvj"/>
+                            <constraint firstItem="JRy-5d-sey" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="WWG-oS-WfB"/>
+                            <constraint firstAttribute="bottom" secondItem="JRy-5d-sey" secondAttribute="bottom" id="lZO-GL-bl6"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="cig-YB-kDR"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="favoriteTableView" destination="JRy-5d-sey" id="K9N-Cx-bGn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1781" y="387"/>
+            <point key="canvasLocation" x="1780" y="386.35682158920542"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="7eE-r4-gtF">
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="i3T-H7-gVr" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="WK9-KE-ZtD">
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="Kd2-Mg-02k" kind="relationship" relationship="viewControllers" id="ICY-lz-aVA"/>
@@ -64,7 +62,6 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Kd2-Mg-02k" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="Ge8-Ss-R4n"/>
                     <toolbarItems/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Owd-eX-y9o">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
