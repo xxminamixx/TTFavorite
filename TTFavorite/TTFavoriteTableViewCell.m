@@ -16,6 +16,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *name;
 @property (weak, nonatomic) IBOutlet UILabel *text;
 @property (weak, nonatomic) IBOutlet UIImageView *image;
+@property (weak, nonatomic) IBOutlet UIImageView *image2;
+@property (weak, nonatomic) IBOutlet UIImageView *image3;
+@property (weak, nonatomic) IBOutlet UIImageView *image4;
 
 - (IBAction)favoriteButton:(id)sender;
 - (IBAction)labelButton:(id)sender;
@@ -76,14 +79,37 @@
     
 }
 
-- (void)sd_setImageWithURL:(NSURL *)url completed:(SDWebImageCompletionBlock)completedBlock
+- (void)sd_setImageWithURL:(NSMutableArray *)urlList completed:(SDWebImageCompletionBlock)completedBlock
 {
-    [self.image sd_setImageWithURL:url placeholderImage:nil options:0 progress:nil completed:completedBlock];
+    for (int i = 0; i < urlList.count; i++) {
+        
+        NSURL *url = [NSURL URLWithString:urlList[i]];
+        
+        switch (i) {
+            case 0:
+                [self.image sd_setImageWithURL:url placeholderImage:nil options:0 progress:nil completed:completedBlock];
+                break;
+            case 1:
+                 [self.image2 sd_setImageWithURL:url placeholderImage:nil options:0 progress:nil completed:completedBlock];
+                break;
+            case 2:
+                 [self.image3 sd_setImageWithURL:url placeholderImage:nil options:0 progress:nil completed:completedBlock];
+                break;
+            case 3:
+                 [self.image4 sd_setImageWithURL:url placeholderImage:nil options:0 progress:nil completed:completedBlock];
+                break;
+            default:
+                break;
+        }
+    }
 }
 
-- (void)imageRefresh:(NSURL *)url
+- (void)imageRefresh:(NSMutableArray *)urlList
 {
-    [self sd_setImageWithURL:url
+    // 画像が4枚以下の場合使われないUIImageViewのサイズを0にする処理がここに必要
+    // 配列の要素数から必要のないUIImageがわかる
+    
+    [self sd_setImageWithURL:urlList
                    completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
                        [self setNeedsLayout];
                        [self layoutIfNeeded];

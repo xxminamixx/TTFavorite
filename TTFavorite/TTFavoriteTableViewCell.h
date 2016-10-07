@@ -22,10 +22,10 @@
 -(CGFloat) height;
 
 // urlの画像を自身のUIImageViewに表示する
-- (void)sd_setImageWithURL:(NSURL *)url completed:(SDWebImageCompletionBlock)completedBlock;
+- (void)sd_setImageWithURL:(NSMutableArray *)urlList completed:(SDWebImageCompletionBlock)completedBlock;
 
 // 画像を再読み込みする
-- (void)imageRefresh:(NSURL *)url;
+- (void)imageRefresh:(NSMutableArray *)urlList;
 
 - (void)sd_setIconWithURL:(NSURL *)url completed:(SDWebImageCompletionBlock)completedBlock;
 - (void)iconRefresh:(NSURL *)url;

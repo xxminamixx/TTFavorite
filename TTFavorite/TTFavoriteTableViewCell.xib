@@ -123,6 +123,9 @@
             <connections>
                 <outlet property="icon" destination="Qd2-0g-BoK" id="Oem-Jy-DYc"/>
                 <outlet property="image" destination="Sk7-Ig-a6V" id="qvq-m6-sAP"/>
+                <outlet property="image2" destination="Xng-De-iKT" id="h8o-Eb-WYh"/>
+                <outlet property="image3" destination="3OI-ac-tEx" id="CFa-04-F3T"/>
+                <outlet property="image4" destination="5x3-mt-GrK" id="U5q-zJ-7EP"/>
                 <outlet property="name" destination="kh8-C2-2PI" id="QMM-hm-NEQ"/>
                 <outlet property="text" destination="iaP-D7-S9T" id="DPv-ss-Iz1"/>
             </connections>
