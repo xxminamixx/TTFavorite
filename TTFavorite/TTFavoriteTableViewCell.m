@@ -55,6 +55,7 @@
     self.text.text = entity.text;
 }
 
+#pragma -mark - HeightCalc
 -(CGFloat) height
 {
     CGFloat margin10 = 10;
@@ -78,6 +79,14 @@
     }
     
 }
+
+#pragma -mark - SetImage
+/**
+ ツイート画像表示処理
+ 
+ - parameter urlList: 画像url(NSString)の配列
+ - parameter complatedBlock: 画像表示処理が終わったあとのコールバックBlocks
+ */
 
 - (void)sd_setImageWithURL:(NSMutableArray *)urlList completed:(SDWebImageCompletionBlock)completedBlock
 {
@@ -106,16 +115,20 @@
 
 - (void)imageRefresh:(NSMutableArray *)urlList
 {
-    // 画像が4枚以下の場合使われないUIImageViewのサイズを0にする処理がここに必要
-    // 配列の要素数から必要のないUIImageがわかる
+    // 画像レイアウト処理
+    [self imageLayoutWithNumberOfImages:urlList.count];
     
-    [self sd_setImageWithURL:urlList
-                   completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-                       [self setNeedsLayout];
-                       [self layoutIfNeeded];
-                   }];
+    // urlListにurlが格納されていた場合画像表示処理(nilではない)
+    if (urlList) {
+        [self sd_setImageWithURL:urlList
+                       completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+                           [self setNeedsLayout];
+                           [self layoutIfNeeded];
+                       }];
+    }
 }
 
+#pragma -mark - SetIcon
 - (void)sd_setIconWithURL:(NSURL *)url completed:(SDWebImageCompletionBlock)completedBlock
 {
     [self.icon sd_setImageWithURL:url placeholderImage:nil options:0 progress:nil completed:completedBlock];
@@ -130,18 +143,25 @@
                    }];
 }
 
+
+#pragma -mark - ButtonAuction
 - (IBAction)favoriteButton:(id)sender {
 }
 
 - (IBAction)labelButton:(id)sender {
 }
 
+#pragma -mark - ImageLayout
 // 画像の数によってレイアウトを変化させる
 - (void)imageLayoutWithNumberOfImages:(NSInteger)numberOfImages
 {
     switch (numberOfImages) {
+        case 0:
+            // 画像なしのときの処理
+            break;
         case 1:
             // 1個のときの処理
+            
             break;
         case 2:
             // 2個のときの処理

@@ -210,10 +210,8 @@ numberOfRowsInSection:(NSInteger)section
     
     [cell setMyProperty:entity];
     
-    if (entity.imageList[0]) {
-        NSURL *url = [NSURL URLWithString:entity.imageList[0]];
-        [cell imageRefresh:url];
-    }
+    // 投稿画像の配列を渡す
+    [cell imageRefresh:entity.imageList];
     
     if (entity.icon) {
         NSURL *url = [NSURL URLWithString:entity.icon];
