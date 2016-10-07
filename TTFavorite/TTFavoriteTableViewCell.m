@@ -24,6 +24,7 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *image2Height;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *image3Height;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *image4Height;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *image2TopMargin;
 
 - (IBAction)favoriteButton:(id)sender;
 - (IBAction)labelButton:(id)sender;
@@ -171,6 +172,7 @@
             
             // image1のtextとのマージンを0にする(4つのUIImageのy座標の基準)
             self.image1TopMargin.constant = 0;
+            self.image2TopMargin.constant = 0;
             
             break;
         case 1:
