@@ -13,13 +13,14 @@
 #import "TTFavoriteEntity.h"
 #import "TTFavoriteTableViewCell.h"
 
+NSInteger numberOfPage;
 
-
-@interface TTHomeViewController ()<UITableViewDataSource,UITableViewDelegate>
+@interface TTHomeViewController ()<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>
 
 @property (nonatomic) ACAccountStore *accountStore;
 @property NSMutableArray *favoriteList;
 @property TTFavoriteTableViewCell *dummyCell;
+@property NSString *page;
 
 @end
 
@@ -37,6 +38,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.page = @"0";
     
     self.navigationItem.title = @"お気に入りビューワー＠みなみ";
 
@@ -57,10 +60,10 @@
     
     
     UIBarButtonItem* left1 = [[UIBarButtonItem alloc]
-                              initWithTitle:@"複数選択"
+                              initWithTitle:@"リロード"
                               style:UIBarButtonItemStylePlain
                               target:self
-                              action:nil];
+                              action:@selector(reload)];
     
     self.navigationItem.rightBarButtonItems = @[left1];
     
@@ -133,7 +136,8 @@
                 [self.accountStore accountsWithAccountType:twitterAccountType];
                 NSURL *url = [NSURL URLWithString:@"https://api.twitter.com/1.1/favorites/list.json"];
                 NSDictionary *parameter = @{@"screen_name" : userName,
-                                            @"count": @"100",
+                                            @"count": @"10",
+                                            @"page" : self.page,
                                             };
                 // リクエスト作成
                 SLRequest *request =
@@ -239,5 +243,20 @@ numberOfRowsInSection:(NSInteger)section
 //    
 //    return self.dummyCell.height;
 //}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    //一番下までスクロールしたかどうか
+    if(self.favoriteTableView.contentOffset.y >= (self.favoriteTableView.contentSize.height - self.favoriteTableView.bounds.size.height))
+    {
+        self.page = [NSString stringWithFormat:@"%ld",numberOfPage + 1];
+        [self.favoriteTableView reloadData];
+    }
+}
+
+- (void)reload
+{
+    [self.favoriteTableView reloadData];
+}
 
 @end
