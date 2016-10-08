@@ -12,6 +12,7 @@
 #import "Utils.h"
 #import "TTFavoriteEntity.h"
 #import "TTFavoriteTableViewCell.h"
+#import "TTMoreLoadingTableViewCell.h"
 
 NSInteger numberOfPage;
 
@@ -51,6 +52,10 @@ NSInteger numberOfPage;
     UINib *nib = [UINib nibWithNibName:@"TTFavoriteTableViewCell" bundle:nil];
     [self.favoriteTableView registerNib:nib forCellReuseIdentifier:@"Cell"];
     self.dummyCell = [self.favoriteTableView dequeueReusableCellWithIdentifier:@"Cell"];
+    
+    // 更読みセルの登録
+    UINib *moreLoadingNib = [UINib nibWithNibName:@"TTMoreLoadingTableViewCell" bundle:nil];
+    [self.favoriteTableView registerNib:moreLoadingNib forCellReuseIdentifier:@"LoadCell"];
     
     self.favoriteTableView.delegate = self;
     self.favoriteTableView.dataSource = self;
@@ -95,7 +100,15 @@ NSInteger numberOfPage;
     [accountStore requestAccessToAccountsWithType:accountType
                                           options:nil
                                        completion:accountBlock ];
-    
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self callFetchFavorite];
+}
+
+- (void)callFetchFavorite
+{
     __weak typeof(self) weakSelf = self;
     completedBlock completed = ^{
         __strong typeof(self) strongSelf = weakSelf;
@@ -124,7 +137,7 @@ NSInteger numberOfPage;
 //　お気に入り取得メソッド
 - (void)fetchFavoriteForUser:(NSString *)userName completed:(completedBlock)block;
 {
-    self.favoriteList = [NSMutableArray array];
+    self.favoriteList = [[NSMutableArray alloc] init];
     
     if ([self userHasAccessToTwitter]) {
         self.accountStore = [[ACAccountStore alloc] init];
@@ -139,6 +152,7 @@ NSInteger numberOfPage;
                                             @"count": @"10",
                                             @"page" : self.page,
                                             };
+                NSLog(@"ページ番号：%@",self.page);
                 // リクエスト作成
                 SLRequest *request =
                 [SLRequest requestForServiceType:SLServiceTypeTwitter
@@ -163,7 +177,7 @@ NSInteger numberOfPage;
                                                                                             error:&jsonError];
                              //　フェッチしたデータがfavoriteDataに格納
                              if (favoriteData) {
-                                NSLog(@"%@", favoriteData);
+//                                NSLog(@"%@", favoriteData);
                                 for (NSDictionary *dic in favoriteData) {
                                      TTFavoriteEntity *entity = [TTFavoriteEntity new];
                                      entity.text = [dic valueForKey:@"text"];
@@ -198,34 +212,51 @@ NSInteger numberOfPage;
 - (NSInteger)tableView:(UITableView *)tableView
 numberOfRowsInSection:(NSInteger)section
 {
-    return self.favoriteList.count;
+    // 更読み用のセルのために+1
+    return self.favoriteList.count + 1;
 }
 
 - (UITableViewCell *)tableView:
 (UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    TTFavoriteTableViewCell *cell =
-    [self.favoriteTableView dequeueReusableCellWithIdentifier:@"Cell"];
-    
-    if (cell == nil) {
-        cell = [[TTFavoriteTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
+    if (self.favoriteList.count > indexPath.row)
+    {
+        TTFavoriteTableViewCell *cell =
+        [self.favoriteTableView dequeueReusableCellWithIdentifier:@"Cell"];
+        
+//        if (cell == nil) {
+//            cell = [[TTFavoriteTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
+//        }
+        
+        TTFavoriteEntity *entity = [[TTFavoriteEntity alloc] init];
+        entity = self.favoriteList[indexPath.row];
+        
+        [cell setMyProperty:entity];
+        
+        // 投稿画像の配列を渡す
+        [cell imageRefresh:entity.imageList];
+        
+        if (entity.icon) {
+            NSURL *url = [NSURL URLWithString:entity.icon];
+            [cell iconRefresh:url];
+        }
+        
+        return cell;
+        
+    } else {
+        TTMoreLoadingTableViewCell *cell = [self.favoriteTableView dequeueReusableCellWithIdentifier:@"LoadCell"];
+        return cell;
     }
-    
-    TTFavoriteEntity *entity = [[TTFavoriteEntity alloc] init];
-    entity = self.favoriteList[indexPath.row];
-    
-    [cell setMyProperty:entity];
-    
-    // 投稿画像の配列を渡す
-    [cell imageRefresh:entity.imageList];
-    
-    if (entity.icon) {
-        NSURL *url = [NSURL URLWithString:entity.icon];
-        [cell iconRefresh:url];
-    }
+}
 
-    
-    return cell;
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (self.favoriteList.count <= indexPath.row)
+    {
+        numberOfPage = [self.page intValue];
+        self.page = [NSString stringWithFormat:@"%ld",numberOfPage + 1];
+        [self callFetchFavorite];
+    }
 }
 
 //- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -244,15 +275,18 @@ numberOfRowsInSection:(NSInteger)section
 //    return self.dummyCell.height;
 //}
 
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView
-{
-    //一番下までスクロールしたかどうか
-    if(self.favoriteTableView.contentOffset.y >= (self.favoriteTableView.contentSize.height - self.favoriteTableView.bounds.size.height))
-    {
-        self.page = [NSString stringWithFormat:@"%ld",numberOfPage + 1];
-        [self.favoriteTableView reloadData];
-    }
-}
+//- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+//{
+//    //一番下までスクロールしたかどうか
+//    if(self.favoriteTableView.contentOffset.y >= (self.favoriteTableView.contentSize.height - self.favoriteTableView.bounds.size.height))
+//    {
+//        numberOfPage = [self.page intValue];
+//        self.page = [NSString stringWithFormat:@"%ld",numberOfPage + 1];
+//        [self callFetchFavorite];
+//    }
+//    
+//    
+//}
 
 - (void)reload
 {
