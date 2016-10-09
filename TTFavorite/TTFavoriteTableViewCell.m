@@ -144,7 +144,9 @@
 - (IBAction)favoriteButton:(id)sender {
 }
 
-- (IBAction)labelButton:(id)sender {
+- (IBAction)labelButton:(id)sender
+{
+    [self.delagate showAddLabelView];
 }
 
 #pragma -mark - ImageLayout

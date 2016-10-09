@@ -16,11 +16,11 @@
 
 NSInteger numberOfPage;
 
-@interface TTHomeViewController ()<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>
+@interface TTHomeViewController ()<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate, TTFavoriteTableViewCellDelegate>
 
 @property (nonatomic) ACAccountStore *accountStore;
 @property NSMutableArray *favoriteList;
-@property TTFavoriteTableViewCell *dummyCell;
+@property TTFavoriteTableViewCell *cell;
 @property NSString *page; // お気に入りのページ数
 @property NSString *count; // お気に入りの取得数
 
@@ -55,7 +55,6 @@ NSInteger numberOfPage;
     // cellの登録
     UINib *nib = [UINib nibWithNibName:@"TTFavoriteTableViewCell" bundle:nil];
     [self.favoriteTableView registerNib:nib forCellReuseIdentifier:@"Cell"];
-    self.dummyCell = [self.favoriteTableView dequeueReusableCellWithIdentifier:@"Cell"];
     
     // 更読みセルの登録
     UINib *moreLoadingNib = [UINib nibWithNibName:@"TTMoreLoadingTableViewCell" bundle:nil];
@@ -234,6 +233,8 @@ numberOfRowsInSection:(NSInteger)section
         TTFavoriteEntity *entity = [[TTFavoriteEntity alloc] init];
         entity = self.favoriteList[indexPath.row];
         
+        cell.delagate = self;
+        
         [cell setMyProperty:entity];
         
         if (entity.icon) {
@@ -291,6 +292,11 @@ numberOfRowsInSection:(NSInteger)section
 - (void)reload
 {
     [self.favoriteTableView reloadData];
+}
+
+- (void)showAddLabelView
+{
+    NSLog(@"ラベルボタンが押されました");
 }
 
 @end

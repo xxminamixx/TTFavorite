@@ -10,7 +10,15 @@
 #import "TTFavoriteEntity.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 
+@protocol TTFavoriteTableViewCellDelegate <NSObject>
+
+- (void)showAddLabelView;
+
+@end
+
 @interface TTFavoriteTableViewCell : UITableViewCell
+
+@property (weak, nonatomic) id<TTFavoriteTableViewCellDelegate> delagate;
 
 // Entityを受け取り自身のlabelに名前とテキストをセットする
 - (void)setMyProperty:(TTFavoriteEntity *)entity;
