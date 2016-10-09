@@ -21,7 +21,8 @@ NSInteger numberOfPage;
 @property (nonatomic) ACAccountStore *accountStore;
 @property NSMutableArray *favoriteList;
 @property TTFavoriteTableViewCell *dummyCell;
-@property NSString *page;
+@property NSString *page; // お気に入りのページ数
+@property NSString *count; // お気に入りの取得数
 
 @end
 
@@ -40,6 +41,7 @@ NSInteger numberOfPage;
 {
     [super viewDidLoad];
     
+    self.count = @"100";
     self.page = @"0";
     
     self.navigationItem.title = @"お気に入りビューワー＠みなみ";
@@ -149,7 +151,7 @@ NSInteger numberOfPage;
                 [self.accountStore accountsWithAccountType:twitterAccountType];
                 NSURL *url = [NSURL URLWithString:@"https://api.twitter.com/1.1/favorites/list.json"];
                 NSDictionary *parameter = @{@"screen_name" : userName,
-                                            @"count": @"10",
+                                            @"count": self.count,
                                             @"page" : self.page,
                                             };
                 NSLog(@"ページ番号：%@",self.page);
