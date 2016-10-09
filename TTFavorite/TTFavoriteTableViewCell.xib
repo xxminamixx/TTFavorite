@@ -12,14 +12,14 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="340"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="TTFavoriteTableViewCell" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <frame key="frameInset" width="320" height="339.5"/>
+                <frame key="frameInset" width="320" height="339"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qd2-0g-BoK">
                         <color key="backgroundColor" red="0.8675556282722513" green="0.8675556282722513" blue="0.8675556282722513" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="64" id="7d0-D3-iqA"/>
-                            <constraint firstAttribute="width" constant="64" id="GGQ-I8-Z2x"/>
+                            <constraint firstAttribute="height" constant="32" id="7d0-D3-iqA"/>
+                            <constraint firstAttribute="width" constant="32" id="GGQ-I8-Z2x"/>
                             <constraint firstAttribute="height" constant="80" id="PCW-ge-75n"/>
                             <constraint firstAttribute="width" constant="80" id="YK8-85-QtJ"/>
                             <constraint firstAttribute="width" constant="80" id="taq-r7-fvo"/>
