@@ -41,7 +41,9 @@ NSInteger numberOfPage;
 {
     [super viewDidLoad];
     
-    self.count = @"100";
+    self.favoriteList = [[NSMutableArray alloc] init];
+    
+    self.count = @"10";
     self.page = @"0";
     
     self.navigationItem.title = @"お気に入りビューワー＠みなみ";
@@ -139,7 +141,6 @@ NSInteger numberOfPage;
 //　お気に入り取得メソッド
 - (void)fetchFavoriteForUser:(NSString *)userName completed:(completedBlock)block;
 {
-    self.favoriteList = [[NSMutableArray alloc] init];
     
     if ([self userHasAccessToTwitter]) {
         self.accountStore = [[ACAccountStore alloc] init];
