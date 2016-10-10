@@ -17,6 +17,9 @@
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Tb-6u-SbJ">
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <state key="normal" title="閉じる"/>
+                            <connections>
+                                <action selector="close:" destination="iN0-l3-epB" eventType="touchUpInside" id="K2Z-IX-JVr"/>
+                            </connections>
                         </button>
                         <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="45A-1O-XLQ">
                             <constraints>

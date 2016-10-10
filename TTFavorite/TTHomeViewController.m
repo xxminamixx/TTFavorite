@@ -13,16 +13,18 @@
 #import "TTFavoriteEntity.h"
 #import "TTFavoriteTableViewCell.h"
 #import "TTMoreLoadingTableViewCell.h"
+#import "TTAddLabelView.h"
 
 NSInteger numberOfPage;
 
-@interface TTHomeViewController ()<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate, TTFavoriteTableViewCellDelegate>
+@interface TTHomeViewController ()<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate, TTFavoriteTableViewCellDelegate, TTAddLabelViewDelegate>
 
 @property (nonatomic) ACAccountStore *accountStore;
 @property NSMutableArray *favoriteList;
 @property TTFavoriteTableViewCell *cell;
 @property NSString *page; // お気に入りのページ数
 @property NSString *count; // お気に入りの取得数
+@property TTAddLabelView *addLabelView;
 
 @end
 
@@ -62,6 +64,7 @@ NSInteger numberOfPage;
     
     self.favoriteTableView.delegate = self;
     self.favoriteTableView.dataSource = self;
+    self.addLabelView.delegate = self;
     
     ACAccountStore *store = [[ACAccountStore alloc] init];
     ACAccountType *type = [store accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
@@ -297,6 +300,14 @@ numberOfRowsInSection:(NSInteger)section
 - (void)showAddLabelView
 {
     NSLog(@"ラベルボタンが押されました");
+    TTAddLabelView *view = [[TTAddLabelView alloc] init];
+    [self.favoriteTableView addSubview:view];
+    
+}
+
+- (void)addLabelViewClose
+{
+    NSLog(@"閉じる");
 }
 
 @end

@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol TTAddLabelViewDelegate <NSObject>
+
+- (void)addLabelViewClose;
+
+@end
+
 @interface TTAddLabelView : UIView
+
+@property (weak, nonatomic) id<TTAddLabelViewDelegate>delegate;
 
 @end
