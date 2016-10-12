@@ -14,6 +14,7 @@
 #import "TTFavoriteTableViewCell.h"
 #import "TTMoreLoadingTableViewCell.h"
 #import "TTAddLabelView.h"
+#import "TTAddLabelViewController.h"
 
 NSInteger numberOfPage;
 
@@ -125,7 +126,7 @@ NSInteger numberOfPage;
         }
     };
     
-    [self fetchFavoriteForUser:@"xxxxx_hobby" completed:completed];
+    [self fetchFavoriteForUser:@"yellowflog" completed:completed];
 }
 
 - (void)didReceiveMemoryWarning
@@ -299,15 +300,34 @@ numberOfRowsInSection:(NSInteger)section
 
 - (void)showAddLabelView
 {
-    NSLog(@"ラベルボタンが押されました");
-//    TTAddLabelView *view = [[TTAddLabelView alloc] init];
-//    [self.favoriteTableView addSubview:view];
+//    NSLog(@"ラベルボタンが押されました");
+//    TTAddLabelView *view = [[TTAddLabelView alloc] initWithFrame:CGRectMake(0, 0, 375, 230)];
+//    [self.view addSubview:view];
 //    
+////    [self.view setNeedsLayout];
+////    [self.view layoutIfNeeded];
+//    
+//    if(![view isDescendantOfView:self.view]) {
+//        // 存在していない
+//        NSLog(@"ビューが追加されていません");
+//    } else {
+//        // 存在している
+//        NSLog(@"ビューが追加されています");
+//    }
+    
+    TTAddLabelViewController *viewContorller =  [self.storyboard instantiateViewControllerWithIdentifier:@"TTAddLabelViewController"];
+    [self presentViewController:viewContorller animated:YES completion:nil];
+
+    
 }
 
 - (void)addLabelViewClose
 {
     NSLog(@"閉じる");
+    // subView全て削除
+    for (UIView *view in [self.view subviews]) {
+        [view removeFromSuperview];
+    }
 }
 
 @end

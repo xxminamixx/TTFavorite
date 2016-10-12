@@ -19,6 +19,7 @@
 		6EE5D20DF76833FFCCF8E757 /* libPods-TTFavorite.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BA5F459E3CBB6253CB92DD47 /* libPods-TTFavorite.a */; };
 		9D9A77A01DAE1120003DF858 /* TTNewLabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9A779F1DAE1120003DF858 /* TTNewLabelView.m */; };
 		9D9A77A21DAE1138003DF858 /* TTNewLabelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D9A77A11DAE1138003DF858 /* TTNewLabelView.xib */; };
+		9D9A77A51DAE3931003DF858 /* TTAddLabelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9A77A41DAE3931003DF858 /* TTAddLabelViewController.m */; };
 		9DC21D601D6C3FBF0037D71F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DC21D5F1D6C3FBF0037D71F /* main.m */; };
 		9DC21D631D6C3FC00037D71F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DC21D621D6C3FC00037D71F /* AppDelegate.m */; };
 		9DC21D691D6C3FC00037D71F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DC21D671D6C3FC00037D71F /* Main.storyboard */; };
@@ -67,6 +68,8 @@
 		9D9A779E1DAE1120003DF858 /* TTNewLabelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTNewLabelView.h; sourceTree = "<group>"; };
 		9D9A779F1DAE1120003DF858 /* TTNewLabelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTNewLabelView.m; sourceTree = "<group>"; };
 		9D9A77A11DAE1138003DF858 /* TTNewLabelView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TTNewLabelView.xib; sourceTree = "<group>"; };
+		9D9A77A31DAE3931003DF858 /* TTAddLabelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTAddLabelViewController.h; sourceTree = "<group>"; };
+		9D9A77A41DAE3931003DF858 /* TTAddLabelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTAddLabelViewController.m; sourceTree = "<group>"; };
 		9DC21D5B1D6C3FBF0037D71F /* TTFavorite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TTFavorite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DC21D5F1D6C3FBF0037D71F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9DC21D611D6C3FBF0037D71F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -253,6 +256,8 @@
 			isa = PBXGroup;
 			children = (
 				6A8A37381D86F6C800BB915C /* HomeViewController */,
+				9D9A77A31DAE3931003DF858 /* TTAddLabelViewController.h */,
+				9D9A77A41DAE3931003DF858 /* TTAddLabelViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -336,7 +341,8 @@
 				TargetAttributes = {
 					9DC21D5A1D6C3FBF0037D71F = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = KRPQ8E7V25;
+						DevelopmentTeam = 629B3TVVNK;
+						ProvisioningStyle = Manual;
 					};
 					9DC21D731D6C3FC00037D71F = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -457,6 +463,7 @@
 				6AE1CD421D83A2AA009EA6FD /* TTFavoriteEntity.m in Sources */,
 				9D9A77A01DAE1120003DF858 /* TTNewLabelView.m in Sources */,
 				6AE1CD461D83A5CE009EA6FD /* Utils.m in Sources */,
+				9D9A77A51DAE3931003DF858 /* TTAddLabelViewController.m in Sources */,
 				9DC21D991D6C433C0037D71F /* TTHomeViewController.m in Sources */,
 				6AF8A2C11DA8F537004D44F8 /* TTMoreLoadingTableViewCell.m in Sources */,
 				6A4AFB3F1D83EF7B003720F8 /* TTFavoriteTableViewCell.m in Sources */,
@@ -609,7 +616,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = KRPQ8E7V25;
+				DEVELOPMENT_TEAM = 629B3TVVNK;
 				INFOPLIST_FILE = TTFavorite/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -619,6 +626,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tutorial.TTFavorite;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "26f90f0a-4ab6-4cc5-a981-63ed3385425b";
+				PROVISIONING_PROFILE_SPECIFIER = "SONIC iDEP Wildcard";
 			};
 			name = Debug;
 		};
@@ -628,7 +637,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = KRPQ8E7V25;
+				DEVELOPMENT_TEAM = 629B3TVVNK;
 				INFOPLIST_FILE = TTFavorite/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -638,6 +647,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tutorial.TTFavorite;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "26f90f0a-4ab6-4cc5-a981-63ed3385425b";
+				PROVISIONING_PROFILE_SPECIFIER = "SONIC iDEP Wildcard";
 			};
 			name = Release;
 		};
