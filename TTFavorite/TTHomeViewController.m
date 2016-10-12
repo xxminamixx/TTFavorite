@@ -300,9 +300,9 @@ numberOfRowsInSection:(NSInteger)section
 - (void)showAddLabelView
 {
     NSLog(@"ラベルボタンが押されました");
-    TTAddLabelView *view = [[TTAddLabelView alloc] init];
-    [self.favoriteTableView addSubview:view];
-    
+//    TTAddLabelView *view = [[TTAddLabelView alloc] init];
+//    [self.favoriteTableView addSubview:view];
+//    
 }
 
 - (void)addLabelViewClose

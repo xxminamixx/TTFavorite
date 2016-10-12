@@ -19,7 +19,7 @@
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <state key="normal" title="閉じる"/>
                             <connections>
-                                <action selector="close:" destination="iN0-l3-epB" eventType="touchUpInside" id="K2Z-IX-JVr"/>
+                                <action selector="dismissWindow:" destination="iN0-l3-epB" eventType="touchUpInside" id="TdN-Gq-Rgh"/>
                             </connections>
                         </button>
                         <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="45A-1O-XLQ">
@@ -34,10 +34,16 @@
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d54-ek-ezj">
                             <state key="normal" title="決定"/>
+                            <connections>
+                                <action selector="alreadyLabel:" destination="iN0-l3-epB" eventType="touchUpInside" id="5Cl-TW-pXi"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y3W-sk-gvW">
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <state key="normal" title="+ 新規ラベルをつける"/>
+                            <connections>
+                                <action selector="newLabel:" destination="iN0-l3-epB" eventType="touchUpInside" id="8UH-J2-dfv"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -63,6 +69,9 @@
                 <constraint firstAttribute="trailing" secondItem="27z-Hl-q9J" secondAttribute="trailing" id="nV5-HD-5Db"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="pickerView" destination="45A-1O-XLQ" id="9Mc-eS-n9Z"/>
+            </connections>
             <point key="canvasLocation" x="27.5" y="59.5"/>
         </view>
     </objects>

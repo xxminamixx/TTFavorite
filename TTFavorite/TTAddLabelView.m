@@ -8,19 +8,30 @@
 
 #import "TTAddLabelView.h"
 
+@interface TTAddLabelView()
+
+@property (weak, nonatomic) IBOutlet UIPickerView *pickerView;
+
+- (IBAction)dismissWindow:(id)sender;
+- (IBAction)alreadyLabel:(id)sender;
+- (IBAction)newLabel:(id)sender;
+
+@end
+
 @implementation TTAddLabelView
 
-- (IBAction)close:(id)sender
+- (IBAction)dismissWindow:(id)sender
 {
     [self.delegate addLabelViewClose];
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
+- (IBAction)alreadyLabel:(id)sender
+{
 
+}
+
+- (IBAction)newLabel:(id)sender
+{
+    
+}
 @end

@@ -17,6 +17,8 @@
 		6AF8A2C71DA9C3BC004D44F8 /* TTAddLabelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AF8A2C61DA9C3BC004D44F8 /* TTAddLabelView.xib */; };
 		6AFC108F1D8EAA4000C8E807 /* libSDWebImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AFC108E1D8EAA4000C8E807 /* libSDWebImage.a */; };
 		6EE5D20DF76833FFCCF8E757 /* libPods-TTFavorite.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BA5F459E3CBB6253CB92DD47 /* libPods-TTFavorite.a */; };
+		9D9A77A01DAE1120003DF858 /* TTNewLabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9A779F1DAE1120003DF858 /* TTNewLabelView.m */; };
+		9D9A77A21DAE1138003DF858 /* TTNewLabelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D9A77A11DAE1138003DF858 /* TTNewLabelView.xib */; };
 		9DC21D601D6C3FBF0037D71F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DC21D5F1D6C3FBF0037D71F /* main.m */; };
 		9DC21D631D6C3FC00037D71F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DC21D621D6C3FC00037D71F /* AppDelegate.m */; };
 		9DC21D691D6C3FC00037D71F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DC21D671D6C3FC00037D71F /* Main.storyboard */; };
@@ -62,6 +64,9 @@
 		6AF8A2C61DA9C3BC004D44F8 /* TTAddLabelView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TTAddLabelView.xib; sourceTree = "<group>"; };
 		6AFC108E1D8EAA4000C8E807 /* libSDWebImage.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSDWebImage.a; path = "Pods/../build/Debug-iphoneos/libSDWebImage.a"; sourceTree = "<group>"; };
 		82107791673DE5E6CCD24C94 /* Pods-TTFavorite.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTFavorite.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TTFavorite/Pods-TTFavorite.debug.xcconfig"; sourceTree = "<group>"; };
+		9D9A779E1DAE1120003DF858 /* TTNewLabelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTNewLabelView.h; sourceTree = "<group>"; };
+		9D9A779F1DAE1120003DF858 /* TTNewLabelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTNewLabelView.m; sourceTree = "<group>"; };
+		9D9A77A11DAE1138003DF858 /* TTNewLabelView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TTNewLabelView.xib; sourceTree = "<group>"; };
 		9DC21D5B1D6C3FBF0037D71F /* TTFavorite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TTFavorite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DC21D5F1D6C3FBF0037D71F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9DC21D611D6C3FBF0037D71F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -237,6 +242,9 @@
 				6AF8A2C31DA9C3AC004D44F8 /* TTAddLabelView.h */,
 				6AF8A2C41DA9C3AC004D44F8 /* TTAddLabelView.m */,
 				6AF8A2C61DA9C3BC004D44F8 /* TTAddLabelView.xib */,
+				9D9A779E1DAE1120003DF858 /* TTNewLabelView.h */,
+				9D9A779F1DAE1120003DF858 /* TTNewLabelView.m */,
+				9D9A77A11DAE1138003DF858 /* TTNewLabelView.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -366,6 +374,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6AF8A2C21DA8F537004D44F8 /* TTMoreLoadingTableViewCell.xib in Resources */,
+				9D9A77A21DAE1138003DF858 /* TTNewLabelView.xib in Resources */,
 				9DC21D6E1D6C3FC00037D71F /* LaunchScreen.storyboard in Resources */,
 				9DC21D6B1D6C3FC00037D71F /* Assets.xcassets in Resources */,
 				9DC21D691D6C3FC00037D71F /* Main.storyboard in Resources */,
@@ -446,6 +455,7 @@
 				9DC21D631D6C3FC00037D71F /* AppDelegate.m in Sources */,
 				9DC21D601D6C3FBF0037D71F /* main.m in Sources */,
 				6AE1CD421D83A2AA009EA6FD /* TTFavoriteEntity.m in Sources */,
+				9D9A77A01DAE1120003DF858 /* TTNewLabelView.m in Sources */,
 				6AE1CD461D83A5CE009EA6FD /* Utils.m in Sources */,
 				9DC21D991D6C433C0037D71F /* TTHomeViewController.m in Sources */,
 				6AF8A2C11DA8F537004D44F8 /* TTMoreLoadingTableViewCell.m in Sources */,
