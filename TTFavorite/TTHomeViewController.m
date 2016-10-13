@@ -190,10 +190,6 @@ NSInteger numberOfPage;
                                      entity.name = [dic valueForKeyPath:@"user.name"];
                                      entity.imageList = [dic valueForKeyPath:@"extended_entities.media.media_url_https"];
                                      entity.icon = [dic valueForKeyPath:@"user.profile_image_url_https"];
-//                                     NSLog(@"%@", entity.text);
-//                                     NSLog(@"%@", entity.name);
-//                                     NSLog(@"%@", entity.image);
-//                                     NSLog(@"%@", entity.icon);
                                      [self.favoriteList addObject:entity];
                                  }
                                  block();
@@ -264,34 +260,6 @@ numberOfRowsInSection:(NSInteger)section
     }
 }
 
-//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    TTFavoriteEntity *entity = [[TTFavoriteEntity alloc] init];
-//    entity = self.favoriteList[indexPath.row];
-//    [self.dummyCell setMyProperty:entity];
-//    
-//    [self.dummyCell imageRefresh:entity.imageList];
-//    
-//    if (entity.icon) {
-//        NSURL *url = [NSURL URLWithString:entity.icon];
-//        [self.dummyCell iconRefresh:url];
-//    }
-//    
-//    return self.dummyCell.height;
-//}
-
-//- (void)scrollViewDidScroll:(UIScrollView *)scrollView
-//{
-//    //一番下までスクロールしたかどうか
-//    if(self.favoriteTableView.contentOffset.y >= (self.favoriteTableView.contentSize.height - self.favoriteTableView.bounds.size.height))
-//    {
-//        numberOfPage = [self.page intValue];
-//        self.page = [NSString stringWithFormat:@"%ld",numberOfPage + 1];
-//        [self callFetchFavorite];
-//    }
-//    
-//    
-//}
 
 - (void)reload
 {
@@ -301,8 +269,6 @@ numberOfRowsInSection:(NSInteger)section
 - (void)showAddLabelView:(TTFavoriteEntity *)entity
 {
     NSLog(@"ラベルボタンが押されました");
-//    TTAddLabelView *view = [[TTAddLabelView alloc] initWithFrame:CGRectMake(0, 0, 375, 230)];
-//    [self.view addSubview:view];
     
     TTAddLabelViewController *viewContorller =  [self.storyboard instantiateViewControllerWithIdentifier:@"TTAddLabelViewController"];
     viewContorller.entity = entity; // タップしたセルの情報の入ったEntityを渡す

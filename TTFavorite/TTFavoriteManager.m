@@ -24,9 +24,13 @@ static TTFavoriteManager *sharedInstance = nil;
 - (void)saveLabel:(NSString *)label
 {
     NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
-    NSMutableArray *labelList = [ud objectForKey:@"LabelList"]; // 永続化されいてるラベル配列を取得;
+    NSMutableArray *labelList = [[ud objectForKey:@"LabelList"] mutableCopy]; // 永続化されいてるラベル配列を取得;
+    if (!labelList) {
+        labelList = [[NSMutableArray alloc] init];
+    }
     [labelList addObject:label]; // ラベルを追加
     [ud setObject:labelList forKey:@"LabelList"]; //　永続化
+
 }
 
 @end

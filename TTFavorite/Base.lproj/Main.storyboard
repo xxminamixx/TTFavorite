@@ -51,25 +51,85 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ibS-xB-yRU" customClass="TTAddLabelView">
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NGp-Vy-L4I">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pmx-9Y-Fag">
+                                <state key="normal" title="決定"/>
+                                <connections>
+                                    <action selector="commitButton:" destination="ePG-Wv-pah" eventType="touchUpInside" id="3st-22-DXZ"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="　既存のラベル選択" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wbv-6F-5Kd">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lth-0a-kID">
+                                <state key="normal" title="+ 新しいラベルをつける"/>
+                                <connections>
+                                    <action selector="newLabelButton:" destination="ePG-Wv-pah" eventType="touchUpInside" id="zHJ-de-Q7i"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R2L-Jq-qGG">
+                                <state key="normal" title="削除"/>
+                                <connections>
+                                    <action selector="deleteButton:" destination="ePG-Wv-pah" eventType="touchUpInside" id="KI1-vx-Rpy"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ibS-xB-yRU" firstAttribute="leading" secondItem="lDq-W1-NCI" secondAttribute="leading" id="2hB-6J-lLG"/>
-                            <constraint firstItem="BHl-qm-tlc" firstAttribute="top" secondItem="ibS-xB-yRU" secondAttribute="bottom" id="imF-b3-7oB"/>
-                            <constraint firstAttribute="trailing" secondItem="ibS-xB-yRU" secondAttribute="trailing" id="krL-bj-Ohr"/>
-                            <constraint firstItem="ibS-xB-yRU" firstAttribute="top" secondItem="lDq-W1-NCI" secondAttribute="top" id="vZu-55-j06"/>
+                            <constraint firstItem="Pmx-9Y-Fag" firstAttribute="centerX" secondItem="lDq-W1-NCI" secondAttribute="centerX" id="LzO-ri-ZHt"/>
+                            <constraint firstItem="R2L-Jq-qGG" firstAttribute="centerX" secondItem="lDq-W1-NCI" secondAttribute="centerX" id="Nz4-vG-hj2"/>
+                            <constraint firstItem="R2L-Jq-qGG" firstAttribute="top" secondItem="Lth-0a-kID" secondAttribute="bottom" constant="10" id="P3e-cO-Smd"/>
+                            <constraint firstItem="Lth-0a-kID" firstAttribute="centerX" secondItem="lDq-W1-NCI" secondAttribute="centerX" id="S2W-2D-lOI"/>
+                            <constraint firstItem="NGp-Vy-L4I" firstAttribute="top" secondItem="Wbv-6F-5Kd" secondAttribute="bottom" constant="5" id="Tf5-GJ-Zoj"/>
+                            <constraint firstItem="BHl-qm-tlc" firstAttribute="top" secondItem="R2L-Jq-qGG" secondAttribute="bottom" constant="5" id="eFO-Bz-q9C"/>
+                            <constraint firstItem="Wbv-6F-5Kd" firstAttribute="centerX" secondItem="lDq-W1-NCI" secondAttribute="centerX" id="gXv-vx-GIh"/>
+                            <constraint firstItem="Wbv-6F-5Kd" firstAttribute="top" secondItem="Led-wQ-QIf" secondAttribute="bottom" constant="5" id="gcW-6e-AJ2"/>
+                            <constraint firstItem="Lth-0a-kID" firstAttribute="top" secondItem="Pmx-9Y-Fag" secondAttribute="bottom" constant="10" id="hIZ-3S-zUv"/>
+                            <constraint firstItem="NGp-Vy-L4I" firstAttribute="leading" secondItem="lDq-W1-NCI" secondAttribute="leading" id="m1i-hc-0IP"/>
+                            <constraint firstAttribute="trailing" secondItem="NGp-Vy-L4I" secondAttribute="trailing" id="nHS-0Z-ojE"/>
+                            <constraint firstItem="Pmx-9Y-Fag" firstAttribute="top" secondItem="NGp-Vy-L4I" secondAttribute="bottom" constant="5" id="pgD-Ku-A8r"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="addLabelView" destination="ibS-xB-yRU" id="VHi-we-up0"/>
+                        <outlet property="labelListTableView" destination="NGp-Vy-L4I" id="sEO-y9-nEg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aRu-fy-UN1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2450.4000000000001" y="380.05997001499253"/>
+        </scene>
+        <!--Label Select View Controller-->
+        <scene sceneID="jiY-8B-lNm">
+            <objects>
+                <viewController storyboardIdentifier="TTLabelSelectViewController" id="X0F-d9-64C" customClass="TTLabelSelectViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Z2H-bM-Lof"/>
+                        <viewControllerLayoutGuide type="bottom" id="3TW-Ew-3Hd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2Md-Dg-bwQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IQ4-Zo-yGZ">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="IQ4-Zo-yGZ" firstAttribute="top" secondItem="2Md-Dg-bwQ" secondAttribute="top" id="98c-hp-z22"/>
+                            <constraint firstAttribute="trailing" secondItem="IQ4-Zo-yGZ" secondAttribute="trailing" id="Ryg-4l-40U"/>
+                            <constraint firstItem="IQ4-Zo-yGZ" firstAttribute="leading" secondItem="2Md-Dg-bwQ" secondAttribute="leading" id="UZE-LB-fUi"/>
+                            <constraint firstItem="3TW-Ew-3Hd" firstAttribute="top" secondItem="IQ4-Zo-yGZ" secondAttribute="bottom" id="jX4-WB-eeJ"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Hb-bB-cpr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2450" y="1089"/>
         </scene>
         <!--Newlabel View Controller-->
         <scene sceneID="uFi-z6-8rY">

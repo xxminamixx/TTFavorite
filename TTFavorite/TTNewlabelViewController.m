@@ -26,9 +26,9 @@
 
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (void)dismissWindow
@@ -43,6 +43,7 @@
     
     [[TTFavoriteManager singleton].favoriteList addObject:self.entity];
     [[TTFavoriteManager singleton] saveLabel:label];
+    [self dismissViewControllerAnimated:YES completion:nil];
     
 }
 
