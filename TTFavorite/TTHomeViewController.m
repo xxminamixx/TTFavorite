@@ -298,14 +298,15 @@ numberOfRowsInSection:(NSInteger)section
     [self.favoriteTableView reloadData];
 }
 
-- (void)showAddLabelView
+- (void)showAddLabelView:(TTFavoriteEntity *)entity
 {
     NSLog(@"ラベルボタンが押されました");
 //    TTAddLabelView *view = [[TTAddLabelView alloc] initWithFrame:CGRectMake(0, 0, 375, 230)];
 //    [self.view addSubview:view];
     
     TTAddLabelViewController *viewContorller =  [self.storyboard instantiateViewControllerWithIdentifier:@"TTAddLabelViewController"];
-    [self presentViewController:viewContorller animated:YES completion:nil];
+    viewContorller.entity = entity; // タップしたセルの情報の入ったEntityを渡す
+     [self.navigationController pushViewController:viewContorller animated:YES];
 
     
 }

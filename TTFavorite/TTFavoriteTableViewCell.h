@@ -12,7 +12,7 @@
 
 @protocol TTFavoriteTableViewCellDelegate <NSObject>
 
-- (void)showAddLabelView;
+- (void)showAddLabelView:(TTFavoriteEntity *)entity;
 
 @end
 
@@ -22,9 +22,6 @@
 
 // Entityを受け取り自身のlabelに名前とテキストをセットする
 - (void)setMyProperty:(TTFavoriteEntity *)entity;
-
-// 自身の高さを返す
--(CGFloat) height;
 
 // urlの画像を自身のUIImageViewに表示する
 - (void)sd_setImageWithURL:(NSMutableArray *)urlList completed:(SDWebImageCompletionBlock)completedBlock;

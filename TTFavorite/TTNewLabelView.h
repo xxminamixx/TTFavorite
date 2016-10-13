@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol TTNewLabelViewDelegate <NSObject>
+
+- (void)dismissWindow; // 閉じるボタンを押した時のデリゲート
+- (void)createLabel:(NSString *)label; // 決定ボタンをおしたときのデリゲート
+
+@end
+
 @interface TTNewLabelView : UIView
+
+@property (weak, nonatomic) id<TTNewLabelViewDelegate>delegate;
 
 @end

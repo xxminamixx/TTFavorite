@@ -10,7 +10,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="TTAddLabelView">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="230"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="27z-Hl-q9J">
@@ -22,11 +22,6 @@
                                 <action selector="dismissWindow:" destination="iN0-l3-epB" eventType="touchUpInside" id="3QT-Tk-hH2"/>
                             </connections>
                         </button>
-                        <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="45A-1O-XLQ">
-                            <constraints>
-                                <constraint firstAttribute="height" constant="100" id="xXc-Dg-Cg9"/>
-                            </constraints>
-                        </pickerView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ラベルをつける" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wt0-97-MTq">
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <nil key="textColor"/>
@@ -45,18 +40,23 @@
                                 <action selector="newLabel:" destination="iN0-l3-epB" eventType="touchUpInside" id="tHG-bj-Hde"/>
                             </connections>
                         </button>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LDz-3D-vxo">
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </tableView>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstItem="45A-1O-XLQ" firstAttribute="centerX" secondItem="27z-Hl-q9J" secondAttribute="centerX" id="9as-NA-0np"/>
+                        <constraint firstItem="LDz-3D-vxo" firstAttribute="leading" secondItem="27z-Hl-q9J" secondAttribute="leading" id="97L-nC-woo"/>
                         <constraint firstItem="Wt0-97-MTq" firstAttribute="top" secondItem="27z-Hl-q9J" secondAttribute="topMargin" constant="10" id="BPJ-np-W5G"/>
-                        <constraint firstItem="y3W-sk-gvW" firstAttribute="centerX" secondItem="27z-Hl-q9J" secondAttribute="centerX" id="IkG-id-pev"/>
+                        <constraint firstItem="LDz-3D-vxo" firstAttribute="top" secondItem="Wt0-97-MTq" secondAttribute="bottom" constant="5" id="J6G-OA-A1O"/>
                         <constraint firstItem="5Tb-6u-SbJ" firstAttribute="leading" secondItem="27z-Hl-q9J" secondAttribute="leading" id="JSq-uO-9at"/>
-                        <constraint firstItem="45A-1O-XLQ" firstAttribute="top" secondItem="Wt0-97-MTq" secondAttribute="bottom" constant="5" id="aM4-Vk-1NK"/>
-                        <constraint firstAttribute="bottom" secondItem="y3W-sk-gvW" secondAttribute="bottom" constant="5" id="eJR-yU-6Yf"/>
                         <constraint firstItem="5Tb-6u-SbJ" firstAttribute="top" secondItem="27z-Hl-q9J" secondAttribute="top" id="evm-OB-NQ1"/>
-                        <constraint firstItem="d54-ek-ezj" firstAttribute="top" secondItem="45A-1O-XLQ" secondAttribute="bottom" constant="5" id="fBM-qY-DXG"/>
+                        <constraint firstAttribute="trailing" secondItem="LDz-3D-vxo" secondAttribute="trailing" id="exD-wG-oUS"/>
+                        <constraint firstItem="y3W-sk-gvW" firstAttribute="centerX" secondItem="27z-Hl-q9J" secondAttribute="centerX" id="jKY-em-4Xs"/>
+                        <constraint firstItem="y3W-sk-gvW" firstAttribute="top" secondItem="d54-ek-ezj" secondAttribute="bottom" constant="4" id="mwZ-aB-Oht"/>
+                        <constraint firstAttribute="bottom" secondItem="y3W-sk-gvW" secondAttribute="bottom" constant="5" id="n2T-eJ-jAn"/>
                         <constraint firstItem="Wt0-97-MTq" firstAttribute="centerX" secondItem="27z-Hl-q9J" secondAttribute="centerX" id="u68-oV-OJS"/>
+                        <constraint firstItem="d54-ek-ezj" firstAttribute="top" secondItem="LDz-3D-vxo" secondAttribute="bottom" constant="5" id="uxj-HW-6kF"/>
                         <constraint firstItem="d54-ek-ezj" firstAttribute="centerX" secondItem="27z-Hl-q9J" secondAttribute="centerX" id="yfL-gs-8Md"/>
                     </constraints>
                 </view>
@@ -69,10 +69,7 @@
                 <constraint firstAttribute="trailing" secondItem="27z-Hl-q9J" secondAttribute="trailing" id="nV5-HD-5Db"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <connections>
-                <outlet property="pickerView" destination="45A-1O-XLQ" id="9Mc-eS-n9Z"/>
-            </connections>
-            <point key="canvasLocation" x="27.5" y="59.5"/>
+            <point key="canvasLocation" x="27.5" y="59"/>
         </view>
     </objects>
 </document>

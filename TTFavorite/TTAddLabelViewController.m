@@ -7,12 +7,15 @@
 //
 
 #import "TTAddLabelViewController.h"
+#import "TTNewlabelViewController.h"
 #import "TTAddLabelView.h"
 #import "TTNewLabelView.h"
 
 @interface TTAddLabelViewController ()<TTAddLabelViewDelegate>
 
 @property (weak, nonatomic) IBOutlet TTAddLabelView *addLabelView;
+
+@property NSMutableArray *labelList;
 
 @end
 
@@ -23,6 +26,12 @@
     [super viewDidLoad];
     TTAddLabelView *view = [self.addLabelView viewWithTag:1];
     view.delegate = self;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    self.labelList = [ud objectForKey:@"LabelList"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -38,6 +47,19 @@
 //        [view removeFromSuperview];
 //    }
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)useAlreadyLabel
+{
+    NSLog(@"既存ラベルのデリゲート");
+}
+
+- (void)createNewLabel
+{
+    NSLog(@"新しいラベルのデリゲート");
+    TTNewlabelViewController *viewContorller =  [self.storyboard instantiateViewControllerWithIdentifier:@"TTNewlabelViewController"];
+    viewContorller.entity = self.entity;
+    [self presentViewController:viewContorller animated:YES completion:nil];
 }
 
 @end

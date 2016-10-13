@@ -48,11 +48,43 @@
                         <viewControllerLayoutGuide type="bottom" id="BHl-qm-tlc"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="lDq-W1-NCI">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ibS-xB-yRU" customClass="TTAddLabelView">
-                                <frame key="frameInset" minY="69" width="375" height="231"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ibS-xB-yRU" customClass="TTAddLabelView">
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ibS-xB-yRU" firstAttribute="leading" secondItem="lDq-W1-NCI" secondAttribute="leading" id="2hB-6J-lLG"/>
+                            <constraint firstItem="BHl-qm-tlc" firstAttribute="top" secondItem="ibS-xB-yRU" secondAttribute="bottom" id="imF-b3-7oB"/>
+                            <constraint firstAttribute="trailing" secondItem="ibS-xB-yRU" secondAttribute="trailing" id="krL-bj-Ohr"/>
+                            <constraint firstItem="ibS-xB-yRU" firstAttribute="top" secondItem="lDq-W1-NCI" secondAttribute="top" id="vZu-55-j06"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="addLabelView" destination="ibS-xB-yRU" id="VHi-we-up0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aRu-fy-UN1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2450.4000000000001" y="380.05997001499253"/>
+        </scene>
+        <!--Newlabel View Controller-->
+        <scene sceneID="uFi-z6-8rY">
+            <objects>
+                <viewController storyboardIdentifier="TTNewlabelViewController" id="mVT-TG-m0e" customClass="TTNewlabelViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vbd-Lb-IyQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="QhK-qO-DLZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UcZ-bY-dEh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="138"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EtT-9u-uyE" customClass="TTNewLabelView">
+                                <frame key="frameInset" minY="10" width="375" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -60,14 +92,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="375" height="300"/>
+                    <size key="freeformSize" width="375" height="138"/>
                     <connections>
-                        <outlet property="addLabelView" destination="ibS-xB-yRU" id="VHi-we-up0"/>
+                        <outlet property="addNewLabelView" destination="EtT-9u-uyE" id="F3J-J1-tCq"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aRu-fy-UN1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wkz-bQ-cdb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2478" y="190"/>
+            <point key="canvasLocation" x="3118" y="143"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="7eE-r4-gtF">
