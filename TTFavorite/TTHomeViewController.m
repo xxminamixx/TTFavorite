@@ -305,7 +305,7 @@ numberOfRowsInSection:(NSInteger)section
 //    [self.view addSubview:view];
     
     TTAddLabelViewController *viewContorller =  [self.storyboard instantiateViewControllerWithIdentifier:@"TTAddLabelViewController"];
-    [self.navigationController pushViewController:viewContorller animated:YES];
+    [self presentViewController:viewContorller animated:YES completion:nil];
 
     
 }

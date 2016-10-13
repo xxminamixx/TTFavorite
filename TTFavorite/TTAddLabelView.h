@@ -11,6 +11,8 @@
 @protocol TTAddLabelViewDelegate <NSObject>
 
 - (void)addLabelViewClose;
+- (void)useAlreadyLabel;
+- (void)createNewLabel;
 
 @end
 

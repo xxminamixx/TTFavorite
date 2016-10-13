@@ -19,7 +19,7 @@
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <state key="normal" title="閉じる"/>
                             <connections>
-                                <action selector="dismissWindow:" destination="iN0-l3-epB" eventType="touchUpInside" id="TdN-Gq-Rgh"/>
+                                <action selector="dismissWindow:" destination="iN0-l3-epB" eventType="touchUpInside" id="3QT-Tk-hH2"/>
                             </connections>
                         </button>
                         <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="45A-1O-XLQ">
@@ -35,14 +35,14 @@
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d54-ek-ezj">
                             <state key="normal" title="決定"/>
                             <connections>
-                                <action selector="alreadyLabel:" destination="iN0-l3-epB" eventType="touchUpInside" id="5Cl-TW-pXi"/>
+                                <action selector="alreadyLabel:" destination="iN0-l3-epB" eventType="touchUpInside" id="3dI-85-3KT"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y3W-sk-gvW">
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <state key="normal" title="+ 新規ラベルをつける"/>
                             <connections>
-                                <action selector="newLabel:" destination="iN0-l3-epB" eventType="touchUpInside" id="8UH-J2-dfv"/>
+                                <action selector="newLabel:" destination="iN0-l3-epB" eventType="touchUpInside" id="tHG-bj-Hde"/>
                             </connections>
                         </button>
                     </subviews>

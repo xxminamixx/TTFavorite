@@ -48,35 +48,26 @@
                         <viewControllerLayoutGuide type="bottom" id="BHl-qm-tlc"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="lDq-W1-NCI">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ibS-xB-yRU" customClass="TTAddLabelView">
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="odR-TC-t6z" customClass="TTNewLabelView">
-                                <frame key="frameInset" minY="350" width="375" height="128"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ibS-xB-yRU" customClass="TTAddLabelView">
+                                <frame key="frameInset" minY="69" width="375" height="231"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.79965502129999999" blue="0.45154041989999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="ibS-xB-yRU" firstAttribute="leading" secondItem="lDq-W1-NCI" secondAttribute="leading" id="7Ft-QR-7MQ"/>
-                            <constraint firstItem="ibS-xB-yRU" firstAttribute="top" secondItem="Led-wQ-QIf" secondAttribute="bottom" constant="20" id="HhG-SP-p7c"/>
-                            <constraint firstItem="ibS-xB-yRU" firstAttribute="centerX" secondItem="lDq-W1-NCI" secondAttribute="centerX" id="Qtj-x4-pC1"/>
-                            <constraint firstItem="BHl-qm-tlc" firstAttribute="top" secondItem="ibS-xB-yRU" secondAttribute="bottom" constant="396" id="ozb-pX-EfA"/>
-                            <constraint firstAttribute="trailing" secondItem="ibS-xB-yRU" secondAttribute="trailing" id="rsd-pA-Tyg"/>
-                        </constraints>
                     </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="300"/>
                     <connections>
                         <outlet property="addLabelView" destination="ibS-xB-yRU" id="VHi-we-up0"/>
-                        <outlet property="addNewLabelView" destination="odR-TC-t6z" id="dqC-RL-CbD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aRu-fy-UN1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2492" y="385.45727136431788"/>
+            <point key="canvasLocation" x="2478" y="190"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="7eE-r4-gtF">

@@ -27,6 +27,7 @@
         if (!self.subviews.count) {
             UIView *subview = [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class]) owner:nil options:nil][0];
             subview.frame = self.bounds;
+            subview.tag = 1;
             [self addSubview:subview];
         }
     }
@@ -35,16 +36,19 @@
 
 - (IBAction)dismissWindow:(id)sender
 {
+    NSLog(@"閉じます");
     [self.delegate addLabelViewClose];
 }
 
 - (IBAction)alreadyLabel:(id)sender
 {
-
+    NSLog(@"既存ラベルをつけます");
+    [self.delegate useAlreadyLabel];
 }
 
 - (IBAction)newLabel:(id)sender
 {
-    
+    NSLog(@"新しいラベルをつけます");
+    [self.delegate createNewLabel];
 }
 @end

@@ -13,7 +13,6 @@
 @interface TTAddLabelViewController ()<TTAddLabelViewDelegate>
 
 @property (weak, nonatomic) IBOutlet TTAddLabelView *addLabelView;
-@property (weak, nonatomic) IBOutlet TTNewLabelView *addNewLabelView;
 
 @end
 
@@ -22,7 +21,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.addLabelView.delegate = self;
+    TTAddLabelView *view = [self.addLabelView viewWithTag:1];
+    view.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,9 +34,10 @@
 {
     NSLog(@"閉じる");
     // subView全て削除
-    for (UIView *view in [self.view subviews]) {
-        [view removeFromSuperview];
-    }
+//    for (UIView *view in [self.view subviews]) {
+//        [view removeFromSuperview];
+//    }
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end
