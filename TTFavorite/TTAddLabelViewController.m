@@ -17,6 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     TTAddLabelView *view = [[TTAddLabelView alloc] initWithFrame:CGRectMake(0, 0, 375, 230)];
     [self.view addSubview:view];
 }

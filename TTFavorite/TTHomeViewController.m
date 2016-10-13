@@ -300,26 +300,26 @@ numberOfRowsInSection:(NSInteger)section
 
 - (void)showAddLabelView
 {
-    NSLog(@"ラベルボタンが押されました");
-    TTAddLabelView *view = [[TTAddLabelView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
-    [self.view addSubview:view];
+//    NSLog(@"ラベルボタンが押されました");
+//    TTAddLabelView *view = [[TTAddLabelView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+//    [self.view addSubview:view];
 //    [self.view setNeedsLayout];
 //    [self.view layoutIfNeeded];
-    NSArray *array = self.view.subviews;
-    for(id any in array){
-        NSLog(@"%@", any);
-    }
-    
-    if(![view isDescendantOfView:self.view]) {
-        // 存在していない
-        NSLog(@"ビューが追加されていません");
-    } else {
-        // 存在している
-        NSLog(@"ビューが追加されています");
-    }
-    
-//    TTAddLabelViewController *viewContorller =  [self.storyboard instantiateViewControllerWithIdentifier:@"TTAddLabelViewController"];
-//    [self presentViewController:viewContorller animated:YES completion:nil];
+//    NSArray *array = self.view.subviews;
+//    for(id any in array){
+//        NSLog(@"%@", any);
+//    }
+//    
+//    if(![view isDescendantOfView:self.view]) {
+//        // 存在していない
+//        NSLog(@"ビューが追加されていません");
+//    } else {
+//        // 存在している
+//        NSLog(@"ビューが追加されています");
+//    }
+//    
+    TTAddLabelViewController *viewContorller =  [self.storyboard instantiateViewControllerWithIdentifier:@"TTAddLabelViewController"];
+    [self presentViewController:viewContorller animated:YES completion:nil];
 
     
 }

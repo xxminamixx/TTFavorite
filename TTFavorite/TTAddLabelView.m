@@ -20,6 +20,19 @@
 
 @implementation TTAddLabelView
 
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        if (!self.subviews.count) {
+            UIView *subview = [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class]) owner:nil options:nil][0];
+            subview.frame = self.bounds;
+            [self addSubview:subview];
+        }
+    }
+    return self;
+}
+
 - (IBAction)dismissWindow:(id)sender
 {
     [self.delegate addLabelViewClose];
