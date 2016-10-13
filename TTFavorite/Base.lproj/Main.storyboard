@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -53,17 +52,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ibS-xB-yRU" customClass="TTAddLabelView">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="odR-TC-t6z" customClass="TTNewLabelView">
+                                <frame key="frameInset" minY="350" width="375" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.79965502129999999" blue="0.45154041989999999" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="ibS-xB-yRU" firstAttribute="leading" secondItem="lDq-W1-NCI" secondAttribute="leading" id="7Ft-QR-7MQ"/>
                             <constraint firstItem="ibS-xB-yRU" firstAttribute="top" secondItem="Led-wQ-QIf" secondAttribute="bottom" constant="20" id="HhG-SP-p7c"/>
                             <constraint firstItem="ibS-xB-yRU" firstAttribute="centerX" secondItem="lDq-W1-NCI" secondAttribute="centerX" id="Qtj-x4-pC1"/>
-                            <constraint firstItem="ibS-xB-yRU" firstAttribute="leading" secondItem="lDq-W1-NCI" secondAttribute="leadingMargin" constant="11" id="RBY-lf-FUc"/>
                             <constraint firstItem="BHl-qm-tlc" firstAttribute="top" secondItem="ibS-xB-yRU" secondAttribute="bottom" constant="396" id="ozb-pX-EfA"/>
+                            <constraint firstAttribute="trailing" secondItem="ibS-xB-yRU" secondAttribute="trailing" id="rsd-pA-Tyg"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="addLabelView" destination="ibS-xB-yRU" id="VHi-we-up0"/>
+                        <outlet property="addNewLabelView" destination="odR-TC-t6z" id="dqC-RL-CbD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aRu-fy-UN1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

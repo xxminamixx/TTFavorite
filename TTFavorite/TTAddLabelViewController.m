@@ -8,18 +8,21 @@
 
 #import "TTAddLabelViewController.h"
 #import "TTAddLabelView.h"
+#import "TTNewLabelView.h"
 
-@interface TTAddLabelViewController ()
+@interface TTAddLabelViewController ()<TTAddLabelViewDelegate>
+
+@property (weak, nonatomic) IBOutlet TTAddLabelView *addLabelView;
+@property (weak, nonatomic) IBOutlet TTNewLabelView *addNewLabelView;
 
 @end
 
 @implementation TTAddLabelViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    
-    TTAddLabelView *view = [[TTAddLabelView alloc] initWithFrame:CGRectMake(0, 0, 375, 230)];
-    [self.view addSubview:view];
+    self.addLabelView.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -27,6 +30,13 @@
     // Dispose of any resources that can be recreated.
 }
 
-
+- (void)addLabelViewClose
+{
+    NSLog(@"閉じる");
+    // subView全て削除
+    for (UIView *view in [self.view subviews]) {
+        [view removeFromSuperview];
+    }
+}
 
 @end

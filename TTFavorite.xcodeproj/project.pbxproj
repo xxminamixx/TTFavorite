@@ -255,9 +255,8 @@
 		9DC21D951D6C40040037D71F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				9DE495BE1DAF204600B3201B /* TTAddLabelViewController */,
 				6A8A37381D86F6C800BB915C /* HomeViewController */,
-				9D9A77A31DAE3931003DF858 /* TTAddLabelViewController.h */,
-				9D9A77A41DAE3931003DF858 /* TTAddLabelViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -269,6 +268,15 @@
 				6AE1CD411D83A2AA009EA6FD /* TTFavoriteEntity.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		9DE495BE1DAF204600B3201B /* TTAddLabelViewController */ = {
+			isa = PBXGroup;
+			children = (
+				9D9A77A31DAE3931003DF858 /* TTAddLabelViewController.h */,
+				9D9A77A41DAE3931003DF858 /* TTAddLabelViewController.m */,
+			);
+			name = TTAddLabelViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
