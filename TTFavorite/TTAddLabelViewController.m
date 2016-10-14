@@ -11,6 +11,7 @@
 #import "TTAddLabelView.h"
 #import "TTNewLabelView.h"
 #import "TTLabelListTableViewCell.h"
+#import "TTFavoriteManager.h"
 
 @interface TTAddLabelViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -92,6 +93,12 @@
     TTLabelListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
     cell.label.text = self.labelList[indexPath.row];
     return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+//    [[TTFavoriteManager singleton].favoriteList addObject:self.labelList[indexPath.row]];
+//    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

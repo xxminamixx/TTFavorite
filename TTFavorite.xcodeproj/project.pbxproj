@@ -311,11 +311,11 @@
 		9DC21D951D6C40040037D71F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				9DD0FDAE1DB092F5008AE0B5 /* SameLabelViewController */,
-				9D1692771DAF8DD100F46BF7 /* LabelSelectViewController */,
 				6A8A37381D86F6C800BB915C /* HomeViewController */,
 				9DE495BE1DAF204600B3201B /* TTAddLabelViewController */,
 				9D1692691DAF65D200F46BF7 /* TTNewlabelViewController */,
+				9D1692771DAF8DD100F46BF7 /* LabelSelectViewController */,
+				9DD0FDAE1DB092F5008AE0B5 /* SameLabelViewController */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
