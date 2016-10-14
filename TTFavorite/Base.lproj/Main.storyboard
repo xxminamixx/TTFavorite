@@ -160,7 +160,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="sameLabelTableView" destination="wYy-FT-xG4" id="Mqe-Q0-wF6"/>
+                        <outlet property="sameLabelTableView" destination="wYy-FT-xG4" id="0Qx-Zv-aq5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dWu-2C-0AN" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -12,6 +12,14 @@ static TTFavoriteManager *sharedInstance = nil;
 
 @implementation TTFavoriteManager
 
+- (id)init{
+    
+    if([super init] != nil) {
+        self.favoriteList = [[NSMutableArray alloc] init];
+    }
+    return self;
+}
+
 + (TTFavoriteManager *)singleton
 {
     static dispatch_once_t onceToken;

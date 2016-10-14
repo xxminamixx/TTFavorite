@@ -9,11 +9,11 @@
 #import "TTSameLabelViewController.h"
 #import "TTFavoriteManager.h"
 #import "TTFavoriteEntity.h"
-#import "TTFavoriteTableViewCell.m"
+#import "TTFavoriteTableViewCell.h"
 
-@interface TTSameLabelViewController ()<UITableViewDataSource, UITableViewDelegate, TTFavoriteTableViewCellDelegate >
-
+@interface TTSameLabelViewController ()<UITableViewDataSource, UITableViewDelegate, TTFavoriteTableViewCellDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *sameLabelTableView;
+
 
 @property NSMutableArray *sameLabelEntityList;
 
@@ -28,6 +28,8 @@
     
     self.sameLabelTableView.estimatedRowHeight = 240;
     self.sameLabelTableView.rowHeight = UITableViewAutomaticDimension;
+    self.sameLabelTableView.delegate = self;
+    self.sameLabelTableView.dataSource = self;
     
     // cellの登録
     UINib *nib = [UINib nibWithNibName:@"TTFavoriteTableViewCell" bundle:nil];
@@ -78,7 +80,6 @@
     }
     
     return cell;
-
 }
 
 - (void)showAddLabelView:(TTFavoriteEntity *)entity
