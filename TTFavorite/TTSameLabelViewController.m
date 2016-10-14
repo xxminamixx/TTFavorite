@@ -81,4 +81,10 @@
 
 }
 
+- (void)showAddLabelView:(TTFavoriteEntity *)entity
+{
+    NSLog(@"デリゲートが呼ばれました");
+}
+
+
 @end
