@@ -54,17 +54,6 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NGp-Vy-L4I">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pmx-9Y-Fag">
-                                <state key="normal" title="決定"/>
-                                <connections>
-                                    <action selector="commitButton:" destination="ePG-Wv-pah" eventType="touchUpInside" id="3st-22-DXZ"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="　既存のラベル選択" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wbv-6F-5Kd">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lth-0a-kID">
                                 <state key="normal" title="+ 新しいラベルをつける"/>
                                 <connections>
@@ -80,18 +69,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Pmx-9Y-Fag" firstAttribute="centerX" secondItem="lDq-W1-NCI" secondAttribute="centerX" id="LzO-ri-ZHt"/>
+                            <constraint firstItem="Lth-0a-kID" firstAttribute="top" secondItem="NGp-Vy-L4I" secondAttribute="bottom" constant="5" id="LI7-EP-ORB"/>
                             <constraint firstItem="R2L-Jq-qGG" firstAttribute="centerX" secondItem="lDq-W1-NCI" secondAttribute="centerX" id="Nz4-vG-hj2"/>
                             <constraint firstItem="R2L-Jq-qGG" firstAttribute="top" secondItem="Lth-0a-kID" secondAttribute="bottom" constant="10" id="P3e-cO-Smd"/>
                             <constraint firstItem="Lth-0a-kID" firstAttribute="centerX" secondItem="lDq-W1-NCI" secondAttribute="centerX" id="S2W-2D-lOI"/>
-                            <constraint firstItem="NGp-Vy-L4I" firstAttribute="top" secondItem="Wbv-6F-5Kd" secondAttribute="bottom" constant="5" id="Tf5-GJ-Zoj"/>
+                            <constraint firstItem="NGp-Vy-L4I" firstAttribute="top" secondItem="lDq-W1-NCI" secondAttribute="top" id="blz-O7-h0k"/>
                             <constraint firstItem="BHl-qm-tlc" firstAttribute="top" secondItem="R2L-Jq-qGG" secondAttribute="bottom" constant="5" id="eFO-Bz-q9C"/>
-                            <constraint firstItem="Wbv-6F-5Kd" firstAttribute="centerX" secondItem="lDq-W1-NCI" secondAttribute="centerX" id="gXv-vx-GIh"/>
-                            <constraint firstItem="Wbv-6F-5Kd" firstAttribute="top" secondItem="Led-wQ-QIf" secondAttribute="bottom" constant="5" id="gcW-6e-AJ2"/>
-                            <constraint firstItem="Lth-0a-kID" firstAttribute="top" secondItem="Pmx-9Y-Fag" secondAttribute="bottom" constant="10" id="hIZ-3S-zUv"/>
                             <constraint firstItem="NGp-Vy-L4I" firstAttribute="leading" secondItem="lDq-W1-NCI" secondAttribute="leading" id="m1i-hc-0IP"/>
                             <constraint firstAttribute="trailing" secondItem="NGp-Vy-L4I" secondAttribute="trailing" id="nHS-0Z-ojE"/>
-                            <constraint firstItem="Pmx-9Y-Fag" firstAttribute="top" secondItem="NGp-Vy-L4I" secondAttribute="bottom" constant="5" id="pgD-Ku-A8r"/>
                         </constraints>
                     </view>
                     <connections>
@@ -176,19 +161,23 @@
                         <viewControllerLayoutGuide type="bottom" id="QhK-qO-DLZ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="UcZ-bY-dEh">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="138"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EtT-9u-uyE" customClass="TTNewLabelView">
-                                <frame key="frameInset" minY="10" width="375" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EtT-9u-uyE" customClass="TTNewLabelView">
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="EtT-9u-uyE" firstAttribute="top" secondItem="vbd-Lb-IyQ" secondAttribute="bottom" constant="2" id="AFl-e6-fP9"/>
+                            <constraint firstAttribute="trailing" secondItem="EtT-9u-uyE" secondAttribute="trailing" id="ErI-CI-7ir"/>
+                            <constraint firstItem="EtT-9u-uyE" firstAttribute="leading" secondItem="UcZ-bY-dEh" secondAttribute="leading" id="LcG-Mp-jmC"/>
+                            <constraint firstItem="QhK-qO-DLZ" firstAttribute="top" secondItem="EtT-9u-uyE" secondAttribute="bottom" id="jfY-0n-JZ2"/>
+                        </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="375" height="138"/>
+                    <size key="freeformSize" width="375" height="150"/>
                     <connections>
                         <outlet property="addNewLabelView" destination="EtT-9u-uyE" id="F3J-J1-tCq"/>
                     </connections>

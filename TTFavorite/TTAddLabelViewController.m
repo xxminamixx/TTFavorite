@@ -15,7 +15,6 @@
 @interface TTAddLabelViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *labelListTableView;
-- (IBAction)commitButton:(id)sender;
 - (IBAction)newLabelButton:(id)sender;
 - (IBAction)deleteButton:(id)sender;
 
@@ -65,11 +64,6 @@
     TTNewlabelViewController *viewContorller =  [self.storyboard instantiateViewControllerWithIdentifier:@"TTNewlabelViewController"];
     viewContorller.entity = self.entity;
     [self presentViewController:viewContorller animated:YES completion:nil];
-}
-
-- (IBAction)commitButton:(id)sender
-{
-    
 }
 
 - (IBAction)newLabelButton:(id)sender
