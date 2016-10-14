@@ -126,7 +126,7 @@ NSInteger numberOfPage;
         }
     };
     
-    [self fetchFavoriteForUser:@"yellowflog" completed:completed];
+    [self fetchFavoriteForUser:@"dev_iosfavotest" completed:completed];
 }
 
 - (void)didReceiveMemoryWarning
