@@ -127,15 +127,18 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="cgK-T9-dgG"/>
+                    <connections>
+                        <outlet property="labelListTableView" destination="IQ4-Zo-yGZ" id="vjp-3P-6Gi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Hb-bB-cpr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1780" y="1218"/>
         </scene>
-        <!--View Controller-->
+        <!--Same Label View Controller-->
         <scene sceneID="leD-c5-fdX">
             <objects>
-                <viewController id="D9Q-D9-rkG" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TTSameLabelViewController" id="D9Q-D9-rkG" customClass="TTSameLabelViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9u8-sA-ggv"/>
                         <viewControllerLayoutGuide type="bottom" id="ziS-sp-zRa"/>
@@ -156,6 +159,9 @@
                             <constraint firstAttribute="trailing" secondItem="wYy-FT-xG4" secondAttribute="trailing" id="pXh-b0-ZeR"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="sameLabelTableView" destination="wYy-FT-xG4" id="djR-oY-ewm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dWu-2C-0AN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
