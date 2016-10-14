@@ -12,9 +12,8 @@
 #import "TTNewLabelView.h"
 #import "TTLabelListTableViewCell.h"
 
-@interface TTAddLabelViewController ()<UITableViewDelegate,UITableViewDataSource,TTAddLabelViewDelegate>
+@interface TTAddLabelViewController ()<UITableViewDelegate,UITableViewDataSource>
 
-@property (weak, nonatomic) IBOutlet TTAddLabelView *addLabelView;
 @property (weak, nonatomic) IBOutlet UITableView *labelListTableView;
 - (IBAction)commitButton:(id)sender;
 - (IBAction)newLabelButton:(id)sender;
@@ -30,9 +29,7 @@
 {
     [super viewDidLoad];
     self.labelList = [[NSMutableArray alloc] init];
-    TTAddLabelView *view = [self.addLabelView viewWithTag:1];
-    view.delegate = self;
-    
+
     self.labelListTableView.delegate = self;
     self.labelListTableView.dataSource = self;
     
@@ -48,40 +45,35 @@
     [self.labelListTableView reloadData];
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (void)addLabelViewClose
 {
-    NSLog(@"閉じる");
-    // subView全て削除
-//    for (UIView *view in [self.view subviews]) {
-//        [view removeFromSuperview];
-//    }
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)useAlreadyLabel
 {
-    NSLog(@"既存ラベルのデリゲート");
+    
 }
 
 - (void)createNewLabel
 {
-    NSLog(@"新しいラベルのデリゲート");
     TTNewlabelViewController *viewContorller =  [self.storyboard instantiateViewControllerWithIdentifier:@"TTNewlabelViewController"];
     viewContorller.entity = self.entity;
     [self presentViewController:viewContorller animated:YES completion:nil];
 }
 
-- (IBAction)commitButton:(id)sender {
+- (IBAction)commitButton:(id)sender
+{
+    
 }
 
 - (IBAction)newLabelButton:(id)sender
 {
-    NSLog(@"新しいラベルのデリゲート");
     TTNewlabelViewController *viewContorller =  [self.storyboard instantiateViewControllerWithIdentifier:@"TTNewlabelViewController"];
     viewContorller.entity = self.entity;
     [self presentViewController:viewContorller animated:YES completion:nil];
@@ -96,14 +88,12 @@
 }
 
 
-- (NSInteger)tableView:(UITableView *)tableView
- numberOfRowsInSection:(NSInteger)section
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return self.labelList.count;
 }
 
-- (UITableViewCell *)tableView:
-(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     TTLabelListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
     cell.label.text = self.labelList[indexPath.row];
