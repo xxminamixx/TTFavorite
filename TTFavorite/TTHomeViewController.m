@@ -9,10 +9,17 @@
 #import "TTHomeViewController.h"
 #import <Social/Social.h>
 #import <Accounts/Accounts.h>
+#import "Utils.h"
+#import "TTFavoriteEntity.h"
+#import "TTFavoriteTableViewCell.h"
 
-@interface TTHomeViewController ()
+
+
+@interface TTHomeViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic) ACAccountStore *accountStore;
+@property NSMutableArray *favoriteList;
+
 
 @end
 
@@ -30,11 +37,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    // cellの登録
+    UINib *nib = [UINib nibWithNibName:@"TTFavoriteTableViewCell" bundle:nil];
+    [self.favoriteTableView registerNib:nib forCellReuseIdentifier:@"Cell"];
+    
+    self.favoriteTableView.delegate = self;
+    self.favoriteTableView.dataSource = self;
+    
     ACAccountStore *store = [[ACAccountStore alloc] init];
-    ACAccountType *type = [store accountTypeWithAccountTypeIdentifier:
-                           ACAccountTypeIdentifierTwitter];
-    
-    
+    ACAccountType *type = [store accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
     
     UIBarButtonItem* left1 = [[UIBarButtonItem alloc]
                               initWithTitle:@"複数選択"
@@ -72,28 +84,16 @@
     [accountStore requestAccessToAccountsWithType:accountType
                                           options:nil
                                        completion:accountBlock ];
-//    [store requestAccessToAccountsWithType:type
-//                                   options:nil
-//                                completion:^(BOOL granted, NSError *error) {
-//                                    
-//                                    if (!granted) {
-//                                        
-//                                        NSLog(@"not granted");
-//                                        
-//                                        return;
-//                                    }
-//                                    
-//                                    NSArray *twitterAccounts = [store accountsWithAccountType:type];
-//                                    
-//                                    if (!(twitterAccounts > 0)) {
-//                                        
-//                                        NSLog(@"no twitter accounts");
-//                                        
-//                                        return;
-//                                    }
-//                                    
-//                                    ACAccount *account = [twitterAccounts lastObject];
-//                                }];
+    
+    __weak typeof(self) weakSelf = self;
+    completedBlock completed = ^{
+        __strong typeof(self) strongSelf = weakSelf;
+        if (strongSelf) {
+            [self.favoriteTableView reloadData];
+        }
+    };
+    
+    [self fetchFavoriteForUser:@"xxxxx_hobby" completed:completed];
 }
 
 - (void)didReceiveMemoryWarning
@@ -108,29 +108,30 @@
             isAvailableForServiceType:SLServiceTypeTwitter];
 }
 
-// タイムライン取得処理
-- (void)fetchTimelineForUser:(NSString *)username
+//　お気に入り取得メソッド
+- (void)fetchFavoriteForUser:(NSString *)userName completed:(completedBlock)block;
 {
-    //  Step 0: Check that the user has local Twitter accounts
+    self.favoriteList = [NSMutableArray array];
+    
     if ([self userHasAccessToTwitter]) {
-        ACAccountType *twitterAccountType =　[self.accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
-        [self.accountStore　requestAccessToAccountsWithType:twitterAccountType　options:NULL completion:^(BOOL granted, NSError *error) {
+        self.accountStore = [[ACAccountStore alloc] init];
+        ACAccountType *twitterAccountType = [self.accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
+
+        [self.accountStore requestAccessToAccountsWithType:twitterAccountType options:NULL completion:^(BOOL granted, NSError *error) {
             if (granted) {
                 NSArray *twitterAccounts =
                 [self.accountStore accountsWithAccountType:twitterAccountType];
-                NSURL *url = [NSURL URLWithString:@"https://api.twitter.com"
-                              @"/1.1/statuses/user_timeline.json"];
-                NSDictionary *params = @{@"screen_name" : username,
-                                         @"include_rts" : @"0",
-                                         @"trim_user" : @"1",
-                                         @"count" : @"1"};
+                NSURL *url = [NSURL URLWithString:@"https://api.twitter.com/1.1/favorites/list.json"];
+                NSDictionary *parameter = @{@"screen_name" : userName,
+                                            @"count": @"100",
+                                            };
+                // リクエスト作成
                 SLRequest *request =
                 [SLRequest requestForServiceType:SLServiceTypeTwitter
                                    requestMethod:SLRequestMethodGET
                                              URL:url
-                                      parameters:params];
+                                      parameters:parameter];
                 
-                //  Attach an account to the request
                 [request setAccount:[twitterAccounts lastObject]];
                 
                 [request performRequestWithHandler:
@@ -143,38 +144,61 @@
                              urlResponse.statusCode < 300) {
                              
                              NSError *jsonError;
-                             NSDictionary *timelineData =
-                             [NSJSONSerialization
-                              JSONObjectWithData:responseData
-                              options:NSJSONReadingAllowFragments error:&jsonError];
-                             if (timelineData) {
-                                 NSLog(@"Timeline Response: %@\n", timelineData);
+                             NSDictionary *favoriteData = [NSJSONSerialization JSONObjectWithData:responseData
+                                                                                          options:NSJSONReadingAllowFragments
+                                                                                            error:&jsonError];
+                             //　フェッチしたデータがfavoriteDataに格納
+                             if (favoriteData) {
+//                                 NSLog(@"%@", favoriteData);
+                                 for (NSDictionary *dic in favoriteData) {
+                                     TTFavoriteEntity *entity = [TTFavoriteEntity new];
+                                     entity.text = [dic valueForKey:@"text"];
+                                     entity.name = [dic valueForKeyPath:@"user.name"];
+                                     entity.image = [dic valueForKeyPath:@"entities.media.media_url"];
+                                     entity.icon = [dic valueForKeyPath:@"user.profile_image_url"];
+                                     NSLog(@"%@", entity.text);
+                                     NSLog(@"%@", entity.name);
+                                     NSLog(@"%@", entity.image);
+                                     NSLog(@"%@", entity.icon);
+                                     [self.favoriteList addObject:entity];
+                                 }
+                                 block();
                              }
                              else {
-                                 // Our JSON deserialization went awry
                                  NSLog(@"JSON Error: %@", [jsonError localizedDescription]);
                              }
                          }
                          else {
-                             // The server did not respond ... were we rate-limited?
-                             NSLog(@"The response status code is %ld", (long)urlResponse.statusCode);
+//                             NSLog(@"The response status code is %ld", (long)urlResponse.statusCode);
                          }
                      }
                  }];
             }
             else {
-                // Access was not granted, or an error occurred
                 NSLog(@"%@", [error localizedDescription]);
             }
         }];
     }
 }
 
-//　お気に入り取得メソッド
-- (void)fetchFavorite
+- (NSInteger)tableView:(UITableView *)tableView
+numberOfRowsInSection:(NSInteger)section
 {
-    NSURL *url = [NSURL URLWithString:@"https://api.twitter.com/1.1/favorites/list.json"];
+    return self.favoriteList.count;
+}
+
+- (UITableViewCell *)tableView:
+(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    TTFavoriteTableViewCell *cell =
+    [self.favoriteTableView dequeueReusableCellWithIdentifier:@"Cell"];
     
+    TTFavoriteEntity *entity = [[TTFavoriteEntity alloc] init];
+    entity = self.favoriteList[indexPath.row];
+    
+    [cell setMyProperty:entity];
+    
+    return cell;
 }
 
 @end
