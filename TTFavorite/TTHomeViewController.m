@@ -126,7 +126,7 @@ NSInteger numberOfPage;
         }
     };
     
-    [self fetchFavoriteForUser:@"dev_iosfavotest" completed:completed];
+    [self fetchFavoriteForUser:@"sac_ios_tester" completed:completed];
 }
 
 - (void)didReceiveMemoryWarning
