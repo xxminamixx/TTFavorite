@@ -26,7 +26,7 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *image4Height;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *image2TopMargin;
 
-@property TTFavoriteEntity *entity;
+@property TTRealmFavoriteEntity *entity;
 
 - (IBAction)favoriteButton:(id)sender;
 - (IBAction)labelButton:(id)sender;
@@ -46,12 +46,14 @@
 }
 
 // 自身のプロパティにエンンティティをセット
-- (void)setMyProperty:(TTFavoriteEntity *)entity
+- (void)setMyProperty:(TTRealmFavoriteEntity *)entity
 {
     self.entity = entity;
     self.name.text = entity.name;
     self.text.text = entity.text;
-    [self imageRefresh:entity.imageList];
+//    [self imageRefresh:entity.imageList];
+    [self imageRefresh:nil];
+
 }
 
 #pragma -mark - SetImage

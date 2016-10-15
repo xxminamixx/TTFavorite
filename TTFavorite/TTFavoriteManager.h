@@ -14,5 +14,7 @@
 
 + (TTFavoriteManager *)singleton;
 - (void)saveLabel:(NSString *)label;
+- (void)saveEntity;
+- (void)loadEntity;
 
 @end

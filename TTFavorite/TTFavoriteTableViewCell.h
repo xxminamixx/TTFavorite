@@ -7,12 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TTFavoriteEntity.h"
+#import "TTRealmFavoriteEntity.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 
 @protocol TTFavoriteTableViewCellDelegate <NSObject>
 
-- (void)showAddLabelView:(TTFavoriteEntity *)entity;
+- (void)showAddLabelView:(TTRealmFavoriteEntity *)entity;
 
 @end
 
@@ -21,7 +21,7 @@
 @property (weak, nonatomic) id<TTFavoriteTableViewCellDelegate> delagate;
 
 // Entityを受け取り自身のlabelに名前とテキストをセットする
-- (void)setMyProperty:(TTFavoriteEntity *)entity;
+- (void)setMyProperty:(TTRealmFavoriteEntity *)entity;
 
 // urlの画像を自身のUIImageViewに表示する
 - (void)sd_setImageWithURL:(NSMutableArray *)urlList completed:(SDWebImageCompletionBlock)completedBlock;

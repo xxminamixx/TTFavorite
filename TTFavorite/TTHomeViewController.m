@@ -10,7 +10,7 @@
 #import <Social/Social.h>
 #import <Accounts/Accounts.h>
 #import "Utils.h"
-#import "TTFavoriteEntity.h"
+#import "TTRealmFavoriteEntity.h"
 #import "TTFavoriteTableViewCell.h"
 #import "TTMoreLoadingTableViewCell.h"
 #import "TTAddLabelView.h"
@@ -185,10 +185,10 @@ NSInteger numberOfPage;
                              if (favoriteData) {
 //                                NSLog(@"%@", favoriteData);
                                 for (NSDictionary *dic in favoriteData) {
-                                     TTFavoriteEntity *entity = [TTFavoriteEntity new];
+                                    TTRealmFavoriteEntity *entity = [TTRealmFavoriteEntity alloc];
                                      entity.text = [dic valueForKey:@"text"];
                                      entity.name = [dic valueForKeyPath:@"user.name"];
-                                     entity.imageList = [dic valueForKeyPath:@"extended_entities.media.media_url_https"];
+//                                     entity.imageList = [dic valueForKeyPath:@"extended_entities.media.media_url_https"];
                                      entity.icon = [dic valueForKeyPath:@"user.profile_image_url_https"];
                                      [self.favoriteList addObject:entity];
                                  }
@@ -230,7 +230,7 @@ numberOfRowsInSection:(NSInteger)section
 //            cell = [[TTFavoriteTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
 //        }
         
-        TTFavoriteEntity *entity = [[TTFavoriteEntity alloc] init];
+        TTRealmFavoriteEntity *entity = [[TTRealmFavoriteEntity alloc] init];
         entity = self.favoriteList[indexPath.row];
         
         cell.delagate = self;
@@ -266,7 +266,7 @@ numberOfRowsInSection:(NSInteger)section
     [self.favoriteTableView reloadData];
 }
 
-- (void)showAddLabelView:(TTFavoriteEntity *)entity
+- (void)showAddLabelView:(TTRealmFavoriteEntity *)entity
 {
     NSLog(@"ラベルボタンが押されました");
     

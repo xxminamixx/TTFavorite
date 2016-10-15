@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TTFavoriteEntity.h"
+#import "TTRealmFavoriteEntity.h"
 
 @interface TTAddLabelViewController : UIViewController
 
-@property TTFavoriteEntity *entity;
+@property TTRealmFavoriteEntity *entity;
 
 @end

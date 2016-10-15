@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "TTHomeViewController.h"
+#import "TTFavoriteManager.h"
 
 @interface AppDelegate ()
 
@@ -18,17 +18,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-//    TTHomeViewController *request = [[TTHomeViewController alloc] init];
-//
-//    __weak typeof(self) weakSelf = self;
-//    completedBlock completed = ^{
-//        __strong typeof(self) strongSelf = weakSelf;
-//        if (strongSelf) {
-//            [request.favoriteTableView reloadData];
-//        }
-//    };
-//    
-//    [request fetchFavoriteForUser:@"xxxxx_hobby" completed:completed];
     return YES;
 }
 
@@ -54,7 +43,7 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
-   
+    [[TTFavoriteManager singleton] saveEntity];
 }
 
 @end
