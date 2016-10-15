@@ -23,7 +23,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    self.navigationItem.title = @"ラベル選択";
     self.labelListTableView.delegate = self;
     self.labelListTableView.dataSource = self;
     

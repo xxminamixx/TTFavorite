@@ -28,6 +28,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.navigationItem.title = @"ラベル選択";
+    
     self.labelList = [[NSMutableArray alloc] init];
 
     self.labelListTableView.delegate = self;

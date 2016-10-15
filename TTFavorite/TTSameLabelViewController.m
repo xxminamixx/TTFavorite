@@ -24,8 +24,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.navigationItem.title = self.label;
     self.sameLabelEntityList = [[NSMutableArray alloc] init];
-    
     self.sameLabelTableView.estimatedRowHeight = 240;
     self.sameLabelTableView.rowHeight = UITableViewAutomaticDimension;
     self.sameLabelTableView.delegate = self;
