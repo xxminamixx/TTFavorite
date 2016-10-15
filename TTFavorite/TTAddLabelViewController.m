@@ -82,6 +82,7 @@
 {
     NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
     [ud removeObjectForKey:@"LabelList"];
+    self.labelList = nil;
     [self.labelListTableView reloadData];
 }
 

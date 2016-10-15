@@ -61,7 +61,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R2L-Jq-qGG">
-                                <state key="normal" title="削除"/>
+                                <state key="normal" title="ラベル全削除"/>
                                 <connections>
                                     <action selector="deleteButton:" destination="ePG-Wv-pah" eventType="touchUpInside" id="KI1-vx-Rpy"/>
                                 </connections>
