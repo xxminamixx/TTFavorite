@@ -5,6 +5,7 @@
 
 target 'TTFavorite' do
 pod 'SDWebImage'
+pod 'Realm'
 end
 
 target 'TTFavoriteTests' do

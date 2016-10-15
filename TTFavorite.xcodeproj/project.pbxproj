@@ -417,8 +417,8 @@
 				TargetAttributes = {
 					9DC21D5A1D6C3FBF0037D71F = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 629B3TVVNK;
-						ProvisioningStyle = Manual;
+						DevelopmentTeam = KRPQ8E7V25;
+						ProvisioningStyle = Automatic;
 					};
 					9DC21D731D6C3FC00037D71F = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -698,7 +698,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = 629B3TVVNK;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = KRPQ8E7V25;
 				INFOPLIST_FILE = TTFavorite/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -708,8 +709,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tutorial.TTFavorite;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "26f90f0a-4ab6-4cc5-a981-63ed3385425b";
-				PROVISIONING_PROFILE_SPECIFIER = "SONIC iDEP Wildcard";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -719,7 +720,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = 629B3TVVNK;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = KRPQ8E7V25;
 				INFOPLIST_FILE = TTFavorite/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -729,8 +731,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tutorial.TTFavorite;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "26f90f0a-4ab6-4cc5-a981-63ed3385425b";
-				PROVISIONING_PROFILE_SPECIFIER = "SONIC iDEP Wildcard";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
