@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -12,14 +12,14 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="340"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="TTFavoriteTableViewCell" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <frame key="frameInset" width="320" height="339.5"/>
+                <frame key="frameInset" width="320" height="339"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qd2-0g-BoK">
                         <color key="backgroundColor" red="0.8675556282722513" green="0.8675556282722513" blue="0.8675556282722513" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="64" id="7d0-D3-iqA"/>
-                            <constraint firstAttribute="width" constant="64" id="GGQ-I8-Z2x"/>
+                            <constraint firstAttribute="height" constant="32" id="7d0-D3-iqA"/>
+                            <constraint firstAttribute="width" constant="32" id="GGQ-I8-Z2x"/>
                             <constraint firstAttribute="height" constant="80" id="PCW-ge-75n"/>
                             <constraint firstAttribute="width" constant="80" id="YK8-85-QtJ"/>
                             <constraint firstAttribute="width" constant="80" id="taq-r7-fvo"/>
@@ -64,7 +64,6 @@
                     </button>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xng-De-iKT">
                         <constraints>
-                            <constraint firstAttribute="width" constant="110" id="5mq-u2-yhh"/>
                             <constraint firstAttribute="height" constant="110" id="TID-1G-Ssk"/>
                         </constraints>
                     </imageView>
@@ -84,6 +83,7 @@
                     <constraint firstItem="zBP-Ma-tFG" firstAttribute="leading" secondItem="3OI-ac-tEx" secondAttribute="leading" id="1D9-K3-u39"/>
                     <constraint firstItem="Xng-De-iKT" firstAttribute="top" relation="greaterThanOrEqual" secondItem="iaP-D7-S9T" secondAttribute="bottom" constant="10" id="4Qf-cG-rr5"/>
                     <constraint firstItem="5x3-mt-GrK" firstAttribute="top" secondItem="3OI-ac-tEx" secondAttribute="top" id="51L-f3-uSo"/>
+                    <constraint firstItem="Xng-De-iKT" firstAttribute="width" secondItem="Sk7-Ig-a6V" secondAttribute="width" id="5EP-WB-M8h"/>
                     <constraint firstItem="3OI-ac-tEx" firstAttribute="top" secondItem="Sk7-Ig-a6V" secondAttribute="bottom" constant="6" id="6eH-S4-5hm"/>
                     <constraint firstItem="Qd2-0g-BoK" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="8Gm-Mv-v0R"/>
                     <constraint firstItem="Xng-De-iKT" firstAttribute="trailing" secondItem="iaP-D7-S9T" secondAttribute="trailing" id="9yi-kw-hoW"/>
@@ -107,6 +107,7 @@
                     <constraint firstItem="Xng-De-iKT" firstAttribute="leading" secondItem="Sk7-Ig-a6V" secondAttribute="trailing" constant="6" id="nSX-f5-yvQ"/>
                     <constraint firstItem="Sk7-Ig-a6V" firstAttribute="leading" secondItem="iaP-D7-S9T" secondAttribute="leading" id="qBw-Je-5AX"/>
                     <constraint firstAttribute="trailing" secondItem="iaP-D7-S9T" secondAttribute="trailing" constant="10" id="x8E-YC-8yb"/>
+                    <constraint firstItem="5x3-mt-GrK" firstAttribute="width" secondItem="3OI-ac-tEx" secondAttribute="width" id="yG3-VS-bso"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

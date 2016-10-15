@@ -48,32 +48,33 @@
 {
     self.name.text = entity.name;
     self.text.text = entity.text;
+    [self imageRefresh:entity.imageList];
 }
 
-#pragma -mark - HeightCalc
--(CGFloat) height
-{
-    CGFloat margin10 = 10;
-    CGFloat margin5 = 5;
-    CGFloat iconHeight = 80;
-    CGFloat nameLabelHeight = 15; // ユーザ名のラベルの高さ
-    CGFloat imageHeight = 110; // 画像の高さ
-    CGFloat buttonHeight = 15; // お気に入りボタンとラベルボタンの高さ
- 
-    CGFloat bodyLabelW = self.text.bounds.size.width;
-    CGSize bodySize = [self.text.attributedText boundingRectWithSize:CGSizeMake(bodyLabelW, MAXFLOAT)
-                                                                  options:NSStringDrawingUsesLineFragmentOrigin
-                                                                  context:nil].size;
-    
-    if (bodySize.height <= iconHeight){
-        // ラベルの高さがiconの高さを超えない場合
-        return 240;
-    } else {
-        // ラベルの高さがiconのサイズ
-        return nameLabelHeight + (margin10 * 2) +bodySize.height + (margin10) + (imageHeight * 2) + (margin5 * 2) + buttonHeight + (margin5 * 2);
-    }
-    
-}
+//#pragma -mark - HeightCalc
+//-(CGFloat) height
+//{
+//    CGFloat margin10 = 10;
+//    CGFloat margin5 = 5;
+//    CGFloat iconHeight = 80;
+//    CGFloat nameLabelHeight = 15; // ユーザ名のラベルの高さ
+//    CGFloat imageHeight = 110; // 画像の高さ
+//    CGFloat buttonHeight = 15; // お気に入りボタンとラベルボタンの高さ
+// 
+//    CGFloat bodyLabelW = self.text.bounds.size.width;
+//    CGSize bodySize = [self.text.attributedText boundingRectWithSize:CGSizeMake(bodyLabelW, MAXFLOAT)
+//                                                                  options:NSStringDrawingUsesLineFragmentOrigin
+//                                                                  context:nil].size;
+//    
+//    if (bodySize.height <= iconHeight){
+//        // ラベルの高さがiconの高さを超えない場合
+//        return 240;
+//    } else {
+//        // ラベルの高さがiconのサイズ
+//        return nameLabelHeight + (margin10 * 2) +bodySize.height + (margin10) + (imageHeight * 2) + (margin5 * 2) + buttonHeight + (margin5 * 2);
+//    }
+//    
+//}
 
 #pragma -mark - SetImage
 /**
@@ -158,11 +159,6 @@
             self.image2Height.constant = 0;
             self.image3Height.constant = 0;
             self.image4Height.constant = 0;
-            
-            // image1のtextとのマージンを0にする(4つのUIImageのy座標の基準)
-//            self.image1TopMargin.constant = 0;
-//            self.image2TopMargin.constant = 0;
-            
             break;
         case 1:
             // 1個のときの処理
@@ -172,7 +168,6 @@
             self.image3Height.constant = 0;
             self.image4Height.constant = 0;
             // image1の下のマージンを0にする必要ある？
-            
             break;
         case 2:
             // 2個のときの処理
@@ -189,7 +184,6 @@
             self.image2.hidden = NO;
             self.image3Height.constant = 110;
             self.image4Height.constant = 0;
-
             break;
         case 4:
             // 4個のときの処理
@@ -198,7 +192,6 @@
             self.image2.hidden = NO;
             self.image3Height.constant = 110;
             self.image4Height.constant = 110;
-
             break;
         default:
             break;
