@@ -13,8 +13,17 @@
 		6AE1CD461D83A5CE009EA6FD /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AE1CD451D83A5CE009EA6FD /* Utils.m */; };
 		6AF8A2C11DA8F537004D44F8 /* TTMoreLoadingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AF8A2BF1DA8F537004D44F8 /* TTMoreLoadingTableViewCell.m */; };
 		6AF8A2C21DA8F537004D44F8 /* TTMoreLoadingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AF8A2C01DA8F537004D44F8 /* TTMoreLoadingTableViewCell.xib */; };
+		6AF8A2C51DA9C3AC004D44F8 /* TTAddLabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AF8A2C41DA9C3AC004D44F8 /* TTAddLabelView.m */; };
+		6AF8A2C71DA9C3BC004D44F8 /* TTAddLabelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AF8A2C61DA9C3BC004D44F8 /* TTAddLabelView.xib */; };
 		6AFC108F1D8EAA4000C8E807 /* libSDWebImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AFC108E1D8EAA4000C8E807 /* libSDWebImage.a */; };
 		6EE5D20DF76833FFCCF8E757 /* libPods-TTFavorite.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BA5F459E3CBB6253CB92DD47 /* libPods-TTFavorite.a */; };
+		9D16926C1DAF661000F46BF7 /* TTNewlabelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16926B1DAF661000F46BF7 /* TTNewlabelViewController.m */; };
+		9D1692711DAF714D00F46BF7 /* TTFavoriteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D1692701DAF714D00F46BF7 /* TTFavoriteManager.m */; };
+		9D1692751DAF895000F46BF7 /* TTLabelListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D1692731DAF895000F46BF7 /* TTLabelListTableViewCell.m */; };
+		9D1692761DAF895000F46BF7 /* TTLabelListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D1692741DAF895000F46BF7 /* TTLabelListTableViewCell.xib */; };
+		9D9A77A01DAE1120003DF858 /* TTNewLabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9A779F1DAE1120003DF858 /* TTNewLabelView.m */; };
+		9D9A77A21DAE1138003DF858 /* TTNewLabelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D9A77A11DAE1138003DF858 /* TTNewLabelView.xib */; };
+		9D9A77A51DAE3931003DF858 /* TTAddLabelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9A77A41DAE3931003DF858 /* TTAddLabelViewController.m */; };
 		9DC21D601D6C3FBF0037D71F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DC21D5F1D6C3FBF0037D71F /* main.m */; };
 		9DC21D631D6C3FC00037D71F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DC21D621D6C3FC00037D71F /* AppDelegate.m */; };
 		9DC21D691D6C3FC00037D71F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DC21D671D6C3FC00037D71F /* Main.storyboard */; };
@@ -25,6 +34,8 @@
 		9DC21D921D6C3FD30037D71F /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DC21D911D6C3FD30037D71F /* Social.framework */; };
 		9DC21D991D6C433C0037D71F /* TTHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DC21D981D6C433C0037D71F /* TTHomeViewController.m */; };
 		9DC21D9B1D6C45DD0037D71F /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DC21D9A1D6C45DD0037D71F /* Accounts.framework */; };
+		9DD0FDAD1DB08AA1008AE0B5 /* TTLabelSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DD0FDAC1DB08AA1008AE0B5 /* TTLabelSelectViewController.m */; };
+		9DD0FDB11DB09307008AE0B5 /* TTSameLabelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DD0FDB01DB09307008AE0B5 /* TTSameLabelViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,8 +66,23 @@
 		6AF8A2BE1DA8F537004D44F8 /* TTMoreLoadingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTMoreLoadingTableViewCell.h; sourceTree = "<group>"; };
 		6AF8A2BF1DA8F537004D44F8 /* TTMoreLoadingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTMoreLoadingTableViewCell.m; sourceTree = "<group>"; };
 		6AF8A2C01DA8F537004D44F8 /* TTMoreLoadingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TTMoreLoadingTableViewCell.xib; sourceTree = "<group>"; };
+		6AF8A2C31DA9C3AC004D44F8 /* TTAddLabelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTAddLabelView.h; sourceTree = "<group>"; };
+		6AF8A2C41DA9C3AC004D44F8 /* TTAddLabelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTAddLabelView.m; sourceTree = "<group>"; };
+		6AF8A2C61DA9C3BC004D44F8 /* TTAddLabelView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TTAddLabelView.xib; sourceTree = "<group>"; };
 		6AFC108E1D8EAA4000C8E807 /* libSDWebImage.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSDWebImage.a; path = "Pods/../build/Debug-iphoneos/libSDWebImage.a"; sourceTree = "<group>"; };
 		82107791673DE5E6CCD24C94 /* Pods-TTFavorite.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTFavorite.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TTFavorite/Pods-TTFavorite.debug.xcconfig"; sourceTree = "<group>"; };
+		9D16926A1DAF661000F46BF7 /* TTNewlabelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTNewlabelViewController.h; sourceTree = "<group>"; };
+		9D16926B1DAF661000F46BF7 /* TTNewlabelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTNewlabelViewController.m; sourceTree = "<group>"; };
+		9D16926F1DAF714D00F46BF7 /* TTFavoriteManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTFavoriteManager.h; sourceTree = "<group>"; };
+		9D1692701DAF714D00F46BF7 /* TTFavoriteManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTFavoriteManager.m; sourceTree = "<group>"; };
+		9D1692721DAF895000F46BF7 /* TTLabelListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTLabelListTableViewCell.h; sourceTree = "<group>"; };
+		9D1692731DAF895000F46BF7 /* TTLabelListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTLabelListTableViewCell.m; sourceTree = "<group>"; };
+		9D1692741DAF895000F46BF7 /* TTLabelListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TTLabelListTableViewCell.xib; sourceTree = "<group>"; };
+		9D9A779E1DAE1120003DF858 /* TTNewLabelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTNewLabelView.h; sourceTree = "<group>"; };
+		9D9A779F1DAE1120003DF858 /* TTNewLabelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTNewLabelView.m; sourceTree = "<group>"; };
+		9D9A77A11DAE1138003DF858 /* TTNewLabelView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TTNewLabelView.xib; sourceTree = "<group>"; };
+		9D9A77A31DAE3931003DF858 /* TTAddLabelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTAddLabelViewController.h; sourceTree = "<group>"; };
+		9D9A77A41DAE3931003DF858 /* TTAddLabelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTAddLabelViewController.m; sourceTree = "<group>"; };
 		9DC21D5B1D6C3FBF0037D71F /* TTFavorite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TTFavorite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DC21D5F1D6C3FBF0037D71F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9DC21D611D6C3FBF0037D71F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -75,6 +101,10 @@
 		9DC21D971D6C433C0037D71F /* TTHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTHomeViewController.h; sourceTree = "<group>"; };
 		9DC21D981D6C433C0037D71F /* TTHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTHomeViewController.m; sourceTree = "<group>"; };
 		9DC21D9A1D6C45DD0037D71F /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		9DD0FDAB1DB08AA1008AE0B5 /* TTLabelSelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTLabelSelectViewController.h; sourceTree = "<group>"; };
+		9DD0FDAC1DB08AA1008AE0B5 /* TTLabelSelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTLabelSelectViewController.m; sourceTree = "<group>"; };
+		9DD0FDAF1DB09307008AE0B5 /* TTSameLabelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTSameLabelViewController.h; sourceTree = "<group>"; };
+		9DD0FDB01DB09307008AE0B5 /* TTSameLabelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTSameLabelViewController.m; sourceTree = "<group>"; };
 		BA5F459E3CBB6253CB92DD47 /* libPods-TTFavorite.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TTFavorite.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C79F93F905B93D71A0A10E6F /* Pods-TTFavorite.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTFavorite.release.xcconfig"; path = "Pods/Target Support Files/Pods-TTFavorite/Pods-TTFavorite.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -142,6 +172,42 @@
 				C79F93F905B93D71A0A10E6F /* Pods-TTFavorite.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		9D1692691DAF65D200F46BF7 /* TTNewlabelViewController */ = {
+			isa = PBXGroup;
+			children = (
+				9D16926A1DAF661000F46BF7 /* TTNewlabelViewController.h */,
+				9D16926B1DAF661000F46BF7 /* TTNewlabelViewController.m */,
+			);
+			name = TTNewlabelViewController;
+			sourceTree = "<group>";
+		};
+		9D16926D1DAF712100F46BF7 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				6AE1CD401D83A2AA009EA6FD /* TTFavoriteEntity.h */,
+				6AE1CD411D83A2AA009EA6FD /* TTFavoriteEntity.m */,
+			);
+			name = Entity;
+			sourceTree = "<group>";
+		};
+		9D16926E1DAF713300F46BF7 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				9D16926F1DAF714D00F46BF7 /* TTFavoriteManager.h */,
+				9D1692701DAF714D00F46BF7 /* TTFavoriteManager.m */,
+			);
+			name = Manager;
+			sourceTree = "<group>";
+		};
+		9D1692771DAF8DD100F46BF7 /* LabelSelectViewController */ = {
+			isa = PBXGroup;
+			children = (
+				9DD0FDAB1DB08AA1008AE0B5 /* TTLabelSelectViewController.h */,
+				9DD0FDAC1DB08AA1008AE0B5 /* TTLabelSelectViewController.m */,
+			);
+			name = LabelSelectViewController;
 			sourceTree = "<group>";
 		};
 		9DC21D521D6C3FBF0037D71F = {
@@ -229,6 +295,15 @@
 				6AF8A2BE1DA8F537004D44F8 /* TTMoreLoadingTableViewCell.h */,
 				6AF8A2BF1DA8F537004D44F8 /* TTMoreLoadingTableViewCell.m */,
 				6AF8A2C01DA8F537004D44F8 /* TTMoreLoadingTableViewCell.xib */,
+				6AF8A2C31DA9C3AC004D44F8 /* TTAddLabelView.h */,
+				6AF8A2C41DA9C3AC004D44F8 /* TTAddLabelView.m */,
+				6AF8A2C61DA9C3BC004D44F8 /* TTAddLabelView.xib */,
+				9D9A779E1DAE1120003DF858 /* TTNewLabelView.h */,
+				9D9A779F1DAE1120003DF858 /* TTNewLabelView.m */,
+				9D9A77A11DAE1138003DF858 /* TTNewLabelView.xib */,
+				9D1692721DAF895000F46BF7 /* TTLabelListTableViewCell.h */,
+				9D1692731DAF895000F46BF7 /* TTLabelListTableViewCell.m */,
+				9D1692741DAF895000F46BF7 /* TTLabelListTableViewCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -237,6 +312,10 @@
 			isa = PBXGroup;
 			children = (
 				6A8A37381D86F6C800BB915C /* HomeViewController */,
+				9DE495BE1DAF204600B3201B /* TTAddLabelViewController */,
+				9D1692691DAF65D200F46BF7 /* TTNewlabelViewController */,
+				9D1692771DAF8DD100F46BF7 /* LabelSelectViewController */,
+				9DD0FDAE1DB092F5008AE0B5 /* SameLabelViewController */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -244,10 +323,28 @@
 		9DC21D961D6C40110037D71F /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				6AE1CD401D83A2AA009EA6FD /* TTFavoriteEntity.h */,
-				6AE1CD411D83A2AA009EA6FD /* TTFavoriteEntity.m */,
+				9D16926E1DAF713300F46BF7 /* Manager */,
+				9D16926D1DAF712100F46BF7 /* Entity */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		9DD0FDAE1DB092F5008AE0B5 /* SameLabelViewController */ = {
+			isa = PBXGroup;
+			children = (
+				9DD0FDAF1DB09307008AE0B5 /* TTSameLabelViewController.h */,
+				9DD0FDB01DB09307008AE0B5 /* TTSameLabelViewController.m */,
+			);
+			name = SameLabelViewController;
+			sourceTree = "<group>";
+		};
+		9DE495BE1DAF204600B3201B /* TTAddLabelViewController */ = {
+			isa = PBXGroup;
+			children = (
+				9D9A77A31DAE3931003DF858 /* TTAddLabelViewController.h */,
+				9D9A77A41DAE3931003DF858 /* TTAddLabelViewController.m */,
+			);
+			name = TTAddLabelViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -320,7 +417,8 @@
 				TargetAttributes = {
 					9DC21D5A1D6C3FBF0037D71F = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = KRPQ8E7V25;
+						DevelopmentTeam = 629B3TVVNK;
+						ProvisioningStyle = Manual;
 					};
 					9DC21D731D6C3FC00037D71F = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -358,10 +456,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				6AF8A2C21DA8F537004D44F8 /* TTMoreLoadingTableViewCell.xib in Resources */,
+				9D9A77A21DAE1138003DF858 /* TTNewLabelView.xib in Resources */,
 				9DC21D6E1D6C3FC00037D71F /* LaunchScreen.storyboard in Resources */,
 				9DC21D6B1D6C3FC00037D71F /* Assets.xcassets in Resources */,
+				9D1692761DAF895000F46BF7 /* TTLabelListTableViewCell.xib in Resources */,
 				9DC21D691D6C3FC00037D71F /* Main.storyboard in Resources */,
 				6A4AFB401D83EF7B003720F8 /* TTFavoriteTableViewCell.xib in Resources */,
+				6AF8A2C71DA9C3BC004D44F8 /* TTAddLabelView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,12 +536,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DC21D631D6C3FC00037D71F /* AppDelegate.m in Sources */,
+				9D1692711DAF714D00F46BF7 /* TTFavoriteManager.m in Sources */,
+				9D16926C1DAF661000F46BF7 /* TTNewlabelViewController.m in Sources */,
+				9DD0FDAD1DB08AA1008AE0B5 /* TTLabelSelectViewController.m in Sources */,
 				9DC21D601D6C3FBF0037D71F /* main.m in Sources */,
 				6AE1CD421D83A2AA009EA6FD /* TTFavoriteEntity.m in Sources */,
+				9D1692751DAF895000F46BF7 /* TTLabelListTableViewCell.m in Sources */,
+				9D9A77A01DAE1120003DF858 /* TTNewLabelView.m in Sources */,
 				6AE1CD461D83A5CE009EA6FD /* Utils.m in Sources */,
+				9DD0FDB11DB09307008AE0B5 /* TTSameLabelViewController.m in Sources */,
+				9D9A77A51DAE3931003DF858 /* TTAddLabelViewController.m in Sources */,
 				9DC21D991D6C433C0037D71F /* TTHomeViewController.m in Sources */,
 				6AF8A2C11DA8F537004D44F8 /* TTMoreLoadingTableViewCell.m in Sources */,
 				6A4AFB3F1D83EF7B003720F8 /* TTFavoriteTableViewCell.m in Sources */,
+				6AF8A2C51DA9C3AC004D44F8 /* TTAddLabelView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -589,7 +698,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = KRPQ8E7V25;
+				DEVELOPMENT_TEAM = 629B3TVVNK;
 				INFOPLIST_FILE = TTFavorite/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -599,6 +708,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tutorial.TTFavorite;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "26f90f0a-4ab6-4cc5-a981-63ed3385425b";
+				PROVISIONING_PROFILE_SPECIFIER = "SONIC iDEP Wildcard";
 			};
 			name = Debug;
 		};
@@ -608,7 +719,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = KRPQ8E7V25;
+				DEVELOPMENT_TEAM = 629B3TVVNK;
 				INFOPLIST_FILE = TTFavorite/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -618,6 +729,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tutorial.TTFavorite;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "26f90f0a-4ab6-4cc5-a981-63ed3385425b";
+				PROVISIONING_PROFILE_SPECIFIER = "SONIC iDEP Wildcard";
 			};
 			name = Release;
 		};

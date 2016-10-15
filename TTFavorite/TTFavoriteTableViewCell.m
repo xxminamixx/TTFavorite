@@ -26,6 +26,8 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *image4Height;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *image2TopMargin;
 
+@property TTFavoriteEntity *entity;
+
 - (IBAction)favoriteButton:(id)sender;
 - (IBAction)labelButton:(id)sender;
 
@@ -46,35 +48,11 @@
 // 自身のプロパティにエンンティティをセット
 - (void)setMyProperty:(TTFavoriteEntity *)entity
 {
+    self.entity = entity;
     self.name.text = entity.name;
     self.text.text = entity.text;
     [self imageRefresh:entity.imageList];
 }
-
-//#pragma -mark - HeightCalc
-//-(CGFloat) height
-//{
-//    CGFloat margin10 = 10;
-//    CGFloat margin5 = 5;
-//    CGFloat iconHeight = 80;
-//    CGFloat nameLabelHeight = 15; // ユーザ名のラベルの高さ
-//    CGFloat imageHeight = 110; // 画像の高さ
-//    CGFloat buttonHeight = 15; // お気に入りボタンとラベルボタンの高さ
-// 
-//    CGFloat bodyLabelW = self.text.bounds.size.width;
-//    CGSize bodySize = [self.text.attributedText boundingRectWithSize:CGSizeMake(bodyLabelW, MAXFLOAT)
-//                                                                  options:NSStringDrawingUsesLineFragmentOrigin
-//                                                                  context:nil].size;
-//    
-//    if (bodySize.height <= iconHeight){
-//        // ラベルの高さがiconの高さを超えない場合
-//        return 240;
-//    } else {
-//        // ラベルの高さがiconのサイズ
-//        return nameLabelHeight + (margin10 * 2) +bodySize.height + (margin10) + (imageHeight * 2) + (margin5 * 2) + buttonHeight + (margin5 * 2);
-//    }
-//    
-//}
 
 #pragma -mark - SetImage
 /**
@@ -144,7 +122,9 @@
 - (IBAction)favoriteButton:(id)sender {
 }
 
-- (IBAction)labelButton:(id)sender {
+- (IBAction)labelButton:(id)sender
+{
+    [self.delagate showAddLabelView:self.entity]; //自身の情報が入ったEntityを渡す
 }
 
 #pragma -mark - ImageLayout
