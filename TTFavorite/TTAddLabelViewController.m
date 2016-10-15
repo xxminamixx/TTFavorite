@@ -1,4 +1,4 @@
-//
+    //
 //  TTAddLabelViewController.m
 //  TTFavorite
 //
@@ -97,8 +97,10 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    [[TTFavoriteManager singleton].favoriteList addObject:self.labelList[indexPath.row]];
-//    [self.navigationController popViewControllerAnimated:YES];
+    self.entity.label = self.labelList[indexPath.row];
+    [[TTFavoriteManager singleton].favoriteList addObject:self.entity];
+    [[TTFavoriteManager singleton] saveLabel:self.labelList[indexPath.row]];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

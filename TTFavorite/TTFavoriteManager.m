@@ -31,14 +31,24 @@ static TTFavoriteManager *sharedInstance = nil;
 
 - (void)saveLabel:(NSString *)label
 {
+    BOOL isAlreadyLabel = NO; //同じラベルがすでに追加されているか判定
     NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
     NSMutableArray *labelList = [[ud objectForKey:@"LabelList"] mutableCopy]; // 永続化されいてるラベル配列を取得;
     if (!labelList) {
         labelList = [[NSMutableArray alloc] init];
     }
-    [labelList addObject:label]; // ラベルを追加
-    [ud setObject:labelList forKey:@"LabelList"]; //　永続化
-
+    //　すでに同じラベルがないことを判定
+    for (NSString *alreadyLabel in labelList) {
+        if([alreadyLabel isEqualToString:label]) {
+            isAlreadyLabel = YES;
+        }
+    }
+    
+    //同じラベルがなかったら
+    if (!isAlreadyLabel) {
+        [labelList addObject:label]; // ラベルを追加
+        [ud setObject:labelList forKey:@"LabelList"]; //　永続化
+    }
 }
 
 @end
