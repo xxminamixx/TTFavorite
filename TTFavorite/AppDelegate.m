@@ -43,7 +43,7 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
-    [[TTFavoriteManager singleton] saveEntity];
+//    [[TTFavoriteManager singleton] saveEntity];
 }
 
 @end
