@@ -19,7 +19,7 @@
 
 @property (nonatomic) ACAccountStore *accountStore;
 @property NSMutableArray *favoriteList;
-
+@property TTFavoriteTableViewCell *dummyCell;
 
 @end
 
@@ -38,15 +38,23 @@
 {
     [super viewDidLoad];
     
+    self.navigationItem.title = @"お気に入りビューワー＠みなみ";
+
+    // 高さ計算が上手くいかない場合は以下を追加する
+    self.favoriteTableView.estimatedRowHeight = 240;
+    self.favoriteTableView.rowHeight = UITableViewAutomaticDimension;
+    
     // cellの登録
     UINib *nib = [UINib nibWithNibName:@"TTFavoriteTableViewCell" bundle:nil];
     [self.favoriteTableView registerNib:nib forCellReuseIdentifier:@"Cell"];
+    self.dummyCell = [self.favoriteTableView dequeueReusableCellWithIdentifier:@"Cell"];
     
     self.favoriteTableView.delegate = self;
     self.favoriteTableView.dataSource = self;
     
     ACAccountStore *store = [[ACAccountStore alloc] init];
     ACAccountType *type = [store accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
+    
     
     UIBarButtonItem* left1 = [[UIBarButtonItem alloc]
                               initWithTitle:@"複数選択"
@@ -70,14 +78,14 @@
                 
                 // ユーザ名
                 NSString* userName = account.username;
-                NSLog(@"%@",userName);
+//                NSLog(@"%@",userName);
                 
                 // ユーザID
                 NSString* userID = [account valueForKeyPath:@"properties.user_id"];
-                NSLog(@"%@",userID);
+//                NSLog(@"%@",userID);
                 
             } else {
-                NSLog(@"登録アカウントなし");
+//                NSLog(@"登録アカウントなし");
             }
         }
     };
@@ -89,7 +97,9 @@
     completedBlock completed = ^{
         __strong typeof(self) strongSelf = weakSelf;
         if (strongSelf) {
-            [self.favoriteTableView reloadData];
+            dispatch_async(dispatch_get_main_queue(),^{
+                [self.favoriteTableView reloadData];
+            });
         }
     };
     
@@ -149,17 +159,17 @@
                                                                                             error:&jsonError];
                              //　フェッチしたデータがfavoriteDataに格納
                              if (favoriteData) {
-//                                 NSLog(@"%@", favoriteData);
-                                 for (NSDictionary *dic in favoriteData) {
+                                NSLog(@"%@", favoriteData);
+                                for (NSDictionary *dic in favoriteData) {
                                      TTFavoriteEntity *entity = [TTFavoriteEntity new];
                                      entity.text = [dic valueForKey:@"text"];
                                      entity.name = [dic valueForKeyPath:@"user.name"];
-                                     entity.image = [dic valueForKeyPath:@"entities.media.media_url"];
-                                     entity.icon = [dic valueForKeyPath:@"user.profile_image_url"];
-                                     NSLog(@"%@", entity.text);
-                                     NSLog(@"%@", entity.name);
-                                     NSLog(@"%@", entity.image);
-                                     NSLog(@"%@", entity.icon);
+                                     entity.imageList = [dic valueForKeyPath:@"extended_entities.media.media_url_https"];
+                                     entity.icon = [dic valueForKeyPath:@"user.profile_image_url_https"];
+//                                     NSLog(@"%@", entity.text);
+//                                     NSLog(@"%@", entity.name);
+//                                     NSLog(@"%@", entity.image);
+//                                     NSLog(@"%@", entity.icon);
                                      [self.favoriteList addObject:entity];
                                  }
                                  block();
@@ -193,12 +203,41 @@ numberOfRowsInSection:(NSInteger)section
     TTFavoriteTableViewCell *cell =
     [self.favoriteTableView dequeueReusableCellWithIdentifier:@"Cell"];
     
+    if (cell == nil) {
+        cell = [[TTFavoriteTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
+    }
+    
     TTFavoriteEntity *entity = [[TTFavoriteEntity alloc] init];
     entity = self.favoriteList[indexPath.row];
     
     [cell setMyProperty:entity];
     
+    // 投稿画像の配列を渡す
+    [cell imageRefresh:entity.imageList];
+    
+    if (entity.icon) {
+        NSURL *url = [NSURL URLWithString:entity.icon];
+        [cell iconRefresh:url];
+    }
+
+    
     return cell;
 }
+
+//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    TTFavoriteEntity *entity = [[TTFavoriteEntity alloc] init];
+//    entity = self.favoriteList[indexPath.row];
+//    [self.dummyCell setMyProperty:entity];
+//    
+//    [self.dummyCell imageRefresh:entity.imageList];
+//    
+//    if (entity.icon) {
+//        NSURL *url = [NSURL URLWithString:entity.icon];
+//        [self.dummyCell iconRefresh:url];
+//    }
+//    
+//    return self.dummyCell.height;
+//}
 
 @end

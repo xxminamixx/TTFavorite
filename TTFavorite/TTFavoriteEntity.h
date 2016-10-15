@@ -10,9 +10,10 @@
 
 @interface TTFavoriteEntity : NSObject
 
-@property NSString *name;
-@property NSString *text;
-@property NSString *image;
-@property NSString *icon;
+@property NSString *name; // ユーザ名
+@property NSString *text; // ツイート本文
+@property NSMutableArray *imageList; // 画像があった場合のurl
+@property NSString *icon; // アイコン画像url
+@property NSString *label; //　フォルダ分け用のlabel
 
 @end

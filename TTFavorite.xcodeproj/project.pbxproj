@@ -11,6 +11,8 @@
 		6A4AFB401D83EF7B003720F8 /* TTFavoriteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A4AFB3E1D83EF7B003720F8 /* TTFavoriteTableViewCell.xib */; };
 		6AE1CD421D83A2AA009EA6FD /* TTFavoriteEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AE1CD411D83A2AA009EA6FD /* TTFavoriteEntity.m */; };
 		6AE1CD461D83A5CE009EA6FD /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AE1CD451D83A5CE009EA6FD /* Utils.m */; };
+		6AFC108F1D8EAA4000C8E807 /* libSDWebImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AFC108E1D8EAA4000C8E807 /* libSDWebImage.a */; };
+		6EE5D20DF76833FFCCF8E757 /* libPods-TTFavorite.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BA5F459E3CBB6253CB92DD47 /* libPods-TTFavorite.a */; };
 		9DC21D601D6C3FBF0037D71F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DC21D5F1D6C3FBF0037D71F /* main.m */; };
 		9DC21D631D6C3FC00037D71F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DC21D621D6C3FC00037D71F /* AppDelegate.m */; };
 		9DC21D691D6C3FC00037D71F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DC21D671D6C3FC00037D71F /* Main.storyboard */; };
@@ -48,6 +50,8 @@
 		6AE1CD411D83A2AA009EA6FD /* TTFavoriteEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTFavoriteEntity.m; sourceTree = "<group>"; };
 		6AE1CD441D83A5CE009EA6FD /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		6AE1CD451D83A5CE009EA6FD /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
+		6AFC108E1D8EAA4000C8E807 /* libSDWebImage.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSDWebImage.a; path = "Pods/../build/Debug-iphoneos/libSDWebImage.a"; sourceTree = "<group>"; };
+		82107791673DE5E6CCD24C94 /* Pods-TTFavorite.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTFavorite.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TTFavorite/Pods-TTFavorite.debug.xcconfig"; sourceTree = "<group>"; };
 		9DC21D5B1D6C3FBF0037D71F /* TTFavorite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TTFavorite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DC21D5F1D6C3FBF0037D71F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9DC21D611D6C3FBF0037D71F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -66,6 +70,8 @@
 		9DC21D971D6C433C0037D71F /* TTHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTHomeViewController.h; sourceTree = "<group>"; };
 		9DC21D981D6C433C0037D71F /* TTHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTHomeViewController.m; sourceTree = "<group>"; };
 		9DC21D9A1D6C45DD0037D71F /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		BA5F459E3CBB6253CB92DD47 /* libPods-TTFavorite.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TTFavorite.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C79F93F905B93D71A0A10E6F /* Pods-TTFavorite.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTFavorite.release.xcconfig"; path = "Pods/Target Support Files/Pods-TTFavorite/Pods-TTFavorite.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,8 +79,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6AFC108F1D8EAA4000C8E807 /* libSDWebImage.a in Frameworks */,
 				9DC21D9B1D6C45DD0037D71F /* Accounts.framework in Frameworks */,
 				9DC21D921D6C3FD30037D71F /* Social.framework in Frameworks */,
+				6EE5D20DF76833FFCCF8E757 /* libPods-TTFavorite.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +103,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3AE61369DFDB267C006E0FFB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6AFC108E1D8EAA4000C8E807 /* libSDWebImage.a */,
+				BA5F459E3CBB6253CB92DD47 /* libPods-TTFavorite.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		6A8A37381D86F6C800BB915C /* HomeViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +130,15 @@
 			name = Utility;
 			sourceTree = "<group>";
 		};
+		77EFBBC683964D12F68DD3C5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				82107791673DE5E6CCD24C94 /* Pods-TTFavorite.debug.xcconfig */,
+				C79F93F905B93D71A0A10E6F /* Pods-TTFavorite.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		9DC21D521D6C3FBF0037D71F = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +147,8 @@
 				9DC21D771D6C3FC00037D71F /* TTFavoriteTests */,
 				9DC21D821D6C3FC00037D71F /* TTFavoriteUITests */,
 				9DC21D5C1D6C3FBF0037D71F /* Products */,
+				77EFBBC683964D12F68DD3C5 /* Pods */,
+				3AE61369DFDB267C006E0FFB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -221,9 +249,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9DC21D881D6C3FC00037D71F /* Build configuration list for PBXNativeTarget "TTFavorite" */;
 			buildPhases = (
+				A31CF952AA6315185B37B993 /* Check Pods Manifest.lock */,
 				9DC21D571D6C3FBF0037D71F /* Sources */,
 				9DC21D581D6C3FBF0037D71F /* Frameworks */,
 				9DC21D591D6C3FBF0037D71F /* Resources */,
+				4A04235B299A256E06343A92 /* Embed Pods Frameworks */,
+				8FA0923DAD9F81F7F8328730 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -276,7 +307,7 @@
 		9DC21D531D6C3FBF0037D71F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "南　京兵";
 				TargetAttributes = {
 					9DC21D5A1D6C3FBF0037D71F = {
@@ -340,6 +371,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4A04235B299A256E06343A92 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TTFavorite/Pods-TTFavorite-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8FA0923DAD9F81F7F8328730 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TTFavorite/Pods-TTFavorite-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A31CF952AA6315185B37B993 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9DC21D571D6C3FBF0037D71F /* Sources */ = {
@@ -420,8 +499,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -465,8 +546,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -492,12 +575,18 @@
 		};
 		9DC21D891D6C3FC00037D71F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 82107791673DE5E6CCD24C94 /* Pods-TTFavorite.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = KRPQ8E7V25;
 				INFOPLIST_FILE = TTFavorite/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tutorial.TTFavorite;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -505,12 +594,18 @@
 		};
 		9DC21D8A1D6C3FC00037D71F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C79F93F905B93D71A0A10E6F /* Pods-TTFavorite.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = KRPQ8E7V25;
 				INFOPLIST_FILE = TTFavorite/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tutorial.TTFavorite;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
