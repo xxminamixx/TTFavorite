@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		6A2F7E951DB1D7D8008ECFF0 /* TTRealmFavoriteEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A2F7E941DB1D7D8008ECFF0 /* TTRealmFavoriteEntity.m */; };
+		6A2F7E981DB21470008ECFF0 /* TTTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A2F7E971DB21470008ECFF0 /* TTTabBarController.m */; };
+		6A2F7E9C1DB214C2008ECFF0 /* folder.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A2F7E9A1DB214C2008ECFF0 /* folder.png */; };
+		6A2F7E9D1DB214C2008ECFF0 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A2F7E9B1DB214C2008ECFF0 /* home.png */; };
 		6A4AFB3F1D83EF7B003720F8 /* TTFavoriteTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A4AFB3D1D83EF7B003720F8 /* TTFavoriteTableViewCell.m */; };
 		6A4AFB401D83EF7B003720F8 /* TTFavoriteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A4AFB3E1D83EF7B003720F8 /* TTFavoriteTableViewCell.xib */; };
 		6AE1CD421D83A2AA009EA6FD /* TTFavoriteEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AE1CD411D83A2AA009EA6FD /* TTFavoriteEntity.m */; };
@@ -59,6 +62,10 @@
 /* Begin PBXFileReference section */
 		6A2F7E931DB1D7D8008ECFF0 /* TTRealmFavoriteEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTRealmFavoriteEntity.h; sourceTree = "<group>"; };
 		6A2F7E941DB1D7D8008ECFF0 /* TTRealmFavoriteEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTRealmFavoriteEntity.m; sourceTree = "<group>"; };
+		6A2F7E961DB21470008ECFF0 /* TTTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTabBarController.h; sourceTree = "<group>"; };
+		6A2F7E971DB21470008ECFF0 /* TTTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTabBarController.m; sourceTree = "<group>"; };
+		6A2F7E9A1DB214C2008ECFF0 /* folder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = folder.png; path = image/folder.png; sourceTree = SOURCE_ROOT; };
+		6A2F7E9B1DB214C2008ECFF0 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = home.png; path = image/home.png; sourceTree = SOURCE_ROOT; };
 		6A4AFB3C1D83EF7B003720F8 /* TTFavoriteTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTFavoriteTableViewCell.h; sourceTree = "<group>"; };
 		6A4AFB3D1D83EF7B003720F8 /* TTFavoriteTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTFavoriteTableViewCell.m; sourceTree = "<group>"; };
 		6A4AFB3E1D83EF7B003720F8 /* TTFavoriteTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TTFavoriteTableViewCell.xib; sourceTree = "<group>"; };
@@ -148,6 +155,15 @@
 				BA5F459E3CBB6253CB92DD47 /* libPods-TTFavorite.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6A2F7E991DB214B4008ECFF0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6A2F7E9A1DB214C2008ECFF0 /* folder.png */,
+				6A2F7E9B1DB214C2008ECFF0 /* home.png */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		6A8A37381D86F6C800BB915C /* HomeViewController */ = {
@@ -241,6 +257,7 @@
 		9DC21D5D1D6C3FBF0037D71F /* TTFavorite */ = {
 			isa = PBXGroup;
 			children = (
+				6A2F7E991DB214B4008ECFF0 /* Resources */,
 				9DC21D611D6C3FBF0037D71F /* AppDelegate.h */,
 				9DC21D621D6C3FC00037D71F /* AppDelegate.m */,
 				6AE1CD431D83A5A4009EA6FD /* Utility */,
@@ -321,6 +338,8 @@
 				9D1692691DAF65D200F46BF7 /* TTNewlabelViewController */,
 				9D1692771DAF8DD100F46BF7 /* LabelSelectViewController */,
 				9DD0FDAE1DB092F5008AE0B5 /* SameLabelViewController */,
+				6A2F7E961DB21470008ECFF0 /* TTTabBarController.h */,
+				6A2F7E971DB21470008ECFF0 /* TTTabBarController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -462,9 +481,11 @@
 			files = (
 				6AF8A2C21DA8F537004D44F8 /* TTMoreLoadingTableViewCell.xib in Resources */,
 				9D9A77A21DAE1138003DF858 /* TTNewLabelView.xib in Resources */,
+				6A2F7E9C1DB214C2008ECFF0 /* folder.png in Resources */,
 				9DC21D6E1D6C3FC00037D71F /* LaunchScreen.storyboard in Resources */,
 				9DC21D6B1D6C3FC00037D71F /* Assets.xcassets in Resources */,
 				9D1692761DAF895000F46BF7 /* TTLabelListTableViewCell.xib in Resources */,
+				6A2F7E9D1DB214C2008ECFF0 /* home.png in Resources */,
 				9DC21D691D6C3FC00037D71F /* Main.storyboard in Resources */,
 				6A4AFB401D83EF7B003720F8 /* TTFavoriteTableViewCell.xib in Resources */,
 				6AF8A2C71DA9C3BC004D44F8 /* TTAddLabelView.xib in Resources */,
@@ -550,6 +571,7 @@
 				9D9A77A01DAE1120003DF858 /* TTNewLabelView.m in Sources */,
 				6A2F7E951DB1D7D8008ECFF0 /* TTRealmFavoriteEntity.m in Sources */,
 				6AE1CD461D83A5CE009EA6FD /* Utils.m in Sources */,
+				6A2F7E981DB21470008ECFF0 /* TTTabBarController.m in Sources */,
 				9DD0FDB11DB09307008AE0B5 /* TTSameLabelViewController.m in Sources */,
 				9D9A77A51DAE3931003DF858 /* TTAddLabelViewController.m in Sources */,
 				9DC21D991D6C433C0037D71F /* TTHomeViewController.m in Sources */,

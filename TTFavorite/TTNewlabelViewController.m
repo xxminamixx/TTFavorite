@@ -21,6 +21,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.navigationItem.title = @"新規ラベル";
     TTNewLabelView *view = [self.addNewLabelView viewWithTag:1];
     view.delegate = self;
 

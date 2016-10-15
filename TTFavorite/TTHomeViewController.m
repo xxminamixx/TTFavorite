@@ -49,7 +49,7 @@ NSInteger numberOfPage;
     self.count = @"10";
     self.page = @"0";
     
-    self.navigationItem.title = @"お気に入りビューワー＠みなみ";
+    self.navigationItem.title = @"ホーム";
 
     // 高さ計算が上手くいかない場合は以下を追加する
     self.favoriteTableView.estimatedRowHeight = 240;
