@@ -7,6 +7,13 @@
 //
 
 #import "TTFavoriteManager.h"
+#import <Realm/Realm.h>
+
+@interface TTFavoriteManager()
+
+@property RLMRealm *realm;
+
+@end
 
 static TTFavoriteManager *sharedInstance = nil;
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6A2F7E951DB1D7D8008ECFF0 /* TTRealmFavoriteEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A2F7E941DB1D7D8008ECFF0 /* TTRealmFavoriteEntity.m */; };
 		6A4AFB3F1D83EF7B003720F8 /* TTFavoriteTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A4AFB3D1D83EF7B003720F8 /* TTFavoriteTableViewCell.m */; };
 		6A4AFB401D83EF7B003720F8 /* TTFavoriteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A4AFB3E1D83EF7B003720F8 /* TTFavoriteTableViewCell.xib */; };
 		6AE1CD421D83A2AA009EA6FD /* TTFavoriteEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AE1CD411D83A2AA009EA6FD /* TTFavoriteEntity.m */; };
@@ -56,6 +57,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6A2F7E931DB1D7D8008ECFF0 /* TTRealmFavoriteEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTRealmFavoriteEntity.h; sourceTree = "<group>"; };
+		6A2F7E941DB1D7D8008ECFF0 /* TTRealmFavoriteEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTRealmFavoriteEntity.m; sourceTree = "<group>"; };
 		6A4AFB3C1D83EF7B003720F8 /* TTFavoriteTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTFavoriteTableViewCell.h; sourceTree = "<group>"; };
 		6A4AFB3D1D83EF7B003720F8 /* TTFavoriteTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTFavoriteTableViewCell.m; sourceTree = "<group>"; };
 		6A4AFB3E1D83EF7B003720F8 /* TTFavoriteTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TTFavoriteTableViewCell.xib; sourceTree = "<group>"; };
@@ -188,6 +191,8 @@
 			children = (
 				6AE1CD401D83A2AA009EA6FD /* TTFavoriteEntity.h */,
 				6AE1CD411D83A2AA009EA6FD /* TTFavoriteEntity.m */,
+				6A2F7E931DB1D7D8008ECFF0 /* TTRealmFavoriteEntity.h */,
+				6A2F7E941DB1D7D8008ECFF0 /* TTRealmFavoriteEntity.m */,
 			);
 			name = Entity;
 			sourceTree = "<group>";
@@ -543,6 +548,7 @@
 				6AE1CD421D83A2AA009EA6FD /* TTFavoriteEntity.m in Sources */,
 				9D1692751DAF895000F46BF7 /* TTLabelListTableViewCell.m in Sources */,
 				9D9A77A01DAE1120003DF858 /* TTNewLabelView.m in Sources */,
+				6A2F7E951DB1D7D8008ECFF0 /* TTRealmFavoriteEntity.m in Sources */,
 				6AE1CD461D83A5CE009EA6FD /* Utils.m in Sources */,
 				9DD0FDB11DB09307008AE0B5 /* TTSameLabelViewController.m in Sources */,
 				9D9A77A51DAE3931003DF858 /* TTAddLabelViewController.m in Sources */,
