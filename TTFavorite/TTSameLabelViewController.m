@@ -8,7 +8,7 @@
 
 #import "TTSameLabelViewController.h"
 #import "TTFavoriteManager.h"
-#import "TTFavoriteEntity.h"
+#import "TTRealmFavoriteEntity.h"
 #import "TTFavoriteTableViewCell.h"
 
 @interface TTSameLabelViewController ()<UITableViewDataSource, UITableViewDelegate, TTFavoriteTableViewCellDelegate>
@@ -42,7 +42,8 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    for (TTFavoriteEntity *entity in [[TTFavoriteManager singleton]  favoriteList]) {
+//    [[TTFavoriteManager singleton] loadEntity];
+    for (TTRealmFavoriteEntity *entity in [[TTFavoriteManager singleton]  favoriteList]) {
         if ([entity.label isEqualToString:self.label]) {
             // 前画面で選択したラベルと永続化されているEntityのラベルが同じ時Entityを自身の配列に格納
             [self.sameLabelEntityList addObject: entity];
@@ -67,7 +68,7 @@
     TTFavoriteTableViewCell *cell =
     [self.sameLabelTableView dequeueReusableCellWithIdentifier:@"Cell"];
     
-    TTFavoriteEntity *entity = [[TTFavoriteEntity alloc] init];
+    TTRealmFavoriteEntity *entity = [[TTRealmFavoriteEntity alloc] init];
     entity = self.sameLabelEntityList[indexPath.row];
     
     cell.delagate = self;
@@ -82,7 +83,7 @@
     return cell;
 }
 
-- (void)showAddLabelView:(TTFavoriteEntity *)entity
+- (void)showAddLabelView:(TTRealmFavoriteEntity *)entity
 {
     NSLog(@"デリゲートが呼ばれました");
 }
