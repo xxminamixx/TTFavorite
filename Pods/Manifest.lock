@@ -1,12 +1,17 @@
 PODS:
+  - Realm (2.0.2):
+    - Realm/Headers (= 2.0.2)
+  - Realm/Headers (2.0.2)
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
 
 DEPENDENCIES:
+  - Realm
   - SDWebImage
 
 SPEC CHECKSUMS:
+  Realm: 0f5a194af0b7e6158b83db41b4ee1a00be7ddf1a
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
 
 COCOAPODS: 0.39.0
