@@ -31,6 +31,14 @@
     
     self.navigationItem.title = @"ラベル選択";
     
+    // リセットボタン追加
+    UIBarButtonItem *deleteButton = [[UIBarButtonItem alloc ] initWithTitle:@"ラベル削除"
+                                                                     style:UIBarButtonItemStylePlain
+                                                                    target:self
+                                                                    action:@selector(deleteLabel)];
+    
+    self.navigationItem.rightBarButtonItems = @[deleteButton];
+    
     self.labelList = [[NSMutableArray alloc] init];
 
     self.labelListTableView.delegate = self;
@@ -51,6 +59,11 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
+}
+
+- (void)deleteLabel
+{
+    [self.labelListTableView setEditing:YES animated:YES];
 }
 
 - (void)addLabelViewClose
@@ -106,5 +119,20 @@
     [[TTFavoriteManager singleton] saveLabel:self.labelList[indexPath.row]];
     [self.navigationController popViewControllerAnimated:YES];
 }
+
+- (void)tableView:
+(UITableView*)tableView commitEditingStyle:
+(UITableViewCellEditingStyle)
+editingStyle forRowAtIndexPath:
+(NSIndexPath*)indexPath
+{
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    self.labelList = [[ud objectForKey:@"LabelList"] mutableCopy];
+    [self.labelList removeObjectAtIndex:indexPath.row];
+    [ud setObject:self.labelList forKey:@"LabelList"];
+    [self.labelListTableView reloadData];
+}
+
+
 
 @end

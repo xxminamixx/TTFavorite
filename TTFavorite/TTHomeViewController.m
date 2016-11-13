@@ -183,12 +183,12 @@ NSInteger numberOfPage;
                                                                                             error:&jsonError];
                              //　フェッチしたデータがfavoriteDataに格納
                              if (favoriteData) {
-//                                NSLog(@"%@", favoriteData);
+                                NSLog(@"%@", favoriteData);
                                 for (NSDictionary *dic in favoriteData) {
                                     TTRealmFavoriteEntity *entity = [TTRealmFavoriteEntity alloc];
                                      entity.text = [dic valueForKey:@"text"];
                                      entity.name = [dic valueForKeyPath:@"user.name"];
-//                                     entity.imageList = [dic valueForKeyPath:@"extended_entities.media.media_url_https"];
+                                     //entity.imageList = [dic valueForKeyPath:@"extended_entities.media.media_url_https"];
                                      entity.icon = [dic valueForKeyPath:@"user.profile_image_url_https"];
                                      [self.favoriteList addObject:entity];
                                  }
@@ -230,8 +230,8 @@ numberOfRowsInSection:(NSInteger)section
 //            cell = [[TTFavoriteTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
 //        }
         
-        TTRealmFavoriteEntity *entity = [[TTRealmFavoriteEntity alloc] init];
-        entity = self.favoriteList[indexPath.row];
+       // TTRealmFavoriteEntity *entity = [[TTRealmFavoriteEntity alloc] init];
+        TTRealmFavoriteEntity *entity = self.favoriteList[indexPath.row];
         
         cell.delagate = self;
         

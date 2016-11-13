@@ -51,7 +51,7 @@
     self.entity = entity;
     self.name.text = entity.name;
     self.text.text = entity.text;
-//    [self imageRefresh:entity.imageList];
+   // [self imageRefresh:entity.imageList];
     [self imageRefresh:nil];
 
 }
@@ -64,7 +64,7 @@
  - parameter complatedBlock: 画像表示処理が終わったあとのコールバックBlocks
  */
 
-- (void)sd_setImageWithURL:(NSMutableArray *)urlList completed:(SDWebImageCompletionBlock)completedBlock
+- (void)sd_setImageWithURL:(RLMArray<StringObject> *)urlList completed:(SDWebImageCompletionBlock)completedBlock
 {
     for (int i = 0; i < urlList.count; i++) {
         
@@ -89,7 +89,7 @@
     }
 }
 
-- (void)imageRefresh:(NSMutableArray *)urlList
+- (void)imageRefresh:(RLMArray<StringObject> *)urlList
 {
     // 画像レイアウト処理
     [self imageLayoutWithNumberOfImages:urlList.count];

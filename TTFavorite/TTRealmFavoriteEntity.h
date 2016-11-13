@@ -10,7 +10,7 @@
 
 @interface StringObject : RLMObject
 
-@property NSArray *urlList;
+@property NSString *url;
 
 @end
 RLM_ARRAY_TYPE(StringObject)
@@ -19,9 +19,8 @@ RLM_ARRAY_TYPE(StringObject)
 
 @property NSString *name; // ユーザ名
 @property NSString *text; // ツイート本文
-//@property (nonatomic)RLMArray<StringObject> *imageList; // 画像があった場合のurl
-
 @property NSString *icon; // アイコン画像url
 @property NSString *label; //　フォルダ分け用のlabel
+// @property RLMArray<StringObject> *imageList;
 
 @end
