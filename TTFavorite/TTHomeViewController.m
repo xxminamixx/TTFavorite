@@ -126,7 +126,7 @@ NSInteger numberOfPage;
         }
     };
     
-    [self fetchFavoriteForUser:@"sac_ios_tester" completed:completed];
+    [self fetchFavoriteForUser:@"xxxxx_hobby" completed:completed];
 }
 
 - (void)didReceiveMemoryWarning
@@ -188,7 +188,7 @@ NSInteger numberOfPage;
                                     TTRealmFavoriteEntity *entity = [TTRealmFavoriteEntity alloc];
                                      entity.text = [dic valueForKey:@"text"];
                                      entity.name = [dic valueForKeyPath:@"user.name"];
-                                     //entity.imageList = [dic valueForKeyPath:@"extended_entities.media.media_url_https"];
+                                     entity.imageList = [dic valueForKeyPath:@"extended_entities.media.media_url_https"];
                                      entity.icon = [dic valueForKeyPath:@"user.profile_image_url_https"];
                                      [self.favoriteList addObject:entity];
                                  }

@@ -21,6 +21,6 @@ RLM_ARRAY_TYPE(StringObject)
 @property NSString *text; // ツイート本文
 @property NSString *icon; // アイコン画像url
 @property NSString *label; //　フォルダ分け用のlabel
-// @property RLMArray<StringObject> *imageList;
+@property RLMArray<StringObject> *imageList;
 
 @end

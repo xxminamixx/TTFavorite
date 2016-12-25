@@ -51,7 +51,7 @@
     self.entity = entity;
     self.name.text = entity.name;
     self.text.text = entity.text;
-   // [self imageRefresh:entity.imageList];
+    [self imageRefresh:entity.imageList];
     [self imageRefresh:nil];
 
 }
@@ -68,7 +68,11 @@
 {
     for (int i = 0; i < urlList.count; i++) {
         
-        NSURL *url = [NSURL URLWithString:urlList[i]];
+        // urlListに格納されているStringObjectを取り出す
+        StringObject *str = urlList[i];
+        
+        // url文字列をNSURLにキャスト
+        NSURL *url = [NSURL URLWithString: str];
         
         switch (i) {
             case 0:
@@ -137,43 +141,43 @@
         case 0:
             // 画像なしのときの処理
             // 各UIImageの高さ制約を0にする
-            self.image1Height.constant = 0;
-            self.image2Height.constant = 0;
-            self.image3Height.constant = 0;
-            self.image4Height.constant = 0;
+//            self.image1Height.constant = 0;
+//            self.image2Height.constant = 0;
+//            self.image3Height.constant = 0;
+//            self.image4Height.constant = 0;
             break;
         case 1:
             // 1個のときの処理
-            self.image1Height.constant = 110;
-            self.image2Height.constant = 110;
-            self.image2.hidden = YES;
-            self.image3Height.constant = 0;
-            self.image4Height.constant = 0;
+//            self.image1Height.constant = 110;
+//            self.image2Height.constant = 110;
+//            self.image2.hidden = YES;
+//            self.image3Height.constant = 0;
+//            self.image4Height.constant = 0;
             // image1の下のマージンを0にする必要ある？
             break;
         case 2:
             // 2個のときの処理
-            self.image1Height.constant = 110;
-            self.image2Height.constant = 110;
-            self.image2.hidden = NO;
-            self.image3Height.constant = 0;
-            self.image4Height.constant = 0;
+//            self.image1Height.constant = 110;
+//            self.image2Height.constant = 110;
+//            self.image2.hidden = NO;
+//            self.image3Height.constant = 0;
+//            self.image4Height.constant = 0;
             break;
         case 3:
             // 3個のときの処理
-            self.image1Height.constant = 110;
-            self.image2Height.constant = 110;
-            self.image2.hidden = NO;
-            self.image3Height.constant = 110;
-            self.image4Height.constant = 0;
+//            self.image1Height.constant = 110;
+//            self.image2Height.constant = 110;
+//            self.image2.hidden = NO;
+//            self.image3Height.constant = 110;
+//            self.image4Height.constant = 0;
             break;
         case 4:
             // 4個のときの処理
-            self.image1Height.constant = 110;
-            self.image2Height.constant = 110;
-            self.image2.hidden = NO;
-            self.image3Height.constant = 110;
-            self.image4Height.constant = 110;
+//            self.image1Height.constant = 110;
+//            self.image2Height.constant = 110;
+//            self.image2.hidden = NO;
+//            self.image3Height.constant = 110;
+//            self.image4Height.constant = 110;
             break;
         default:
             break;
