@@ -141,43 +141,64 @@
         case 0:
             // 画像なしのときの処理
             // 各UIImageの高さ制約を0にする
-//            self.image1Height.constant = 0;
-//            self.image2Height.constant = 0;
-//            self.image3Height.constant = 0;
-//            self.image4Height.constant = 0;
+            self.image1Height.constant = 0;
+            self.image2Height.constant = 0;
+            self.image3Height.constant = 0;
+            self.image4Height.constant = 0;
+            
+            self.image.hidden = YES;
+            self.image2.hidden = YES;
+            self.image3.hidden = YES;
+            self.image4.hidden = YES;
             break;
         case 1:
             // 1個のときの処理
-//            self.image1Height.constant = 110;
-//            self.image2Height.constant = 110;
-//            self.image2.hidden = YES;
-//            self.image3Height.constant = 0;
-//            self.image4Height.constant = 0;
+            self.image1Height.constant = 110;
+            self.image2Height.constant = 110;
+            self.image3Height.constant = 0;
+            self.image4Height.constant = 0;
+            
+            self.image.hidden = NO;
+            self.image2.hidden = YES;
+            self.image3.hidden = YES;
+            self.image4.hidden = YES;
             // image1の下のマージンを0にする必要ある？
             break;
         case 2:
             // 2個のときの処理
-//            self.image1Height.constant = 110;
-//            self.image2Height.constant = 110;
-//            self.image2.hidden = NO;
-//            self.image3Height.constant = 0;
-//            self.image4Height.constant = 0;
+            self.image1Height.constant = 110;
+            self.image2Height.constant = 110;
+            self.image3Height.constant = 0;
+            self.image4Height.constant = 0;
+            
+            self.image.hidden = NO;
+            self.image2.hidden = NO;
+            self.image3.hidden = YES;
+            self.image4.hidden = YES;
             break;
         case 3:
             // 3個のときの処理
-//            self.image1Height.constant = 110;
-//            self.image2Height.constant = 110;
-//            self.image2.hidden = NO;
-//            self.image3Height.constant = 110;
-//            self.image4Height.constant = 0;
+            self.image1Height.constant = 110;
+            self.image2Height.constant = 110;
+            self.image3Height.constant = 110;
+            self.image4Height.constant = 0;
+            
+            self.image.hidden = NO;
+            self.image2.hidden = NO;
+            self.image3.hidden = NO;
+            self.image4.hidden = YES;
             break;
         case 4:
             // 4個のときの処理
-//            self.image1Height.constant = 110;
-//            self.image2Height.constant = 110;
-//            self.image2.hidden = NO;
-//            self.image3Height.constant = 110;
-//            self.image4Height.constant = 110;
+            self.image1Height.constant = 110;
+            self.image2Height.constant = 110;
+            self.image3Height.constant = 110;
+            self.image4Height.constant = 110;
+            
+            self.image.hidden = NO;
+            self.image2.hidden = NO;
+            self.image3.hidden = NO;
+            self.image4.hidden = NO;
             break;
         default:
             break;
